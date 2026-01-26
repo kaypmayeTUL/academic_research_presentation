@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Academic Research | Tulane University Libraries</title>
+    <style>
+        :root {
+            --tulane-green: #285C4D;
+            --tulane-green-dark: #1e4a3d;
+            --tulane-blue: #71C5E8;
+            --tulane-blue-light: #a8ddf2;
+            --storm-shutters: #00778B;
+            --medallion: #CC9900;
+            --olive-branch: #658D1B;
+            --verdigris: #71DBD4;
+            --light-bg: #f8fafb;
+            --text-dark: #2c3e50;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--tulane-green);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-title {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .page-selector {
+            padding: 8px 12px;
+            border: 2px solid var(--tulane-blue);
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--tulane-green);
+            font-size: 0.95rem;
+            cursor: pointer;
+            min-width: 280px;
+        }
+
+        .nav-btn {
+            background: var(--tulane-blue);
+            color: var(--tulane-green-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-indicator {
+            color: var(--tulane-blue);
+            font-size: 0.9rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Main content */
+        .presentation {
+            margin-top: 70px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Title slide */
+        .title-slide {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--tulane-green) 0%, var(--storm-shutters) 100%);
+            border-radius: 16px;
+            color: var(--white);
+            min-height: calc(100vh - 130px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.5rem;
+            color: var(--tulane-blue-light);
+            margin-bottom: 40px;
+        }
+
+        .title-slide .presenter {
+            font-size: 1.3rem;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--tulane-blue);
+            display: inline-block;
+        }
+
+        .title-slide .institution {
+            font-size: 1.1rem;
+            color: var(--tulane-blue-light);
+            margin-top: 10px;
+        }
+
+        /* Content slides */
+        .content-slide {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 45px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            min-height: calc(100vh - 130px);
+        }
+
+        .content-slide h2 {
+            color: var(--tulane-green);
+            font-size: 2.1rem;
+            margin-bottom: 35px;
+            padding-bottom: 18px;
+            border-bottom: 3px solid var(--tulane-blue);
+            line-height: 1.3;
+        }
+
+        .content-slide h3 {
+            color: var(--storm-shutters);
+            font-size: 1.45rem;
+            margin: 35px 0 20px 0;
+            line-height: 1.4;
+        }
+
+        .content-slide h4 {
+            color: var(--tulane-green);
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
+            line-height: 1.4;
+        }
+
+        .content-slide p {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-slide ul, .content-slide ol {
+            margin: 20px 0 20px 30px;
+        }
+
+        .content-slide li {
+            margin-bottom: 14px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .content-slide li ul, .content-slide li ol {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5f1 0%, #e1f4fb 100%);
+            border-left: 6px solid var(--tulane-green);
+            padding: 30px 35px;
+            margin: 35px 0;
+            border-radius: 0 12px 12px 0;
+            line-height: 2;
+        }
+
+        .highlight-box ul, .highlight-box ol {
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 12px;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fef3e2 0%, #ffecd2 100%);
+            border-left-color: var(--medallion);
+        }
+
+        .highlight-box.tip {
+            background: linear-gradient(135deg, #e8f4fd 0%, #dbeafe 100%);
+            border-left-color: var(--tulane-blue);
+        }
+
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 35px 40px;
+            border-radius: 12px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 1.05rem;
+            overflow-x: auto;
+            margin: 30px 0;
+            line-height: 2.4;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            letter-spacing: 0.3px;
+        }
+
+        .code-example .comment {
+            color: #68d391;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .code-example .highlight {
+            color: var(--tulane-blue);
+            font-weight: 600;
+        }
+
+        .code-example .operator {
+            color: var(--medallion);
+            font-weight: 700;
+        }
+
+        /* Activity boxes */
+        .activity-box {
+            background: linear-gradient(135deg, #fef9e7 0%, #fff8e1 100%);
+            border: 2px solid var(--medallion);
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin: 40px 0;
+        }
+
+        .activity-box h4 {
+            color: var(--medallion);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .activity-box h4::before {
+            content: "✏️";
+            font-size: 1.5rem;
+        }
+
+        .activity-content {
+            margin-top: 25px;
+            line-height: 2;
+        }
+
+        .activity-content p {
+            margin-bottom: 14px;
+            margin-top: 22px;
+        }
+
+        .activity-content p:first-child {
+            margin-top: 0;
+        }
+
+        .activity-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            margin: 14px 0 24px 0;
+            transition: border-color 0.3s;
+            line-height: 1.6;
+        }
+
+        .activity-input:focus {
+            outline: none;
+            border-color: var(--tulane-green);
+        }
+
+        .activity-textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            margin: 14px 0 24px 0;
+            min-height: 130px;
+            resize: vertical;
+            font-family: inherit;
+            line-height: 1.8;
+        }
+
+        .activity-textarea:focus {
+            outline: none;
+            border-color: var(--tulane-green);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 16px 10px;
+            border-bottom: 1px solid #eee;
+            line-height: 1.8;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            accent-color: var(--tulane-green);
+            cursor: pointer;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.1rem;
+        }
+
+        .checklist-item.checked label {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        /* Radio options */
+        .radio-group {
+            margin: 20px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .radio-option:hover {
+            background: #e8f5f1;
+        }
+
+        .radio-option.selected {
+            background: #e8f5f1;
+            border-color: var(--tulane-green);
+        }
+
+        .radio-option input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--tulane-green);
+            cursor: pointer;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .radio-option .option-label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .radio-option .option-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .data-table th {
+            background: var(--tulane-green);
+            color: var(--white);
+            padding: 18px 24px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .data-table tr:hover {
+            background: #e8f5f1;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .comparison-table th {
+            background: var(--tulane-green);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table th:first-child {
+            background: #f0f0f0;
+            color: var(--text-dark);
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .comparison-table td:first-child {
+            background: #f8f9fa;
+            font-weight: 600;
+            width: 25%;
+        }
+
+        .comparison-table .yes {
+            color: var(--olive-branch);
+            font-weight: 600;
+        }
+
+        .comparison-table .no {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        .comparison-table .maybe {
+            color: var(--medallion);
+            font-weight: 600;
+        }
+
+        /* Two column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 35px 0;
+        }
+
+        .column {
+            background: #f8f9fa;
+            padding: 30px 35px;
+            border-radius: 14px;
+            line-height: 2;
+        }
+
+        .column h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .column ul, .column ol {
+            margin-left: 22px;
+        }
+
+        .column li {
+            margin-bottom: 14px;
+        }
+
+        .column p {
+            margin-bottom: 16px;
+        }
+
+        /* Key points */
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 24px 28px;
+            background: #f8f9fa;
+            border-radius: 14px;
+            margin: 18px 0;
+            line-height: 1.9;
+        }
+
+        .key-point-icon {
+            background: var(--tulane-green);
+            color: var(--white);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.15rem;
+        }
+
+        /* Source cards */
+        .source-card {
+            background: var(--white);
+            border: 2px solid #e0e0e0;
+            border-radius: 14px;
+            padding: 25px 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .source-card:hover {
+            border-color: var(--tulane-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .source-card h4 {
+            color: var(--tulane-green);
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .source-card .icon {
+            font-size: 1.5rem;
+        }
+
+        .source-card p {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        .source-card .examples {
+            background: #f8f9fa;
+            padding: 15px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .source-card .examples strong {
+            color: var(--storm-shutters);
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, var(--tulane-green) 0%, var(--storm-shutters) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .contact-card h3 {
+            color: var(--white);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card .name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-card .title {
+            color: var(--tulane-blue-light);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-card .email-link {
+            display: inline-block;
+            background: var(--white);
+            color: var(--tulane-green);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card .email-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Links */
+        a {
+            color: var(--storm-shutters);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--storm-shutters);
+        }
+
+        a:hover {
+            color: var(--tulane-green);
+            border-bottom-style: solid;
+        }
+
+        /* Footer */
+        .slide-footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--tulane-blue);
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .nav-title {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-selector {
+                min-width: 200px;
+            }
+
+            .title-slide h1 {
+                font-size: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .content-slide {
+                padding: 30px 22px;
+            }
+
+            .content-slide h2 {
+                font-size: 1.7rem;
+                margin-bottom: 25px;
+            }
+
+            .content-slide h3 {
+                font-size: 1.3rem;
+                margin: 28px 0 16px 0;
+            }
+
+            .content-slide p {
+                line-height: 1.9;
+            }
+
+            .content-slide li {
+                line-height: 1.8;
+                margin-bottom: 12px;
+            }
+
+            .code-example {
+                padding: 25px 22px;
+                font-size: 0.92rem;
+                line-height: 2.2;
+            }
+
+            .activity-box {
+                padding: 28px 22px;
+            }
+
+            .highlight-box {
+                padding: 24px 22px;
+                line-height: 1.9;
+            }
+
+            .column {
+                padding: 24px 22px;
+                line-height: 1.9;
+            }
+
+            .key-point {
+                padding: 20px 18px;
+                gap: 16px;
+            }
+
+            .data-table {
+                font-size: 0.92rem;
+            }
+
+            .data-table th, .data-table td {
+                padding: 14px 16px;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th, .comparison-table td {
+                padding: 12px;
+            }
+        }
+
+        /* Medium screens (tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .content-slide {
+                padding: 40px 35px;
+            }
+
+            .code-example {
+                padding: 30px 32px;
+                line-height: 2.2;
+            }
+
+            .column {
+                padding: 26px 28px;
+            }
+
+            .two-column {
+                gap: 30px;
+            }
+
+            .activity-box {
+                padding: 32px 35px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .nav-container, .progress-bar, .email-panel-toggle, .email-panel {
+                display: none;
+            }
+
+            .slide {
+                display: block !important;
+                page-break-after: always;
+            }
+
+            .presentation {
+                margin-top: 0;
+            }
+        }
+
+        /* Email Panel */
+        .email-panel-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--tulane-green);
+            color: var(--white);
+            border: none;
+            padding: 16px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .email-panel-toggle:hover {
+            background: var(--tulane-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .email-panel-toggle .icon {
+            font-size: 1.2rem;
+        }
+
+        .email-panel {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 998;
+            width: 380px;
+            max-width: calc(100vw - 60px);
+            display: none;
+            animation: slideUp 0.3s ease;
+        }
+
+        .email-panel.active {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .email-panel h3 {
+            color: var(--tulane-green);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .email-panel .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .email-panel label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .email-panel input[type="email"],
+        .email-panel input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .email-panel input[type="email"]:focus,
+        .email-panel input[type="text"]:focus {
+            outline: none;
+            border-color: var(--tulane-green);
+        }
+
+        .email-panel .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .email-panel .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-panel .btn-primary {
+            background: var(--tulane-green);
+            color: var(--white);
+        }
+
+        .email-panel .btn-primary:hover {
+            background: var(--tulane-green-dark);
+        }
+
+        .email-panel .btn-secondary {
+            background: #f0f0f0;
+            color: var(--text-dark);
+        }
+
+        .email-panel .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .email-panel .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+
+        .email-panel .close-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .email-panel .response-preview {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .email-panel .response-preview h4 {
+            color: var(--storm-shutters);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .email-panel .response-count {
+            display: inline-block;
+            background: var(--tulane-blue);
+            color: var(--tulane-green-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .email-panel .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .email-panel .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .email-panel-toggle {
+                bottom: 20px;
+                right: 20px;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+
+            .email-panel {
+                bottom: 90px;
+                right: 15px;
+                left: 15px;
+                width: auto;
+                padding: 25px 20px;
+            }
+
+            .email-panel .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-title">Introduction to Academic Research</div>
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <select class="page-selector" id="slideSelector" onchange="goToSlide(this.value)">
+                <option value="0">Title Slide</option>
+                <option value="1">Why Library Research?</option>
+                <option value="2">Credible vs. Scholarly Sources</option>
+                <option value="3">Understanding Scholarly Sources</option>
+                <option value="4">Types of Research Sources</option>
+                <option value="5">Activity: Evaluate a Source</option>
+                <option value="6">From Topic to Search Terms</option>
+                <option value="7">Boolean Operators & Techniques</option>
+                <option value="8">Activity: Build Your Search</option>
+                <option value="9">Library Databases</option>
+                <option value="10">Finding the Right Database</option>
+                <option value="11">A-Z Database List</option>
+                <option value="12">Activity: Choose Your Databases</option>
+                <option value="13">Library Research Guides</option>
+                <option value="14">Interlibrary Loan (ILL)</option>
+                <option value="15">Tulane Library Locations</option>
+                <option value="16">Media Services & Equipment</option>
+                <option value="17">Activity: Research Planning</option>
+                <option value="18">Getting Help</option>
+                <option value="19">Summary & Next Steps</option>
+            </select>
+            <span class="page-indicator" id="pageIndicator">1 / 20</span>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </nav>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <main class="presentation">
+        <!-- Slide 0: Title -->
+        <section class="slide active" id="slide-0">
+            <div class="title-slide">
+                <h1>Introduction to Academic Research</h1>
+                <p class="subtitle">Finding, Evaluating, and Using Library Resources for Your Research</p>
+                <div>
+                    <p class="presenter">Presented by Kay P Maye</p>
+                    <p class="institution">Howard-Tilton Memorial Library<br>Tulane University</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 1: Why Library Research -->
+        <section class="slide" id="slide-1">
+            <div class="content-slide">
+                <h2>Why Use the Library for Research?</h2>
+                
+                <p>You have access to Google—so why bother with the library? Great question!</p>
+
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🔍 Google Gives You...</h4>
+                        <ul>
+                            <li>Billions of results (too many!)</li>
+                            <li>Results ranked by popularity, not quality</li>
+                            <li>Ads and sponsored content</li>
+                            <li>Paywalled articles you can't access</li>
+                            <li>Mixed reliability—anyone can publish</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📚 The Library Gives You...</h4>
+                        <ul>
+                            <li>Curated, high-quality sources</li>
+                            <li>Expert-reviewed scholarship</li>
+                            <li>Free access to expensive databases</li>
+                            <li>Full-text articles and books</li>
+                            <li>Librarians who can help you</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>💡 Fun Fact:</strong> Your tuition gives you access to millions of dollars worth of research databases, journals, and books. Not using the library is like paying for an all-you-can-eat buffet and only eating the breadsticks!
+                </div>
+
+                <h3>What You'll Learn Today</h3>
+                <ol>
+                    <li>The difference between <strong>credible</strong> and <strong>scholarly</strong> sources</li>
+                    <li>How to turn your topic into effective <strong>search terms</strong></li>
+                    <li>Which <strong>databases and resources</strong> to use for your research</li>
+                    <li>Where to get <strong>help</strong> when you're stuck</li>
+                </ol>
+
+                <h3>Setting Up Google Scholar</h3>
+                <p>Connect Google Scholar to Tulane's library for free access to articles:</p>
+                <div class="highlight-box tip">
+                    <ol style="margin: 0;">
+                        <li>Go to <a href="https://scholar.google.com" target="_blank">scholar.google.com</a></li>
+                        <li>Click the menu (☰) → Settings → Library links</li>
+                        <li>Search "Tulane" and check the box</li>
+                        <li>Now you'll see "Full Text @ Tulane" links in your results!</li>
+                    </ol>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Credible vs Scholarly -->
+        <section class="slide" id="slide-2">
+            <div class="content-slide">
+                <h2>Credible vs. Scholarly: What's the Difference?</h2>
+                
+                <p>These terms are often confused, but they mean different things. Understanding the difference will help you choose the right sources for your assignments.</p>
+
+                <div class="highlight-box warning">
+                    <strong>⚠️ Key Insight:</strong> All scholarly sources are credible, but not all credible sources are scholarly. Your professor's requirements matter!
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th></th>
+                        <th>Credible Sources</th>
+                        <th>Scholarly Sources</th>
+                    </tr>
+                    <tr>
+                        <td>Definition</td>
+                        <td>Trustworthy, reliable, and accurate information from reputable sources</td>
+                        <td>Academic work written by experts, peer-reviewed, and published in academic venues</td>
+                    </tr>
+                    <tr>
+                        <td>Authors</td>
+                        <td>Journalists, experts, organizations, professionals</td>
+                        <td>Researchers, professors, academics with credentials</td>
+                    </tr>
+                    <tr>
+                        <td>Audience</td>
+                        <td>General public or specific professional groups</td>
+                        <td>Other scholars and researchers in the field</td>
+                    </tr>
+                    <tr>
+                        <td>Review Process</td>
+                        <td>Editorial review (varies widely)</td>
+                        <td><strong>Peer review</strong> by other experts</td>
+                    </tr>
+                    <tr>
+                        <td>Examples</td>
+                        <td>New York Times, CDC, Encyclopedia Britannica, NPR</td>
+                        <td>Journal of Psychology, Nature, academic books from university presses</td>
+                    </tr>
+                </table>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Understanding Scholarly Sources -->
+        <section class="slide" id="slide-3">
+            <div class="content-slide">
+                <h2>Understanding Scholarly Sources</h2>
+
+                <h3>What Makes Something "Scholarly"?</h3>
+                <p>Scholarly (or "peer-reviewed" or "academic") sources go through a rigorous review process before publication:</p>
+
+                <div class="key-point">
+                    <div class="key-point-icon">1</div>
+                    <div>
+                        <strong>Expert Authors</strong><br>
+                        Written by researchers with advanced degrees and institutional affiliations (universities, research institutes)
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">2</div>
+                    <div>
+                        <strong>Peer Review</strong><br>
+                        Before publication, other experts in the field anonymously evaluate the research for accuracy, methodology, and significance
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">3</div>
+                    <div>
+                        <strong>Citations & References</strong><br>
+                        Scholarly articles cite their sources extensively, showing how the research builds on existing knowledge
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">4</div>
+                    <div>
+                        <strong>Academic Language</strong><br>
+                        Uses technical vocabulary and assumes readers have background knowledge in the field
+                    </div>
+                </div>
+
+                <h3>When to Use Each Type</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Use Credible Sources For:</h4>
+                        <ul>
+                            <li>Background information</li>
+                            <li>Current events & news</li>
+                            <li>Statistics from official sources</li>
+                            <li>General audience writing</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>Use Scholarly Sources For:</h4>
+                        <ul>
+                            <li>Research papers & theses</li>
+                            <li>Literature reviews</li>
+                            <li>Evidence-based arguments</li>
+                            <li>When your professor requires them!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Types of Research Sources -->
+        <section class="slide" id="slide-4">
+            <div class="content-slide">
+                <h2>Types of Research Sources</h2>
+
+                <h3>Books vs. Journal Articles</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>📚 Books & eBooks</h4>
+                        <ul>
+                            <li>Comprehensive overviews of a topic</li>
+                            <li>Historical background & context</li>
+                            <li>Theoretical frameworks</li>
+                            <li>Humanities research</li>
+                        </ul>
+                        <p><strong>Find:</strong> <a href="https://library.tulane.edu" target="_blank">Library catalog</a></p>
+                    </div>
+                    <div class="column">
+                        <h4>📄 Journal Articles</h4>
+                        <ul>
+                            <li>Recent research & discoveries</li>
+                            <li>Specific, focused studies</li>
+                            <li>Scientific & empirical evidence</li>
+                            <li>STEM and social science research</li>
+                        </ul>
+                        <p><strong>Find:</strong> Subject databases</p>
+                    </div>
+                </div>
+
+                <h3>Other Important Resource Types</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🗺️ Maps & Geospatial Data</h4>
+                        <p>Historical maps, GIS data, and geographic information for spatial analysis and visualization.</p>
+                        <p><strong>Find:</strong> Louisiana Fire Insurance Maps, ArcGIS Online, David Rumsey Map Collection</p>
+                    </div>
+                    <div class="column">
+                        <h4>📊 Data & Statistics</h4>
+                        <p>Numeric datasets, surveys, census data, and statistical reports for quantitative research.</p>
+                        <p><strong>Find:</strong> ICPSR, Data.gov, Census Bureau, Social Explorer</p>
+                    </div>
+                </div>
+
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🏛️ Government Documents</h4>
+                        <p>Official reports, legislation, regulations, and policy documents from federal, state, and local agencies.</p>
+                        <p><strong>Find:</strong> GovInfo, Congress.gov, Louisiana Digital Library</p>
+                    </div>
+                    <div class="column">
+                        <h4>📜 Primary Sources</h4>
+                        <p>Original documents, manuscripts, letters, photographs, and firsthand accounts from the time period studied.</p>
+                        <p><strong>Find:</strong> Tulane Special Collections, Archives Unbound, Digital National Security Archive</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Your research may require multiple source types! A history paper might need primary sources and scholarly articles; a policy analysis might need government documents and statistics.
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Activity - Evaluate a Source -->
+        <section class="slide" id="slide-5">
+            <div class="content-slide">
+                <h2>Activity 1: Evaluate a Source</h2>
+
+                <div class="highlight-box tip">
+                    <strong>🔗 Choose a source to evaluate:</strong> Click any link below, then answer the questions to determine if it's scholarly, credible, or questionable.
+                    <ol style="margin-top: 15px; margin-bottom: 0;">
+                        <li><a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank">Source A: About Mental Health</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7364393/" target="_blank">Source B: Social Media Use and Mental Health</a></li>
+                        <li><a href="https://www.psychologytoday.com/us/basics/social-media" target="_blank">Source C: Social Media Overview</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Social_media_and_the_effects_on_American_adolescents" target="_blank">Source D: Social Media Effects on Adolescents</a></li>
+                        <li><a href="https://www.apa.org/topics/social-media-internet/social-media-health-advisory" target="_blank">Source E: Health Advisory on Social Media Use</a></li>
+                        <li><a href="https://www.nature.com/articles/s41562-018-0506-1" target="_blank">Source F: Association of Screen Time and Depression</a></li>
+                    </ol>
+                </div>
+
+                <div class="activity-box">
+                    <h4>Is It Scholarly or Credible?</h4>
+                    <div class="activity-content">
+                        <p><strong>After reviewing your chosen source, answer these questions:</strong></p>
+
+                        <p><strong>1. What is the source? (Title, website, publication name)</strong></p>
+                        <input type="text" class="activity-input" id="source-name" placeholder="e.g., 'The Impact of Social Media on Teen Mental Health' from Journal of Adolescent Psychology">
+
+                        <p><strong>2. Who is the author? What are their credentials?</strong></p>
+                        <input type="text" class="activity-input" id="source-author" placeholder="e.g., Dr. Jane Smith, Professor of Psychology at UCLA">
+
+                        <p><strong>3. Who is the intended audience?</strong></p>
+                        <div class="radio-group" id="audience-group">
+                            <div class="radio-option" onclick="selectRadio(this, 'audience')">
+                                <input type="radio" name="audience" value="general" id="aud-general">
+                                <label for="aud-general">
+                                    <span class="option-label">General public</span>
+                                    <span class="option-desc">Written for anyone to understand</span>
+                                </label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'audience')">
+                                <input type="radio" name="audience" value="scholars" id="aud-scholars">
+                                <label for="aud-scholars">
+                                    <span class="option-label">Scholars/Researchers</span>
+                                    <span class="option-desc">Uses technical language, assumes background knowledge</span>
+                                </label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'audience')">
+                                <input type="radio" name="audience" value="professionals" id="aud-professionals">
+                                <label for="aud-professionals">
+                                    <span class="option-label">Industry professionals</span>
+                                    <span class="option-desc">Practical focus for practitioners in a field</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <p><strong>4. Is it peer-reviewed?</strong></p>
+                        <div class="radio-group" id="peer-review-group">
+                            <div class="radio-option" onclick="selectRadio(this, 'peerreview')">
+                                <input type="radio" name="peerreview" value="yes" id="pr-yes">
+                                <label for="pr-yes">Yes, peer-reviewed</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'peerreview')">
+                                <input type="radio" name="peerreview" value="no" id="pr-no">
+                                <label for="pr-no">No, not peer-reviewed</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'peerreview')">
+                                <input type="radio" name="peerreview" value="unsure" id="pr-unsure">
+                                <label for="pr-unsure">I'm not sure</label>
+                            </div>
+                        </div>
+
+                        <p><strong>5. Does it include citations/references?</strong></p>
+                        <div class="radio-group" id="citations-group">
+                            <div class="radio-option" onclick="selectRadio(this, 'citations')">
+                                <input type="radio" name="citations" value="yes" id="cit-yes">
+                                <label for="cit-yes">Yes, extensive bibliography/references</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'citations')">
+                                <input type="radio" name="citations" value="some" id="cit-some">
+                                <label for="cit-some">Some links or mentions of sources</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'citations')">
+                                <input type="radio" name="citations" value="no" id="cit-no">
+                                <label for="cit-no">No citations</label>
+                            </div>
+                        </div>
+
+                        <p><strong>6. Based on your answers, is this source:</strong></p>
+                        <div class="radio-group" id="conclusion-group">
+                            <div class="radio-option" onclick="selectRadio(this, 'conclusion')">
+                                <input type="radio" name="conclusion" value="scholarly" id="con-scholarly">
+                                <label for="con-scholarly">Scholarly (academic, peer-reviewed)</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'conclusion')">
+                                <input type="radio" name="conclusion" value="credible" id="con-credible">
+                                <label for="con-credible">Credible but not scholarly</label>
+                            </div>
+                            <div class="radio-option" onclick="selectRadio(this, 'conclusion')">
+                                <input type="radio" name="conclusion" value="questionable" id="con-questionable">
+                                <label for="con-questionable">Questionable—needs more evaluation</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 6: From Topic to Search Terms -->
+        <section class="slide" id="slide-6">
+            <div class="content-slide">
+                <h2>From Topic to Search Terms</h2>
+
+                <p>Finding good sources starts with good search terms. Here's how to transform your research question into effective searches.</p>
+
+                <h3>Step 1: Identify Key Concepts</h3>
+                <p>Break your topic into its main ideas. Don't search your entire question—pull out the important nouns and concepts.</p>
+
+                <div class="highlight-box">
+                    <strong>Example Topic:</strong> "How does social media use affect depression rates among college students?"<br><br>
+                    <strong>Key Concepts:</strong>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Social media</strong> (what platform/technology)</li>
+                        <li><strong>Depression</strong> (what outcome/condition)</li>
+                        <li><strong>College students</strong> (what population)</li>
+                    </ul>
+                </div>
+
+                <h3>Step 2: Brainstorm Synonyms & Related Terms</h3>
+                <p>Different authors use different words for the same concepts. Expand your search vocabulary:</p>
+
+                <table class="data-table">
+                    <tr>
+                        <th>Key Concept</th>
+                        <th>Synonyms & Related Terms</th>
+                    </tr>
+                    <tr>
+                        <td>Social media</td>
+                        <td>Facebook, Instagram, TikTok, social networking, online platforms, digital media</td>
+                    </tr>
+                    <tr>
+                        <td>Depression</td>
+                        <td>Mental health, anxiety, psychological well-being, mood disorders, emotional health</td>
+                    </tr>
+                    <tr>
+                        <td>College students</td>
+                        <td>University students, undergraduates, young adults, emerging adults, higher education</td>
+                    </tr>
+                </table>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Use a thesaurus or look at the keywords in articles you've already found to discover more search terms!
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Boolean Operators -->
+        <section class="slide" id="slide-7">
+            <div class="content-slide">
+                <h2>Boolean Operators & Search Techniques</h2>
+
+                <p>Boolean operators are special words that tell databases how to combine your search terms. Master these and you'll find better results faster!</p>
+
+                <h3>The Three Magic Words</h3>
+
+                <div class="code-example">
+<span class="comment"># AND - Narrows your search (both terms must appear)</span>
+social media <span class="operator">AND</span> depression <span class="operator">AND</span> college students
+<span class="highlight">→ Results must include ALL three concepts</span>
+
+<span class="comment"># OR - Broadens your search (either term can appear)</span>
+depression <span class="operator">OR</span> anxiety <span class="operator">OR</span> mental health
+<span class="highlight">→ Results can include ANY of these terms</span>
+
+<span class="comment"># NOT - Excludes terms (removes unwanted results)</span>
+social media <span class="operator">NOT</span> marketing
+<span class="highlight">→ Removes results about social media marketing</span>
+                </div>
+
+                <h3>More Powerful Techniques</h3>
+
+                <div class="two-column">
+                    <div class="column">
+                        <h4>"Quotation Marks"</h4>
+                        <p>Search exact phrases:</p>
+                        <p><code>"social media addiction"</code></p>
+                        <p><code>"college students"</code></p>
+                        <p>Without quotes, databases search each word separately.</p>
+                    </div>
+                    <div class="column">
+                        <h4>Truncation (*)</h4>
+                        <p>Find word variations:</p>
+                        <p><code>depress*</code> → depression, depressed, depressive</p>
+                        <p><code>teen*</code> → teen, teens, teenager, teenagers</p>
+                        <p>The asterisk acts as a wildcard.</p>
+                    </div>
+                </div>
+
+                <h3>Putting It Together</h3>
+                <div class="code-example">
+<span class="comment"># A sophisticated search combining techniques:</span>
+("social media" <span class="operator">OR</span> Instagram <span class="operator">OR</span> TikTok) <span class="operator">AND</span> (depress* <span class="operator">OR</span> anxi* <span class="operator">OR</span> "mental health") <span class="operator">AND</span> ("college students" <span class="operator">OR</span> undergrad*)
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Activity - Build Your Search -->
+        <section class="slide" id="slide-8">
+            <div class="content-slide">
+                <h2>Activity 2: Build Your Search Strategy</h2>
+
+                <div class="activity-box">
+                    <h4>Develop Search Terms for Your Topic</h4>
+                    <div class="activity-content">
+                        <p><strong>1. What is your research topic or question?</strong></p>
+                        <textarea class="activity-textarea" id="research-topic" placeholder="Write your topic as a question or statement, e.g., 'How does climate change affect hurricane intensity in the Gulf of Mexico?'"></textarea>
+
+                        <p><strong>2. Identify 3-4 key concepts from your topic:</strong></p>
+                        <input type="text" class="activity-input" id="concept1" placeholder="Concept 1 (e.g., climate change)">
+                        <input type="text" class="activity-input" id="concept2" placeholder="Concept 2 (e.g., hurricanes)">
+                        <input type="text" class="activity-input" id="concept3" placeholder="Concept 3 (e.g., Gulf of Mexico)">
+                        <input type="text" class="activity-input" id="concept4" placeholder="Concept 4 (optional)">
+
+                        <p><strong>3. List synonyms or related terms for each concept:</strong></p>
+                        <textarea class="activity-textarea" id="synonyms" placeholder="Concept 1: climate change, global warming, greenhouse effect&#10;Concept 2: hurricanes, tropical storms, cyclones&#10;Concept 3: Gulf of Mexico, Gulf Coast, Caribbean"></textarea>
+
+                        <p><strong>4. Write a search string using Boolean operators:</strong></p>
+                        <textarea class="activity-textarea" id="search-string" placeholder='Example: ("climate change" OR "global warming") AND (hurricane* OR "tropical storm*") AND ("Gulf of Mexico" OR "Gulf Coast")'></textarea>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Remember:</strong> You'll probably need to try several different searches! Start broad, then narrow down based on your results.
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Library Databases -->
+        <section class="slide" id="slide-9">
+            <div class="content-slide">
+                <h2>Library Databases: Your Research Powerhouse</h2>
+
+                <p>Databases are searchable collections of articles, books, and other sources. Unlike Google, they're organized, high-quality, and you have full access through the library!</p>
+
+                <h3>Types of Databases</h3>
+
+                <div class="source-card">
+                    <h4><span class="icon">🔬</span> Subject-Specific Databases</h4>
+                    <p>Focus on one discipline or field. Best for in-depth research in your major.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> PsycINFO (psychology), PubMed (health/medicine), JSTOR (humanities), IEEE Xplore (engineering), Business Source Complete (business)
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">🌐</span> Multidisciplinary Databases</h4>
+                    <p>Cover many subjects. Great for interdisciplinary topics or getting started.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Academic Search Complete, Web of Science, Library Search at Tulane, ProQuest Central
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">📰</span> News & Current Events</h4>
+                    <p>Newspapers, magazines, and news archives. Good for recent events and public opinion.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Nexis Uni, Newspaper Source Plus, Nola.com (Times-Picayune), Access World News
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">🎬</span> Streaming Media & Primary Sources</h4>
+                    <p>Films, music, archival documents, and historical collections.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Films on Demand, Digital Theatre+, Archives Unbound, Black Studies Center, Gerritsen Collection (Women's History)
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>🔗 Access 900+ Databases:</strong> Go to <a href="https://library.tulane.edu" target="_blank">library.tulane.edu</a> → "Databases A-Z" or "Find Databases by Subject"
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Finding the Right Database -->
+        <section class="slide" id="slide-10">
+            <div class="content-slide">
+                <h2>Finding the Right Database for Your Research</h2>
+
+                <p>Different assignments need different databases. Select your research area below to see recommended databases:</p>
+
+                <div class="highlight-box" style="padding: 25px 30px;">
+                    <strong>🔍 Select Your Research Area:</strong>
+                    <select id="research-area-selector" class="activity-input" style="margin-top: 15px; margin-bottom: 0; font-size: 1.1rem;" onchange="showResearchDatabases(this.value)">
+                        <option value="">-- Choose a Subject Area --</option>
+                        <option value="psychology">Psychology, Behavior & Mental Health</option>
+                        <option value="health">Medicine, Nursing & Public Health</option>
+                        <option value="business">Business, Economics & Management</option>
+                        <option value="humanities">History, Literature & Philosophy</option>
+                        <option value="sociology">Sociology & Social Work</option>
+                        <option value="crime">Crime & Criminology</option>
+                        <option value="gender">Gender & Sexuality Studies</option>
+                        <option value="education">Education, Teaching & Learning</option>
+                        <option value="science">Science, Biology & Chemistry</option>
+                        <option value="engineering">Engineering & Computer Science</option>
+                        <option value="architecture">Architecture & Urban Studies</option>
+                        <option value="latinamerican">Latin American Studies</option>
+                        <option value="communication">Communication, Film & Theater</option>
+                        <option value="arts">Music, Art & Performing Arts</option>
+                        <option value="legal">Legal Research</option>
+                        <option value="news">News & Current Events</option>
+                        <option value="primary">Primary Sources & Archives</option>
+                        <option value="multidisciplinary">Multiple Subjects / Not Sure</option>
+                    </select>
+                    
+                    <div id="database-results" style="margin-top: 20px; display: none;">
+                        <div style="background: #fff; border-radius: 12px; padding: 25px; border-left: 5px solid var(--tulane-green);">
+                            <h4 style="color: var(--tulane-green); margin-top: 0; margin-bottom: 15px;" id="database-area-title"></h4>
+                            <p style="margin-bottom: 10px;"><strong>Recommended Databases:</strong></p>
+                            <p id="database-results-list" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;"></p>
+                            <p id="database-description" style="color: #666; font-size: 0.95rem; margin-bottom: 0;"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 11: A-Z Database List -->
+        <section class="slide" id="slide-11">
+            <div class="content-slide">
+                <h2>Tulane's A-Z Database List</h2>
+
+                <p>The databases shown here are just a small sample! Tulane University Libraries provides access to <strong>hundreds of databases</strong> covering every subject area. The complete list is available through the A-Z Database List.</p>
+
+                <div class="highlight-box" style="padding: 30px;">
+                    <strong>🔗 Access the A-Z Database List:</strong>
+                    <p style="margin-top: 15px; margin-bottom: 0;"><a href="https://library.tulane.edu/databases" target="_blank" style="font-size: 1.2rem;"><strong>library.tulane.edu/databases</strong></a></p>
+                </div>
+
+                <h3>How to Find It from the Library Website</h3>
+                <div class="key-point">
+                    <div class="key-point-icon">1</div>
+                    <div>
+                        Go to <a href="https://library.tulane.edu" target="_blank"><strong>library.tulane.edu</strong></a>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">2</div>
+                    <div>
+                        Click on <strong>"Databases"</strong> in the top navigation menu
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">3</div>
+                    <div>
+                        Browse alphabetically, by subject, or search by database name
+                    </div>
+                </div>
+
+                <h3>What You Can Do on the A-Z List</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🔤 Browse by Letter</h4>
+                        <p>Click any letter to see all databases starting with that letter—useful when you know the database name.</p>
+                    </div>
+                    <div class="column">
+                        <h4>📚 Filter by Subject</h4>
+                        <p>Select your subject area to see only the databases relevant to your field of study.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Bookmark the A-Z Database List page for quick access throughout your time at Tulane. It's your gateway to all library research resources!
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Activity - Choose Databases -->
+        <section class="slide" id="slide-12">
+            <div class="content-slide">
+                <h2>Activity 3: Choose Your Databases</h2>
+
+                <div class="activity-box">
+                    <h4>Plan Your Database Strategy</h4>
+                    <div class="activity-content">
+                        <p><strong>1. What class or subject is your research for?</strong></p>
+                        <input type="text" class="activity-input" id="class-subject" placeholder="e.g., PSYC 101, ENGL 2000, Sociology senior seminar">
+
+                        <p><strong>2. Based on your topic, which type of sources do you need? (Check all that apply)</strong></p>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="need-scholarly" onchange="toggleCheck(this)">
+                            <label for="need-scholarly">Scholarly/peer-reviewed journal articles</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="need-news" onchange="toggleCheck(this)">
+                            <label for="need-news">News articles or current events coverage</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="need-books" onchange="toggleCheck(this)">
+                            <label for="need-books">Books or book chapters</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="need-data" onchange="toggleCheck(this)">
+                            <label for="need-data">Statistics or data sets</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="need-primary" onchange="toggleCheck(this)">
+                            <label for="need-primary">Primary sources (historical documents, interviews, etc.)</label>
+                        </div>
+
+                        <p><strong>3. List 2-3 databases you plan to search:</strong></p>
+                        
+                        <div class="highlight-box" style="margin: 15px 0; padding: 20px;">
+                            <strong>📚 Database Reference:</strong> Select a subject to see recommended databases.
+                            <select id="database-reference" class="activity-input" style="margin-top: 12px; margin-bottom: 0;" onchange="showDatabaseSuggestions(this.value)">
+                                <option value="">-- Select a Subject --</option>
+                                <option value="psychology">Psychology & Mental Health</option>
+                                <option value="health">Medicine, Nursing & Public Health</option>
+                                <option value="business">Business & Economics</option>
+                                <option value="humanities">History, Literature & Philosophy</option>
+                                <option value="sociology">Sociology & Social Work</option>
+                                <option value="crime">Crime & Criminology</option>
+                                <option value="gender">Gender & Sexuality Studies</option>
+                                <option value="education">Education & Teaching</option>
+                                <option value="science">Science, Biology & Chemistry</option>
+                                <option value="engineering">Engineering & Computer Science</option>
+                                <option value="architecture">Architecture & Urban Studies</option>
+                                <option value="latinamerican">Latin American Studies</option>
+                                <option value="communication">Communication, Film & Theater</option>
+                                <option value="arts">Music, Art & Performing Arts</option>
+                                <option value="legal">Legal Research</option>
+                                <option value="news">News & Current Events</option>
+                                <option value="multidisciplinary">Multidisciplinary / Not Sure</option>
+                            </select>
+                            <div id="database-suggestions" style="margin-top: 12px; padding: 12px; background: #fff; border-radius: 8px; display: none;">
+                                <strong>Recommended databases:</strong>
+                                <span id="database-list"></span>
+                            </div>
+                        </div>
+
+                        <input type="text" class="activity-input" id="database1" placeholder="Database 1 (e.g., PsycINFO)">
+                        <input type="text" class="activity-input" id="database2" placeholder="Database 2 (e.g., Academic Search Complete)">
+                        <input type="text" class="activity-input" id="database3" placeholder="Database 3 (optional)">
+
+                        <div class="highlight-box warning" style="margin-top: 20px;">
+                            <strong>📋 Remember:</strong> This is just a small selection of databases! Visit the <a href="https://library.tulane.edu/databases" target="_blank"><strong>A-Z Database List</strong></a> to explore hundreds more databases available through Tulane Libraries.
+                        </div>
+
+                        <p><strong>4. Why did you choose these databases?</strong></p>
+                        <textarea class="activity-textarea" id="database-reasoning" placeholder="Explain your reasoning—e.g., 'PsycINFO because my topic is about mental health, and Academic Search Complete for broader coverage.'"></textarea>
+                    </div>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Research Guides -->
+        <section class="slide" id="slide-13">
+            <div class="content-slide">
+                <h2>Library Research Guides: Your Secret Weapon</h2>
+
+                <p>Research guides (also called "LibGuides") are curated starting points created by librarians for specific subjects and courses.</p>
+
+                <h3>What's in a Research Guide?</h3>
+
+                <div class="two-column">
+                    <div class="column">
+                        <h4>You'll Find:</h4>
+                        <ul>
+                            <li>Best databases for that subject</li>
+                            <li>Key journals in the field</li>
+                            <li>Recommended books</li>
+                            <li>Research tips and strategies</li>
+                            <li>Citation help</li>
+                            <li>Contact info for subject librarians</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>Examples of Guides:</h4>
+                        <ul>
+                            <li>Psychology Research Guide</li>
+                            <li>History: U.S. History</li>
+                            <li>Business: Company Research</li>
+                            <li>ENGL 1010: First-Year Writing</li>
+                            <li>Latin American Studies</li>
+                            <li>Data & Statistics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>🔗 Find Research Guides:</strong> <a href="https://libguides.tulane.edu" target="_blank">libguides.tulane.edu</a><br><br>
+                    Browse by subject or search for your course number to find a guide made just for your class!
+                </div>
+
+                <h3>Why Use Research Guides?</h3>
+                <ul>
+                    <li><strong>Save time</strong>—librarians have already identified the best resources</li>
+                    <li><strong>Get expert advice</strong>—guides are written by subject specialists</li>
+                    <li><strong>Find hidden gems</strong>—discover resources you didn't know existed</li>
+                    <li><strong>Start strong</strong>—don't waste time with trial and error</li>
+                </ul>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Interlibrary Loan -->
+        <section class="slide" id="slide-14">
+            <div class="content-slide">
+                <h2>Interlibrary Loan (ILL): Get Any Source You Need</h2>
+
+                <p>Can't find an article, book, or other source in Tulane's collection? <strong>Interlibrary Loan (ILL)</strong> lets you request materials from libraries around the world—for free!</p>
+
+                <div class="highlight-box">
+                    <strong>🔗 Request Materials:</strong> <a href="https://library.tulane.edu/services/ill" target="_blank"><strong>library.tulane.edu/services/ill</strong></a>
+                </div>
+
+                <h3>What Can You Request?</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>📄 Articles & Book Chapters</h4>
+                        <ul>
+                            <li>Journal articles not in our databases</li>
+                            <li>Book chapters from books we don't own</li>
+                            <li>Conference papers and proceedings</li>
+                            <li>Delivered as PDF to your email</li>
+                            <li><strong>Typical delivery: 1-3 days</strong></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📚 Books & Physical Materials</h4>
+                        <ul>
+                            <li>Books not in Tulane's catalog</li>
+                            <li>DVDs, CDs, and other media</li>
+                            <li>Dissertations and theses</li>
+                            <li>Pick up at the library</li>
+                            <li><strong>Typical delivery: 5-10 days</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>How to Submit a Request</h3>
+                <div class="key-point">
+                    <div class="key-point-icon">1</div>
+                    <div>
+                        <strong>Find the "Request via ILL" link</strong> — Look for this option when an article isn't available full-text, or search the ILL system directly.
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">2</div>
+                    <div>
+                        <strong>Log in with your Tulane credentials</strong> — Use your Tulane email and password to access the ILL system.
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">3</div>
+                    <div>
+                        <strong>Fill out the request form</strong> — Provide as much information as possible (title, author, journal name, DOI, etc.) for faster processing.
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Don't wait until the last minute! While most articles arrive within a few days, some requests may take longer. Submit ILL requests early in your research process.
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Tulane Library Locations -->
+        <section class="slide" id="slide-15">
+            <div class="content-slide">
+                <h2>Tulane Library Locations</h2>
+
+                <p>Tulane's libraries form a research network ranked among the top in the nation. Each location serves different needs and houses unique collections.</p>
+
+                <div class="source-card">
+                    <h4><span class="icon">🏛️</span> Howard-Tilton Memorial Library</h4>
+                    <p><strong>Main Library</strong> — 7001 Freret Street (Uptown Campus)</p>
+                    <div class="examples">
+                        <strong>Features:</strong> General collections in humanities, social sciences, and sciences. Study spaces, group rooms, computer labs, 24-hour access during finals. Home to the Latin American Library (4th floor) and Media Services (6th floor).
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">🌎</span> Doris Z. Stone Latin American Library</h4>
+                    <p><strong>4th Floor, Howard-Tilton Memorial Library</strong></p>
+                    <div class="examples">
+                        <strong>Features:</strong> One of the world's foremost collections of Latin American research materials. Over 6,600 linear feet of rare books, manuscripts, maps, newspapers, ephemera, and images. Special strengths in Mesoamerican studies, Central American history, and Caribbean materials.
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">⚕️</span> Rudolph Matas Library of the Health Sciences</h4>
+                    <p><strong>Downtown Campus</strong> — 1430 Tulane Avenue (connected to Tulane Medical Center)</p>
+                    <div class="examples">
+                        <strong>Features:</strong> Serves the School of Medicine, School of Public Health and Tropical Medicine, and National Primate Center. Medical databases, clinical resources, and historic medical collections including the Faust Collection on parasitology and tropical medicine.
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">📜</span> Tulane University Special Collections (TUSC)</h4>
+                    <p><strong>Jones Hall</strong> — 6801 Freret Street (across from Howard-Tilton)</p>
+                    <div class="examples">
+                        <strong>Features:</strong> Hogan Archive of New Orleans Music and Jazz, Louisiana Research Collection, Rare Books Collection, Southeastern Architectural Archive, and University Archives. Reading room by appointment only.
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>📍 Other Tulane Libraries:</strong> Turchin Business Library (Freeman School), Law Library (Law School), Math Library (Gibson Hall). Each provides specialized resources for their programs.
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Media Services & Equipment -->
+        <section class="slide" id="slide-16">
+            <div class="content-slide">
+                <h2>Media Services & Equipment</h2>
+
+                <p>Media Services on the <strong>6th floor of Howard-Tilton</strong> provides access to films, music, microforms, and technology equipment you can borrow.</p>
+
+                <h3>Collections Available</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🎬 Film & Audio</h4>
+                        <ul>
+                            <li><strong>Films on Demand</strong> — streaming documentaries and educational films</li>
+                            <li><strong>Swank Digital Campus</strong> — feature films for academic use</li>
+                            <li><strong>Digital Theatre+</strong> — 600+ theatre productions</li>
+                            <li>Physical DVDs, Blu-rays, VHS tapes</li>
+                            <li>Music CDs, vinyl records, cassettes</li>
+                            <li>Viewing and listening stations available</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📰 Microforms & Maps</h4>
+                        <ul>
+                            <li>Historical newspapers on microfilm</li>
+                            <li>Louisiana history manuscripts</li>
+                            <li>Rare and unpublished archival materials</li>
+                            <li><strong>Louisiana Fire Insurance Maps</strong> — digitized historical maps</li>
+                            <li>Digital microfilm readers with scanning capability</li>
+                            <li>Save scans as PDF, JPEG, or TIFF</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Equipment You Can Borrow</h3>
+                <p>The <strong>Creative Technology Lending Collection</strong> lets you check out equipment for up to one week with your Splash Card:</p>
+                
+                <div class="two-column">
+                    <div class="column">
+                        <h4>🎥 Available Equipment</h4>
+                        <ul>
+                            <li>Video cameras and tripods</li>
+                            <li>Projectors for presentations</li>
+                            <li>GPS devices for mapping</li>
+                            <li>Portable DVD/Blu-ray drives</li>
+                            <li>Headphones</li>
+                            <li>Assistive technology workstations</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📍 How to Borrow</h4>
+                        <ul>
+                            <li>Visit the 6th floor Service Desk</li>
+                            <li>Bring your Tulane Splash Card</li>
+                            <li>Hours: Mon-Fri 8:30am-6pm, Sun 12-6pm (academic year)</li>
+                            <li>Equipment loans up to 1 week</li>
+                            <li>Check <a href="https://libguides.tulane.edu/ctlc" target="_blank">libguides.tulane.edu/ctlc</a> for full inventory</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Need to digitize old materials? Media Services has scanners for microfilm, oversized documents, photos, and negatives. Staff can help you get started!
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Activity - Research Planning -->
+        <section class="slide" id="slide-17">
+            <div class="content-slide">
+                <h2>Activity 4: Create Your Research Plan</h2>
+
+                <div class="activity-box">
+                    <h4>Put It All Together</h4>
+                    <div class="activity-content">
+                        <p><strong>1. My research topic/question is:</strong></p>
+                        <textarea class="activity-textarea" id="final-topic" placeholder="Write your research question here"></textarea>
+
+                        <p><strong>2. My main search terms and Boolean search string:</strong></p>
+                        <textarea class="activity-textarea" id="final-search" placeholder='e.g., ("social media" OR Instagram) AND (depression OR "mental health") AND "college students"'></textarea>
+
+                        <p><strong>3. I will search these databases:</strong></p>
+                        <textarea class="activity-textarea" id="final-databases" placeholder="List your databases and explain why you chose each one"></textarea>
+
+                        <p><strong>4. Types of sources I need:</strong></p>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-scholarly" onchange="toggleCheck(this)">
+                            <label for="final-scholarly">Scholarly journal articles</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-books" onchange="toggleCheck(this)">
+                            <label for="final-books">Books or eBooks</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-news" onchange="toggleCheck(this)">
+                            <label for="final-news">News articles</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-credible" onchange="toggleCheck(this)">
+                            <label for="final-credible">Credible websites (government, organizations)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-data" onchange="toggleCheck(this)">
+                            <label for="final-data">Statistics or data</label>
+                        </div>
+
+                        <p><strong>5. What's still confusing or challenging about your research?</strong></p>
+                        <textarea class="activity-textarea" id="final-challenges" placeholder="What questions do you still have? Where might you need help?"></textarea>
+                    </div>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Getting Help -->
+        <section class="slide" id="slide-18">
+            <div class="content-slide">
+                <h2>Getting Help: You're Not Alone!</h2>
+
+                <p>Stuck? Confused? Overwhelmed? <strong>Asking for help is what smart researchers do!</strong> Librarians are here to support you at every stage of your research.</p>
+
+                <h3>Ways to Get Help</h3>
+
+                <div class="source-card">
+                    <h4><span class="icon">💬</span> Chat With Us</h4>
+                    <p>Get instant help through our online chat service, available on the library website.</p>
+                    <div class="examples">
+                        <strong>Best for:</strong> Quick questions, database help, finding articles
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <h4><span class="icon">📅</span> Schedule a Research Consultation</h4>
+                    <p>Book a one-on-one appointment with a librarian who specializes in your subject.</p>
+                    <div class="examples">
+                        <strong>Best for:</strong> In-depth research help, developing search strategies, big projects
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Your Library Contact</h3>
+                    <p class="name">Kay P Maye</p>
+                    <p class="title">Librarian II<br>Howard-Tilton Memorial Library</p>
+                    <a href="/cdn-cgi/l/email-protection#c0abada1b9a580b4b5aca1aea5eea5a4b5" class="email-link">📧 <span class="__cf_email__" data-cfemail="472c2a263e220733322b26292269222332">[email&#160;protected]</span></a>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Remember:</strong> There's no such thing as a "dumb question." Librarians love helping students succeed, and we've seen every research challenge imaginable. Reach out early—don't wait until the night before your paper is due!
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Summary -->
+        <section class="slide" id="slide-19">
+            <div class="content-slide">
+                <h2>Summary & Next Steps</h2>
+
+                <h3>What You Learned Today</h3>
+
+                <div class="key-point">
+                    <div class="key-point-icon">1</div>
+                    <div>
+                        <strong>Credible vs. Scholarly</strong><br>
+                        All scholarly sources are credible, but not all credible sources are scholarly. Know what your assignment requires!
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">2</div>
+                    <div>
+                        <strong>Building Search Strategies</strong><br>
+                        Break your topic into concepts, brainstorm synonyms, and use Boolean operators (AND, OR, NOT) to create powerful searches.
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">3</div>
+                    <div>
+                        <strong>Choosing the Right Resources</strong><br>
+                        Use subject-specific databases for your field, check Research Guides for curated resources, and don't forget books!
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">4</div>
+                    <div>
+                        <strong>Types of Research Sources</strong><br>
+                        Different sources serve different purposes: books for overviews, articles for recent research, primary sources for original evidence, data for quantitative analysis, and government documents for policy research.
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <div class="key-point-icon">5</div>
+                    <div>
+                        <strong>Getting Help</strong><br>
+                        Librarians are your research partners. Chat, email, or make an appointment—we're here for you!
+                    </div>
+                </div>
+
+                <h3>Your Action Items</h3>
+                <ul>
+                    <li>☐ Set up Google Scholar with Tulane library links</li>
+                    <li>☐ Find the Research Guide for your major or current class</li>
+                    <li>☐ Try your search strategy in at least one database</li>
+                    <li>☐ Explore a library location you haven't visited before</li>
+                    <li>☐ Save this presentation and your activity responses for reference</li>
+                    <li>☐ Reach out to a librarian if you have questions!</li>
+                </ul>
+
+                <div class="contact-card" style="margin-top: 40px;">
+                    <h3>Questions? Contact Me!</h3>
+                    <p class="name">Kay P Maye</p>
+                    <p class="title">Howard-Tilton Memorial Library</p>
+                    <a href="/cdn-cgi/l/email-protection#d1babcb0a8b491a5a4bdb0bfb4ffb4b5a4" class="email-link">📧 <span class="__cf_email__" data-cfemail="92f9fff3ebf7d2e6e7fef3fcf7bcf7f6e7">[email&#160;protected]</span></a>
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Email Panel Toggle Button -->
+    <button class="email-panel-toggle" onclick="toggleEmailPanel()" title="Email my responses">
+        <span class="icon">📧</span>
+        <span>Email My Responses</span>
+    </button>
+
+    <!-- Email Panel -->
+    <div class="email-panel" id="emailPanel">
+        <button class="close-btn" onclick="toggleEmailPanel()">&times;</button>
+        <h3>📧 Email Your Responses</h3>
+        <p class="subtitle">Send your activity responses to yourself for future reference.</p>
+        
+        <div class="success-message" id="successMessage">
+            ✓ Email client opened! Check your email application.
+        </div>
+
+        <div class="response-count" id="responseCount">0 responses collected</div>
+        
+        <div class="response-preview" id="responsePreview">
+            <em>Complete activities in the presentation to see your responses here.</em>
+        </div>
+
+        <label for="respondentName">Your Name (optional)</label>
+        <input type="text" id="respondentName" placeholder="Enter your name">
+
+        <label for="respondentEmail">Your Email Address</label>
+        <input type="email" id="respondentEmail" placeholder="your.email@tulane.edu">
+
+        <div class="btn-group">
+            <button class="btn btn-secondary" onclick="previewResponses()">Preview</button>
+            <button class="btn btn-primary" onclick="emailResponses()">Send Email</button>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        let currentSlide = 0;
+        const totalSlides = 20;
+
+        function updateSlide() {
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            document.getElementById('slideSelector').value = currentSlide;
+            document.getElementById('pageIndicator').textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+
+            window.scrollTo(0, 0);
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 0 && newSlide < totalSlides) {
+                currentSlide = newSlide;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = parseInt(slideIndex);
+            updateSlide();
+        }
+
+        function toggleCheck(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            if (item) {
+                if (checkbox.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            }
+            updateResponseCount();
+        }
+
+        function selectRadio(element, groupName) {
+            // Remove selected class from all options in this group
+            const parent = element.closest('.radio-group') || element.parentElement;
+            parent.querySelectorAll('.radio-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Check the radio button
+            const radio = element.querySelector('input[type="radio"]');
+            if (radio) {
+                radio.checked = true;
+            }
+            
+            updateResponseCount();
+        }
+
+        function showDatabaseSuggestions(subject) {
+            const databases = {
+                'psychology': 'PsycINFO, PsycARTICLES, Psychology and Behavioral Sciences Collection, PTSDpubs',
+                'health': 'PubMed/MEDLINE, CINAHL Complete, Cochrane Library, Global Health',
+                'business': 'Business Source Complete, EconLit, Bloomberg, S&P Global Market Intelligence',
+                'humanities': 'JSTOR, MLA International Bibliography, Historical Abstracts, Arts & Humanities Database',
+                'sociology': 'SocINDEX, Sociological Abstracts, Social Services Abstracts, Social Work Abstracts',
+                'crime': 'Criminal Justice Abstracts, National Criminal Justice Reference Service (NCJRS), SocINDEX, Nexis Uni',
+                'gender': 'GenderWatch, LGBT Life, Sociological Abstracts, Women\'s Studies International',
+                'education': 'ERIC, Education Source, Professional Development Collection, Teacher Reference Center',
+                'science': 'Web of Science, SciFinder-n, Biological Abstracts, General Science Full Text',
+                'engineering': 'IEEE Xplore, ACM Digital Library, Compendex',
+                'architecture': 'Avery Index to Architectural Periodicals, JSTOR, ARTstor, Urban Studies Abstracts',
+                'latinamerican': 'PRISMA with HAPI Index, HLAS Web, Latin American Newspapers, Oxford Research Encyclopedia of Latin American History',
+                'communication': 'Communication & Mass Media Complete, Film & Television Literature Index, Digital Theatre+',
+                'arts': 'Oxford Music Online, Music Periodicals Database, Grove Art Online, ARTstor',
+                'legal': 'Westlaw, Nexis Uni (legal section), HeinOnline',
+                'news': 'Nexis Uni, Newspaper Source Plus, Access World News, Nola.com (Times-Picayune)',
+                'multidisciplinary': 'Academic Search Complete, Library Search at Tulane, ProQuest Central, Google Scholar'
+            };
+            
+            const suggestionsDiv = document.getElementById('database-suggestions');
+            const listSpan = document.getElementById('database-list');
+            
+            if (subject && databases[subject]) {
+                listSpan.textContent = databases[subject];
+                suggestionsDiv.style.display = 'block';
+            } else {
+                suggestionsDiv.style.display = 'none';
+            }
+        }
+
+        function showResearchDatabases(area) {
+            const databaseInfo = {
+                'psychology': {
+                    title: 'Psychology, Behavior & Mental Health',
+                    databases: '<strong>PsycINFO</strong>, PsycARTICLES, Psychology and Behavioral Sciences Collection, PTSDpubs',
+                    description: 'PsycINFO is the premier database for psychology research. Start there for most psychology topics.'
+                },
+                'health': {
+                    title: 'Medicine, Nursing & Public Health',
+                    databases: '<strong>PubMed/MEDLINE</strong>, CINAHL Complete, Cochrane Library, Global Health',
+                    description: 'PubMed is essential for medical and health sciences research. CINAHL is best for nursing-specific topics.'
+                },
+                'business': {
+                    title: 'Business, Economics & Management',
+                    databases: '<strong>Business Source Complete</strong>, EconLit, Bloomberg, S&P Global Market Intelligence, WRDS',
+                    description: 'Business Source Complete covers most business topics. Use Bloomberg for financial data and company information.'
+                },
+                'humanities': {
+                    title: 'History, Literature & Philosophy',
+                    databases: '<strong>JSTOR</strong>, MLA International Bibliography, Historical Abstracts, Arts & Humanities Database',
+                    description: 'JSTOR is excellent for humanities journals. Use MLA International Bibliography specifically for literature and language studies.'
+                },
+                'sociology': {
+                    title: 'Sociology & Social Work',
+                    databases: '<strong>SocINDEX</strong>, Sociological Abstracts, Social Services Abstracts, Social Work Abstracts',
+                    description: 'SocINDEX provides comprehensive sociology coverage. Social Work Abstracts is best for social work practice topics.'
+                },
+                'crime': {
+                    title: 'Crime & Criminology',
+                    databases: '<strong>Criminal Justice Abstracts</strong>, National Criminal Justice Reference Service (NCJRS), SocINDEX, Nexis Uni',
+                    description: 'Criminal Justice Abstracts is the core database for criminology. NCJRS includes government reports and policy documents.'
+                },
+                'gender': {
+                    title: 'Gender & Sexuality Studies',
+                    databases: '<strong>GenderWatch</strong>, LGBT Life, Sociological Abstracts, Women\'s Studies International',
+                    description: 'GenderWatch and LGBT Life are specialized databases for gender and sexuality research. Combine with discipline-specific databases for interdisciplinary work.'
+                },
+                'education': {
+                    title: 'Education, Teaching & Learning',
+                    databases: '<strong>ERIC</strong>, Education Source, Professional Development Collection, Teacher Reference Center',
+                    description: 'ERIC is the essential database for education research, including curriculum, teaching methods, and policy.'
+                },
+                'science': {
+                    title: 'Science, Biology & Chemistry',
+                    databases: '<strong>Web of Science</strong>, SciFinder-n, Biological Abstracts, General Science Full Text',
+                    description: 'Web of Science covers all sciences broadly. Use SciFinder-n for chemistry-specific research.'
+                },
+                'engineering': {
+                    title: 'Engineering & Computer Science',
+                    databases: '<strong>IEEE Xplore</strong>, ACM Digital Library, Compendex',
+                    description: 'IEEE Xplore covers electrical engineering and computer science. ACM Digital Library is best for computing and IT research.'
+                },
+                'architecture': {
+                    title: 'Architecture & Urban Studies',
+                    databases: '<strong>Avery Index to Architectural Periodicals</strong>, JSTOR, ARTstor, Urban Studies Abstracts',
+                    description: 'Avery Index is the premier architecture database. ARTstor provides images of buildings and architectural drawings.'
+                },
+                'latinamerican': {
+                    title: 'Latin American Studies',
+                    databases: '<strong>PRISMA with HAPI Index</strong>, HLAS Web, Latin American Newspapers, Oxford Research Encyclopedia of Latin American History',
+                    description: 'HAPI Index is essential for Latin American studies. The Latin American Library on the 4th floor has specialized resources.'
+                },
+                'communication': {
+                    title: 'Communication, Film & Theater',
+                    databases: '<strong>Communication & Mass Media Complete</strong>, Film & Television Literature Index, Digital Theatre+',
+                    description: 'Communication & Mass Media Complete covers journalism, media studies, and communication theory. Digital Theatre+ offers streaming performances.'
+                },
+                'arts': {
+                    title: 'Music, Art & Performing Arts',
+                    databases: '<strong>Oxford Music Online</strong>, Music Periodicals Database, Grove Art Online, ARTstor',
+                    description: 'Grove dictionaries (via Oxford) are authoritative references. ARTstor provides high-quality images for visual arts research.'
+                },
+                'legal': {
+                    title: 'Legal Research',
+                    databases: '<strong>Westlaw</strong>, Nexis Uni (legal section), HeinOnline',
+                    description: 'Westlaw is comprehensive for case law and legal analysis. HeinOnline is best for historical legal materials and law journals.'
+                },
+                'news': {
+                    title: 'News & Current Events',
+                    databases: '<strong>Nexis Uni</strong>, Newspaper Source Plus, Access World News, Nola.com (Times-Picayune)',
+                    description: 'Nexis Uni provides extensive news coverage. Use Nola.com for New Orleans and Louisiana news archives.'
+                },
+                'primary': {
+                    title: 'Primary Sources & Archives',
+                    databases: '<strong>Archives Unbound</strong>, Digital National Security Archive, Gerritsen Collection, Black Studies Center',
+                    description: 'These databases provide digitized primary sources. Also check Tulane Special Collections for unique local materials.'
+                },
+                'multidisciplinary': {
+                    title: 'Multiple Subjects / Not Sure',
+                    databases: '<strong>Academic Search Complete</strong>, Library Search at Tulane, ProQuest Central, Google Scholar',
+                    description: 'Start with Academic Search Complete or Library Search for broad topics. These are great starting points when you\'re unsure which database to use.'
+                }
+            };
+            
+            const resultsDiv = document.getElementById('database-results');
+            const titleEl = document.getElementById('database-area-title');
+            const listEl = document.getElementById('database-results-list');
+            const descEl = document.getElementById('database-description');
+            
+            if (area && databaseInfo[area]) {
+                titleEl.textContent = databaseInfo[area].title;
+                listEl.innerHTML = databaseInfo[area].databases;
+                descEl.textContent = databaseInfo[area].description;
+                resultsDiv.style.display = 'block';
+            } else {
+                resultsDiv.style.display = 'none';
+            }
+        }
+
+        // Email functionality
+        function toggleEmailPanel() {
+            const panel = document.getElementById('emailPanel');
+            panel.classList.toggle('active');
+            if (panel.classList.contains('active')) {
+                updateResponseCount();
+                previewResponses();
+            }
+        }
+
+        function collectResponses() {
+            const responses = [];
+            
+            // Activity 1: Evaluate a Source (Slide 5)
+            const slide5 = document.getElementById('slide-5');
+            if (slide5) {
+                const activity1 = {
+                    title: 'Activity 1: Evaluate a Source',
+                    items: []
+                };
+                
+                const sourceName = slide5.querySelector('#source-name');
+                if (sourceName && sourceName.value.trim()) {
+                    activity1.items.push({ label: 'Source evaluated', value: sourceName.value.trim() });
+                }
+                
+                const sourceAuthor = slide5.querySelector('#source-author');
+                if (sourceAuthor && sourceAuthor.value.trim()) {
+                    activity1.items.push({ label: 'Author/credentials', value: sourceAuthor.value.trim() });
+                }
+                
+                const audience = slide5.querySelector('input[name="audience"]:checked');
+                if (audience) {
+                    const labels = { general: 'General public', scholars: 'Scholars/Researchers', professionals: 'Industry professionals' };
+                    activity1.items.push({ label: 'Intended audience', value: labels[audience.value] || audience.value });
+                }
+                
+                const peerReview = slide5.querySelector('input[name="peerreview"]:checked');
+                if (peerReview) {
+                    const labels = { yes: 'Yes, peer-reviewed', no: 'No, not peer-reviewed', unsure: 'Not sure' };
+                    activity1.items.push({ label: 'Peer-reviewed', value: labels[peerReview.value] || peerReview.value });
+                }
+                
+                const citations = slide5.querySelector('input[name="citations"]:checked');
+                if (citations) {
+                    const labels = { yes: 'Yes, extensive references', some: 'Some sources mentioned', no: 'No citations' };
+                    activity1.items.push({ label: 'Citations included', value: labels[citations.value] || citations.value });
+                }
+                
+                const conclusion = slide5.querySelector('input[name="conclusion"]:checked');
+                if (conclusion) {
+                    const labels = { scholarly: 'Scholarly (academic, peer-reviewed)', credible: 'Credible but not scholarly', questionable: 'Questionable—needs more evaluation' };
+                    activity1.items.push({ label: 'Conclusion', value: labels[conclusion.value] || conclusion.value });
+                }
+                
+                if (activity1.items.length > 0) responses.push(activity1);
+            }
+
+            // Activity 2: Build Your Search (Slide 8)
+            const slide8 = document.getElementById('slide-8');
+            if (slide8) {
+                const activity2 = {
+                    title: 'Activity 2: Build Your Search Strategy',
+                    items: []
+                };
+                
+                const topic = slide8.querySelector('#research-topic');
+                if (topic && topic.value.trim()) {
+                    activity2.items.push({ label: 'Research topic', value: topic.value.trim() });
+                }
+                
+                const concepts = [];
+                for (let i = 1; i <= 4; i++) {
+                    const concept = slide8.querySelector(`#concept${i}`);
+                    if (concept && concept.value.trim()) {
+                        concepts.push(concept.value.trim());
+                    }
+                }
+                if (concepts.length > 0) {
+                    activity2.items.push({ label: 'Key concepts', value: concepts.join(', ') });
+                }
+                
+                const synonyms = slide8.querySelector('#synonyms');
+                if (synonyms && synonyms.value.trim()) {
+                    activity2.items.push({ label: 'Synonyms/related terms', value: synonyms.value.trim() });
+                }
+                
+                const searchString = slide8.querySelector('#search-string');
+                if (searchString && searchString.value.trim()) {
+                    activity2.items.push({ label: 'Boolean search string', value: searchString.value.trim() });
+                }
+                
+                if (activity2.items.length > 0) responses.push(activity2);
+            }
+
+            // Activity 3: Choose Databases (Slide 12)
+            const slide12 = document.getElementById('slide-12');
+            if (slide12) {
+                const activity3 = {
+                    title: 'Activity 3: Choose Your Databases',
+                    items: []
+                };
+                
+                const classSubject = slide12.querySelector('#class-subject');
+                if (classSubject && classSubject.value.trim()) {
+                    activity3.items.push({ label: 'Class/subject', value: classSubject.value.trim() });
+                }
+                
+                const sourceTypes = [];
+                const checkboxes = {
+                    'need-scholarly': 'Scholarly articles',
+                    'need-news': 'News articles',
+                    'need-books': 'Books',
+                    'need-data': 'Statistics/data',
+                    'need-primary': 'Primary sources'
+                };
+                
+                Object.entries(checkboxes).forEach(([id, label]) => {
+                    const checkbox = slide12.querySelector(`#${id}`);
+                    if (checkbox && checkbox.checked) {
+                        sourceTypes.push(label);
+                    }
+                });
+                
+                if (sourceTypes.length > 0) {
+                    activity3.items.push({ label: 'Source types needed', value: sourceTypes.join(', ') });
+                }
+                
+                const databases = [];
+                for (let i = 1; i <= 3; i++) {
+                    const db = slide12.querySelector(`#database${i}`);
+                    if (db && db.value.trim()) {
+                        databases.push(db.value.trim());
+                    }
+                }
+                if (databases.length > 0) {
+                    activity3.items.push({ label: 'Databases selected', value: databases.join(', ') });
+                }
+                
+                const reasoning = slide12.querySelector('#database-reasoning');
+                if (reasoning && reasoning.value.trim()) {
+                    activity3.items.push({ label: 'Reasoning', value: reasoning.value.trim() });
+                }
+                
+                if (activity3.items.length > 0) responses.push(activity3);
+            }
+
+            // Activity 4: Research Plan (Slide 17)
+            const slide17 = document.getElementById('slide-17');
+            if (slide17) {
+                const activity4 = {
+                    title: 'Activity 4: Research Plan',
+                    items: []
+                };
+                
+                const finalTopic = slide17.querySelector('#final-topic');
+                if (finalTopic && finalTopic.value.trim()) {
+                    activity4.items.push({ label: 'Research topic', value: finalTopic.value.trim() });
+                }
+                
+                const finalSearch = slide17.querySelector('#final-search');
+                if (finalSearch && finalSearch.value.trim()) {
+                    activity4.items.push({ label: 'Search strategy', value: finalSearch.value.trim() });
+                }
+                
+                const finalDatabases = slide17.querySelector('#final-databases');
+                if (finalDatabases && finalDatabases.value.trim()) {
+                    activity4.items.push({ label: 'Databases to search', value: finalDatabases.value.trim() });
+                }
+                
+                const finalSourceTypes = [];
+                const finalCheckboxes = {
+                    'final-scholarly': 'Scholarly articles',
+                    'final-books': 'Books/eBooks',
+                    'final-news': 'News articles',
+                    'final-credible': 'Credible websites',
+                    'final-data': 'Statistics/data'
+                };
+                
+                Object.entries(finalCheckboxes).forEach(([id, label]) => {
+                    const checkbox = slide17.querySelector(`#${id}`);
+                    if (checkbox && checkbox.checked) {
+                        finalSourceTypes.push(label);
+                    }
+                });
+                
+                if (finalSourceTypes.length > 0) {
+                    activity4.items.push({ label: 'Source types needed', value: finalSourceTypes.join(', ') });
+                }
+                
+                const challenges = slide17.querySelector('#final-challenges');
+                if (challenges && challenges.value.trim()) {
+                    activity4.items.push({ label: 'Questions/challenges', value: challenges.value.trim() });
+                }
+                
+                if (activity4.items.length > 0) responses.push(activity4);
+            }
+
+            return responses;
+        }
+
+        function countResponses() {
+            const responses = collectResponses();
+            let count = 0;
+            responses.forEach(activity => {
+                count += activity.items.length;
+            });
+            return count;
+        }
+
+        function updateResponseCount() {
+            const count = countResponses();
+            const countEl = document.getElementById('responseCount');
+            if (countEl) {
+                countEl.textContent = `${count} response${count !== 1 ? 's' : ''} collected`;
+            }
+        }
+
+        function previewResponses() {
+            const responses = collectResponses();
+            const preview = document.getElementById('responsePreview');
+            
+            if (responses.length === 0) {
+                preview.innerHTML = '<em>Complete activities in the presentation to see your responses here.</em>';
+                return;
+            }
+            
+            let html = '';
+            responses.forEach(activity => {
+                html += `<h4>${activity.title}</h4>`;
+                html += '<ul style="margin: 5px 0 15px 20px; padding: 0;">';
+                activity.items.forEach(item => {
+                    const truncatedValue = item.value.length > 80 
+                        ? item.value.substring(0, 80) + '...' 
+                        : item.value;
+                    html += `<li style="margin-bottom: 5px;"><strong>${item.label}:</strong> ${truncatedValue}</li>`;
+                });
+                html += '</ul>';
+            });
+            
+            preview.innerHTML = html;
+            updateResponseCount();
+        }
+
+        function formatResponsesForEmail() {
+            const responses = collectResponses();
+            const name = document.getElementById('respondentName').value.trim();
+            const date = new Date().toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            let text = 'INTRODUCTION TO ACADEMIC RESEARCH\n';
+            text += 'Activity Responses\n';
+            text += '═══════════════════════════════════════════\n\n';
+            
+            if (name) {
+                text += `Student: ${name}\n`;
+            }
+            text += `Date: ${date}\n`;
+            text += `Workshop Presenter: Kay P Maye\n`;
+            text += `Institution: Tulane University Libraries\n\n`;
+            text += '═══════════════════════════════════════════\n\n';
+            
+            if (responses.length === 0) {
+                text += 'No activity responses were recorded.\n';
+                text += 'Please complete the activities in the presentation and try again.';
+                return text;
+            }
+            
+            responses.forEach((activity, index) => {
+                text += `${activity.title.toUpperCase()}\n`;
+                text += '───────────────────────────────────────────\n';
+                
+                activity.items.forEach(item => {
+                    text += `\n• ${item.label}:\n  ${item.value}\n`;
+                });
+                
+                text += '\n\n';
+            });
+            
+            text += '═══════════════════════════════════════════\n';
+            text += 'NEED HELP WITH YOUR RESEARCH?\n\n';
+            text += 'Contact: Kay P Maye\n';
+            text += 'Email: kmaye@tulane.edu\n';
+            text += 'Howard-Tilton Memorial Library, Tulane University\n\n';
+            text += 'Resources:\n';
+            text += '• Library website: library.tulane.edu\n';
+            text += '• Research Guides: libguides.tulane.edu\n';
+            text += '• Schedule a consultation: Ask a Librarian\n';
+            
+            return text;
+        }
+
+        function emailResponses() {
+            const email = document.getElementById('respondentEmail').value.trim();
+            const name = document.getElementById('respondentName').value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                document.getElementById('respondentEmail').focus();
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                document.getElementById('respondentEmail').focus();
+                return;
+            }
+            
+            const responses = collectResponses();
+            if (responses.length === 0) {
+                if (!confirm('You haven\'t completed any activities yet. Do you still want to send an email?')) {
+                    return;
+                }
+            }
+            
+            const subject = encodeURIComponent('My Academic Research Workshop Responses - ' + new Date().toLocaleDateString());
+            const body = encodeURIComponent(formatResponsesForEmail());
+            
+            const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+            
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        // Update response count when inputs change
+        document.addEventListener('input', (e) => {
+            if (e.target.classList.contains('activity-input') || 
+                e.target.classList.contains('activity-textarea')) {
+                updateResponseCount();
+            }
+        });
+
+        document.addEventListener('change', (e) => {
+            if (e.target.type === 'checkbox' || e.target.type === 'radio') {
+                updateResponseCount();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                changeSlide(-1);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                currentSlide = 0;
+                updateSlide();
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                currentSlide = totalSlides - 1;
+                updateSlide();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+        updateResponseCount();
+    </script>
+</body>
+</html>

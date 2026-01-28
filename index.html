@@ -1035,26 +1035,28 @@
             <select class="page-selector" id="slideSelector" onchange="goToSlide(this.value)">
                 <option value="0">Title Slide</option>
                 <option value="1">Why Library Research?</option>
-                <option value="2">Credible vs. Scholarly Sources</option>
-                <option value="3">Understanding Scholarly Sources</option>
-                <option value="4">Types of Research Sources</option>
-                <option value="5">Activity: Evaluate a Source</option>
-                <option value="6">From Topic to Search Terms</option>
-                <option value="7">Boolean Operators & Techniques</option>
-                <option value="8">Activity: Build Your Search</option>
-                <option value="9">Library Databases</option>
-                <option value="10">Finding the Right Database</option>
-                <option value="11">A-Z Database List</option>
-                <option value="12">Activity: Choose Your Databases</option>
-                <option value="13">Library Research Guides</option>
-                <option value="14">Interlibrary Loan (ILL)</option>
-                <option value="15">Tulane Library Locations</option>
-                <option value="16">Media Services & Equipment</option>
-                <option value="17">Activity: Research Planning</option>
-                <option value="18">Getting Help</option>
-                <option value="19">Summary & Next Steps</option>
+                <option value="2">Setting Up Google Scholar</option>
+                <option value="3">Credible vs. Scholarly Sources</option>
+                <option value="4">Understanding Scholarly Sources</option>
+                <option value="5">Types of Research Sources</option>
+                <option value="6">Activity: Evaluate a Source</option>
+                <option value="7">From Topic to Search Terms</option>
+                <option value="8">Boolean Operators & Techniques</option>
+                <option value="9">Activity: Build Your Search</option>
+                <option value="10">Try Your Search</option>
+                <option value="11">Library Databases</option>
+                <option value="12">Finding the Right Database</option>
+                <option value="13">A-Z Database List</option>
+                <option value="14">Activity: Choose Your Databases</option>
+                <option value="15">Library Research Guides</option>
+                <option value="16">Interlibrary Loan (ILL)</option>
+                <option value="17">Tulane Library Locations</option>
+                <option value="18">Media Services & Equipment</option>
+                <option value="19">Activity: Research Planning</option>
+                <option value="20">Getting Help</option>
+                <option value="21">Summary & Next Steps</option>
             </select>
-            <span class="page-indicator" id="pageIndicator">1 / 20</span>
+            <span class="page-indicator" id="pageIndicator">1 / 22</span>
             <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
         </div>
     </nav>
@@ -1116,23 +1118,59 @@
                     <li>Where to get <strong>help</strong> when you're stuck</li>
                 </ol>
 
-                <h3>Setting Up Google Scholar</h3>
-                <p>Connect Google Scholar to Tulane's library for free access to articles:</p>
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Setting Up Google Scholar -->
+        <section class="slide" id="slide-2">
+            <div class="content-slide">
+                <h2>Setting Up Google Scholar with Tulane</h2>
+
+                <p>Google Scholar is a powerful search engine for academic literature. By connecting it to Tulane Libraries, you'll get <strong>free access to full-text articles</strong> that would otherwise be behind paywalls.</p>
+
+                <h3>Why Connect Google Scholar to Tulane?</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Without Tulane Links:</h4>
+                        <ul>
+                            <li>See article titles and abstracts only</li>
+                            <li>Hit paywalls ($30-50 per article!)</li>
+                            <li>Miss out on library subscriptions</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>With Tulane Links:</h4>
+                        <ul>
+                            <li>One-click access to full text</li>
+                            <li>Free access through library subscriptions</li>
+                            <li>"Full Text @ Tulane" links appear automatically</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>How to Set It Up (One-Time Setup)</h3>
                 <div class="highlight-box tip">
                     <ol style="margin: 0;">
                         <li>Go to <a href="https://scholar.google.com" target="_blank">scholar.google.com</a></li>
-                        <li>Click the menu (☰) → Settings → Library links</li>
-                        <li>Search "Tulane" and check the box</li>
-                        <li>Now you'll see "Full Text @ Tulane" links in your results!</li>
+                        <li>Click the menu (☰) in the top left corner</li>
+                        <li>Select <strong>Settings</strong></li>
+                        <li>Click <strong>Library links</strong> in the left sidebar</li>
+                        <li>Search for "Tulane" and check the box next to <strong>Tulane University - Full Text @ Tulane</strong></li>
+                        <li>Click <strong>Save</strong></li>
                     </ol>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>✅ You're all set!</strong> Now when you search Google Scholar, you'll see "Full Text @ Tulane" links next to articles available through the library.
                 </div>
 
                 <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
             </div>
         </section>
 
-        <!-- Slide 2: Credible vs Scholarly -->
-        <section class="slide" id="slide-2">
+        <!-- Slide 3: Credible vs Scholarly -->
+        <section class="slide" id="slide-3">
             <div class="content-slide">
                 <h2>Credible vs. Scholarly: What's the Difference?</h2>
                 
@@ -1179,8 +1217,8 @@
             </div>
         </section>
 
-        <!-- Slide 3: Understanding Scholarly Sources -->
-        <section class="slide" id="slide-3">
+        <!-- Slide 4: Understanding Scholarly Sources -->
+        <section class="slide" id="slide-4">
             <div class="content-slide">
                 <h2>Understanding Scholarly Sources</h2>
 
@@ -1245,8 +1283,8 @@
             </div>
         </section>
 
-        <!-- Slide 4: Types of Research Sources -->
-        <section class="slide" id="slide-4">
+        <!-- Slide 5: Types of Research Sources -->
+        <section class="slide" id="slide-5">
             <div class="content-slide">
                 <h2>Types of Research Sources</h2>
 
@@ -1309,8 +1347,8 @@
             </div>
         </section>
 
-        <!-- Slide 5: Activity - Evaluate a Source -->
-        <section class="slide" id="slide-5">
+        <!-- Slide 6: Activity - Evaluate a Source -->
+        <section class="slide" id="slide-6">
             <div class="content-slide">
                 <h2>Activity 1: Evaluate a Source</h2>
 
@@ -1416,8 +1454,8 @@
             </div>
         </section>
 
-        <!-- Slide 6: From Topic to Search Terms -->
-        <section class="slide" id="slide-6">
+        <!-- Slide 7: From Topic to Search Terms -->
+        <section class="slide" id="slide-7">
             <div class="content-slide">
                 <h2>From Topic to Search Terms</h2>
 
@@ -1466,8 +1504,8 @@
             </div>
         </section>
 
-        <!-- Slide 7: Boolean Operators -->
-        <section class="slide" id="slide-7">
+        <!-- Slide 8: Boolean Operators -->
+        <section class="slide" id="slide-8">
             <div class="content-slide">
                 <h2>Boolean Operators & Search Techniques</h2>
 
@@ -1518,8 +1556,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 8: Activity - Build Your Search -->
-        <section class="slide" id="slide-8">
+        <!-- Slide 9: Activity - Build Your Search -->
+        <section class="slide" id="slide-9">
             <div class="content-slide">
                 <h2>Activity 2: Build Your Search Strategy</h2>
 
@@ -1551,8 +1589,43 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 9: Library Databases -->
-        <section class="slide" id="slide-9">
+        <!-- Slide 10: Try Your Search -->
+        <section class="slide" id="slide-10">
+            <div class="content-slide">
+                <h2>Try Your Search at Tulane Libraries</h2>
+
+                <p>Now that you've built your search strategy, it's time to put it into action! Click the link below to access Tulane University Libraries and start searching.</p>
+
+                <div class="highlight-box" style="text-align: center; padding: 40px;">
+                    <h3 style="margin-top: 0; color: var(--tulane-green);">🔍 Ready to Search?</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 25px;">Click the button below to go to the Tulane Libraries website and try your search strategy.</p>
+                    <a href="https://library.tulane.edu" target="_blank" style="display: inline-block; background: var(--tulane-green); color: white; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-size: 1.3rem; font-weight: 600; transition: all 0.3s ease;">
+                        Go to library.tulane.edu →
+                    </a>
+                </div>
+
+                <h3>What to Do When You Get There</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Option 1: Library Search</h4>
+                        <p>Use the main search box on the homepage to search across books, articles, and more simultaneously.</p>
+                    </div>
+                    <div class="column">
+                        <h4>Option 2: Specific Database</h4>
+                        <p>Click "Databases" to find and search a subject-specific database for your field.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>💡 Pro Tip:</strong> Keep this presentation open in another tab so you can refer back to your search strategy and Boolean operators while you search!
+                </div>
+
+                <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Library Databases -->
+        <section class="slide" id="slide-11">
             <div class="content-slide">
                 <h2>Library Databases: Your Research Powerhouse</h2>
 
@@ -1600,8 +1673,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 10: Finding the Right Database -->
-        <section class="slide" id="slide-10">
+        <!-- Slide 12: Finding the Right Database -->
+        <section class="slide" id="slide-12">
             <div class="content-slide">
                 <h2>Finding the Right Database for Your Research</h2>
 
@@ -1645,8 +1718,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 11: A-Z Database List -->
-        <section class="slide" id="slide-11">
+        <!-- Slide 13: A-Z Database List -->
+        <section class="slide" id="slide-13">
             <div class="content-slide">
                 <h2>Tulane's A-Z Database List</h2>
 
@@ -1699,8 +1772,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 12: Activity - Choose Databases -->
-        <section class="slide" id="slide-12">
+        <!-- Slide 14: Activity - Choose Databases -->
+        <section class="slide" id="slide-14">
             <div class="content-slide">
                 <h2>Activity 3: Choose Your Databases</h2>
 
@@ -1779,8 +1852,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 13: Research Guides -->
-        <section class="slide" id="slide-13">
+        <!-- Slide 15: Research Guides -->
+        <section class="slide" id="slide-15">
             <div class="content-slide">
                 <h2>Library Research Guides: Your Secret Weapon</h2>
 
@@ -1803,12 +1876,12 @@ social media <span class="operator">NOT</span> marketing
                     <div class="column">
                         <h4>Examples of Guides:</h4>
                         <ul>
-                            <li>Psychology Research Guide</li>
-                            <li>History: U.S. History</li>
-                            <li>Business: Company Research</li>
-                            <li>ENGL 1010: First-Year Writing</li>
-                            <li>Latin American Studies</li>
-                            <li>Data & Statistics</li>
+                            <li><a href="https://libguides.tulane.edu/psychology" target="_blank">Psychology Research Guide</a></li>
+                            <li><a href="https://libguides.tulane.edu/ushistory" target="_blank">History: U.S. History</a></li>
+                            <li><a href="https://libguides.tulane.edu/company" target="_blank">Business: Company Research</a></li>
+                            <li><a href="https://libguides.tulane.edu/firstyearwriting" target="_blank">ENGL 1010: First-Year Writing</a></li>
+                            <li><a href="https://libguides.tulane.edu/latinamericanstudies" target="_blank">Latin American Studies</a></li>
+                            <li><a href="https://libguides.tulane.edu/data" target="_blank">Data & Statistics</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1830,8 +1903,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 14: Interlibrary Loan -->
-        <section class="slide" id="slide-14">
+        <!-- Slide 16: Interlibrary Loan -->
+        <section class="slide" id="slide-16">
             <div class="content-slide">
                 <h2>Interlibrary Loan (ILL): Get Any Source You Need</h2>
 
@@ -1895,15 +1968,15 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 15: Tulane Library Locations -->
-        <section class="slide" id="slide-15">
+        <!-- Slide 17: Tulane Library Locations -->
+        <section class="slide" id="slide-17">
             <div class="content-slide">
                 <h2>Tulane Library Locations</h2>
 
                 <p>Tulane's libraries form a research network ranked among the top in the nation. Each location serves different needs and houses unique collections.</p>
 
                 <div class="source-card">
-                    <h4><span class="icon">🏛️</span> Howard-Tilton Memorial Library</h4>
+                    <h4><span class="icon">🏛️</span> <a href="https://library.tulane.edu/locations/howard-tilton" target="_blank">Howard-Tilton Memorial Library</a></h4>
                     <p><strong>Main Library</strong> — 7001 Freret Street (Uptown Campus)</p>
                     <div class="examples">
                         <strong>Features:</strong> General collections in humanities, social sciences, and sciences. Study spaces, group rooms, computer labs, 24-hour access during finals. Home to the Latin American Library (4th floor) and Media Services (6th floor).
@@ -1911,7 +1984,7 @@ social media <span class="operator">NOT</span> marketing
                 </div>
 
                 <div class="source-card">
-                    <h4><span class="icon">🌎</span> Doris Z. Stone Latin American Library</h4>
+                    <h4><span class="icon">🌎</span> <a href="https://library.tulane.edu/locations/latin-american-library" target="_blank">Doris Z. Stone Latin American Library</a></h4>
                     <p><strong>4th Floor, Howard-Tilton Memorial Library</strong></p>
                     <div class="examples">
                         <strong>Features:</strong> One of the world's foremost collections of Latin American research materials. Over 6,600 linear feet of rare books, manuscripts, maps, newspapers, ephemera, and images. Special strengths in Mesoamerican studies, Central American history, and Caribbean materials.
@@ -1919,7 +1992,7 @@ social media <span class="operator">NOT</span> marketing
                 </div>
 
                 <div class="source-card">
-                    <h4><span class="icon">⚕️</span> Rudolph Matas Library of the Health Sciences</h4>
+                    <h4><span class="icon">⚕️</span> <a href="https://library.tulane.edu/locations/matas" target="_blank">Rudolph Matas Library of the Health Sciences</a></h4>
                     <p><strong>Downtown Campus</strong> — 1430 Tulane Avenue (connected to Tulane Medical Center)</p>
                     <div class="examples">
                         <strong>Features:</strong> Serves the School of Medicine, School of Public Health and Tropical Medicine, and National Primate Center. Medical databases, clinical resources, and historic medical collections including the Faust Collection on parasitology and tropical medicine.
@@ -1927,7 +2000,7 @@ social media <span class="operator">NOT</span> marketing
                 </div>
 
                 <div class="source-card">
-                    <h4><span class="icon">📜</span> Tulane University Special Collections (TUSC)</h4>
+                    <h4><span class="icon">📜</span> <a href="https://library.tulane.edu/locations/special-collections" target="_blank">Tulane University Special Collections (TUSC)</a></h4>
                     <p><strong>Jones Hall</strong> — 6801 Freret Street (across from Howard-Tilton)</p>
                     <div class="examples">
                         <strong>Features:</strong> Hogan Archive of New Orleans Music and Jazz, Louisiana Research Collection, Rare Books Collection, Southeastern Architectural Archive, and University Archives. Reading room by appointment only.
@@ -1935,15 +2008,15 @@ social media <span class="operator">NOT</span> marketing
                 </div>
 
                 <div class="highlight-box">
-                    <strong>📍 Other Tulane Libraries:</strong> Turchin Business Library (Freeman School), Law Library (Law School), Math Library (Gibson Hall). Each provides specialized resources for their programs.
+                    <strong>📍 Other Tulane Libraries:</strong> <a href="https://library.tulane.edu/locations/business" target="_blank">Turchin Business Library</a> (Freeman School), <a href="https://law.tulane.edu/library" target="_blank">Law Library</a> (Law School), <a href="https://library.tulane.edu/locations/math" target="_blank">Math Library</a> (Gibson Hall). Each provides specialized resources for their programs.
                 </div>
 
                 <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
             </div>
         </section>
 
-        <!-- Slide 16: Media Services & Equipment -->
-        <section class="slide" id="slide-16">
+        <!-- Slide 18: Media Services & Equipment -->
+        <section class="slide" id="slide-18">
             <div class="content-slide">
                 <h2>Media Services & Equipment</h2>
 
@@ -2010,8 +2083,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 17: Activity - Research Planning -->
-        <section class="slide" id="slide-17">
+        <!-- Slide 19: Activity - Research Planning -->
+        <section class="slide" id="slide-19">
             <div class="content-slide">
                 <h2>Activity 4: Create Your Research Plan</h2>
 
@@ -2048,6 +2121,15 @@ social media <span class="operator">NOT</span> marketing
                             <input type="checkbox" id="final-data" onchange="toggleCheck(this)">
                             <label for="final-data">Statistics or data</label>
                         </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-primary" onchange="toggleCheck(this)">
+                            <label for="final-primary">Primary sources (historical documents, interviews, etc.)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="final-other-check" onchange="toggleCheck(this)">
+                            <label for="final-other-check">Other:</label>
+                            <input type="text" class="activity-input" id="final-other" placeholder="Specify other source types" style="margin-top: 8px;">
+                        </div>
 
                         <p><strong>5. What's still confusing or challenging about your research?</strong></p>
                         <textarea class="activity-textarea" id="final-challenges" placeholder="What questions do you still have? Where might you need help?"></textarea>
@@ -2058,8 +2140,8 @@ social media <span class="operator">NOT</span> marketing
             </div>
         </section>
 
-        <!-- Slide 18: Getting Help -->
-        <section class="slide" id="slide-18">
+        <!-- Slide 20: Getting Help -->
+        <section class="slide" id="slide-20">
             <div class="content-slide">
                 <h2>Getting Help: You're Not Alone!</h2>
 
@@ -2082,12 +2164,19 @@ social media <span class="operator">NOT</span> marketing
                         <strong>Best for:</strong> In-depth research help, developing search strategies, big projects
                     </div>
                 </div>
+
+                <div class="highlight-box">
+                    <strong>👩‍🏫 Find a Subject Specialist</strong>
+                    <p style="margin-top: 15px; margin-bottom: 0;">Every subject area has a dedicated librarian who can help with your research. Find yours at:<br>
+                    <a href="https://library.tulane.edu/find-subject-specialist" target="_blank" style="font-size: 1.1rem;"><strong>library.tulane.edu/find-subject-specialist</strong></a></p>
+                </div>
+
                 <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
             </div>
         </section>
 
-        <!-- Slide 19: Summary -->
-        <section class="slide" id="slide-19">
+        <!-- Slide 21: Summary -->
+        <section class="slide" id="slide-21">
             <div class="content-slide">
                 <h2>Summary & Next Steps</h2>
 
@@ -2147,7 +2236,7 @@ social media <span class="operator">NOT</span> marketing
                     <h3>Questions? Contact Me!</h3>
                     <p class="name">Kay P Maye</p>
                     <p class="title">Howard-Tilton Memorial Library</p>
-                    <a href="kmaye@tulane.edu" class="email-link">📧 <span class="__cf_email__" data-cfemail="kmaye@tulane.edu">kmaye@tulane.edu</span></a>
+                    <p style="font-size: 1.1rem;">📧 kmaye@tulane.edu</p>
                 </div>
 
                 <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
@@ -2189,9 +2278,9 @@ social media <span class="operator">NOT</span> marketing
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentSlide = 0;
-        const totalSlides = 20;
+        const totalSlides = 22;
 
         function updateSlide() {
             document.querySelectorAll('.slide').forEach(slide => {
@@ -2409,43 +2498,43 @@ social media <span class="operator">NOT</span> marketing
         function collectResponses() {
             const responses = [];
             
-            // Activity 1: Evaluate a Source (Slide 5)
-            const slide5 = document.getElementById('slide-5');
-            if (slide5) {
+            // Activity 1: Evaluate a Source (Slide 6)
+            const slide6 = document.getElementById('slide-6');
+            if (slide6) {
                 const activity1 = {
                     title: 'Activity 1: Evaluate a Source',
                     items: []
                 };
                 
-                const sourceName = slide5.querySelector('#source-name');
+                const sourceName = slide6.querySelector('#source-name');
                 if (sourceName && sourceName.value.trim()) {
                     activity1.items.push({ label: 'Source evaluated', value: sourceName.value.trim() });
                 }
                 
-                const sourceAuthor = slide5.querySelector('#source-author');
+                const sourceAuthor = slide6.querySelector('#source-author');
                 if (sourceAuthor && sourceAuthor.value.trim()) {
                     activity1.items.push({ label: 'Author/credentials', value: sourceAuthor.value.trim() });
                 }
                 
-                const audience = slide5.querySelector('input[name="audience"]:checked');
+                const audience = slide6.querySelector('input[name="audience"]:checked');
                 if (audience) {
                     const labels = { general: 'General public', scholars: 'Scholars/Researchers', professionals: 'Industry professionals' };
                     activity1.items.push({ label: 'Intended audience', value: labels[audience.value] || audience.value });
                 }
                 
-                const peerReview = slide5.querySelector('input[name="peerreview"]:checked');
+                const peerReview = slide6.querySelector('input[name="peerreview"]:checked');
                 if (peerReview) {
                     const labels = { yes: 'Yes, peer-reviewed', no: 'No, not peer-reviewed', unsure: 'Not sure' };
                     activity1.items.push({ label: 'Peer-reviewed', value: labels[peerReview.value] || peerReview.value });
                 }
                 
-                const citations = slide5.querySelector('input[name="citations"]:checked');
+                const citations = slide6.querySelector('input[name="citations"]:checked');
                 if (citations) {
                     const labels = { yes: 'Yes, extensive references', some: 'Some sources mentioned', no: 'No citations' };
                     activity1.items.push({ label: 'Citations included', value: labels[citations.value] || citations.value });
                 }
                 
-                const conclusion = slide5.querySelector('input[name="conclusion"]:checked');
+                const conclusion = slide6.querySelector('input[name="conclusion"]:checked');
                 if (conclusion) {
                     const labels = { scholarly: 'Scholarly (academic, peer-reviewed)', credible: 'Credible but not scholarly', questionable: 'Questionable—needs more evaluation' };
                     activity1.items.push({ label: 'Conclusion', value: labels[conclusion.value] || conclusion.value });
@@ -2454,22 +2543,22 @@ social media <span class="operator">NOT</span> marketing
                 if (activity1.items.length > 0) responses.push(activity1);
             }
 
-            // Activity 2: Build Your Search (Slide 8)
-            const slide8 = document.getElementById('slide-8');
-            if (slide8) {
+            // Activity 2: Build Your Search (Slide 9)
+            const slide9 = document.getElementById('slide-9');
+            if (slide9) {
                 const activity2 = {
                     title: 'Activity 2: Build Your Search Strategy',
                     items: []
                 };
                 
-                const topic = slide8.querySelector('#research-topic');
+                const topic = slide9.querySelector('#research-topic');
                 if (topic && topic.value.trim()) {
                     activity2.items.push({ label: 'Research topic', value: topic.value.trim() });
                 }
                 
                 const concepts = [];
                 for (let i = 1; i <= 4; i++) {
-                    const concept = slide8.querySelector(`#concept${i}`);
+                    const concept = slide9.querySelector(`#concept${i}`);
                     if (concept && concept.value.trim()) {
                         concepts.push(concept.value.trim());
                     }
@@ -2478,12 +2567,12 @@ social media <span class="operator">NOT</span> marketing
                     activity2.items.push({ label: 'Key concepts', value: concepts.join(', ') });
                 }
                 
-                const synonyms = slide8.querySelector('#synonyms');
+                const synonyms = slide9.querySelector('#synonyms');
                 if (synonyms && synonyms.value.trim()) {
                     activity2.items.push({ label: 'Synonyms/related terms', value: synonyms.value.trim() });
                 }
                 
-                const searchString = slide8.querySelector('#search-string');
+                const searchString = slide9.querySelector('#search-string');
                 if (searchString && searchString.value.trim()) {
                     activity2.items.push({ label: 'Boolean search string', value: searchString.value.trim() });
                 }
@@ -2491,15 +2580,15 @@ social media <span class="operator">NOT</span> marketing
                 if (activity2.items.length > 0) responses.push(activity2);
             }
 
-            // Activity 3: Choose Databases (Slide 12)
-            const slide12 = document.getElementById('slide-12');
-            if (slide12) {
+            // Activity 3: Choose Databases (Slide 14)
+            const slide14 = document.getElementById('slide-14');
+            if (slide14) {
                 const activity3 = {
                     title: 'Activity 3: Choose Your Databases',
                     items: []
                 };
                 
-                const classSubject = slide12.querySelector('#class-subject');
+                const classSubject = slide14.querySelector('#class-subject');
                 if (classSubject && classSubject.value.trim()) {
                     activity3.items.push({ label: 'Class/subject', value: classSubject.value.trim() });
                 }
@@ -2514,7 +2603,7 @@ social media <span class="operator">NOT</span> marketing
                 };
                 
                 Object.entries(checkboxes).forEach(([id, label]) => {
-                    const checkbox = slide12.querySelector(`#${id}`);
+                    const checkbox = slide14.querySelector(`#${id}`);
                     if (checkbox && checkbox.checked) {
                         sourceTypes.push(label);
                     }
@@ -2526,7 +2615,7 @@ social media <span class="operator">NOT</span> marketing
                 
                 const databases = [];
                 for (let i = 1; i <= 3; i++) {
-                    const db = slide12.querySelector(`#database${i}`);
+                    const db = slide14.querySelector(`#database${i}`);
                     if (db && db.value.trim()) {
                         databases.push(db.value.trim());
                     }
@@ -2535,7 +2624,7 @@ social media <span class="operator">NOT</span> marketing
                     activity3.items.push({ label: 'Databases selected', value: databases.join(', ') });
                 }
                 
-                const reasoning = slide12.querySelector('#database-reasoning');
+                const reasoning = slide14.querySelector('#database-reasoning');
                 if (reasoning && reasoning.value.trim()) {
                     activity3.items.push({ label: 'Reasoning', value: reasoning.value.trim() });
                 }
@@ -2543,25 +2632,25 @@ social media <span class="operator">NOT</span> marketing
                 if (activity3.items.length > 0) responses.push(activity3);
             }
 
-            // Activity 4: Research Plan (Slide 17)
-            const slide17 = document.getElementById('slide-17');
-            if (slide17) {
+            // Activity 4: Research Plan (Slide 19)
+            const slide19 = document.getElementById('slide-19');
+            if (slide19) {
                 const activity4 = {
                     title: 'Activity 4: Research Plan',
                     items: []
                 };
                 
-                const finalTopic = slide17.querySelector('#final-topic');
+                const finalTopic = slide19.querySelector('#final-topic');
                 if (finalTopic && finalTopic.value.trim()) {
                     activity4.items.push({ label: 'Research topic', value: finalTopic.value.trim() });
                 }
                 
-                const finalSearch = slide17.querySelector('#final-search');
+                const finalSearch = slide19.querySelector('#final-search');
                 if (finalSearch && finalSearch.value.trim()) {
                     activity4.items.push({ label: 'Search strategy', value: finalSearch.value.trim() });
                 }
                 
-                const finalDatabases = slide17.querySelector('#final-databases');
+                const finalDatabases = slide19.querySelector('#final-databases');
                 if (finalDatabases && finalDatabases.value.trim()) {
                     activity4.items.push({ label: 'Databases to search', value: finalDatabases.value.trim() });
                 }
@@ -2572,21 +2661,29 @@ social media <span class="operator">NOT</span> marketing
                     'final-books': 'Books/eBooks',
                     'final-news': 'News articles',
                     'final-credible': 'Credible websites',
-                    'final-data': 'Statistics/data'
+                    'final-data': 'Statistics/data',
+                    'final-primary': 'Primary sources'
                 };
                 
                 Object.entries(finalCheckboxes).forEach(([id, label]) => {
-                    const checkbox = slide17.querySelector(`#${id}`);
+                    const checkbox = slide19.querySelector(`#${id}`);
                     if (checkbox && checkbox.checked) {
                         finalSourceTypes.push(label);
                     }
                 });
                 
+                // Check for "Other" option
+                const otherCheck = slide19.querySelector('#final-other-check');
+                const otherText = slide19.querySelector('#final-other');
+                if (otherCheck && otherCheck.checked && otherText && otherText.value.trim()) {
+                    finalSourceTypes.push('Other: ' + otherText.value.trim());
+                }
+                
                 if (finalSourceTypes.length > 0) {
                     activity4.items.push({ label: 'Source types needed', value: finalSourceTypes.join(', ') });
                 }
                 
-                const challenges = slide17.querySelector('#final-challenges');
+                const challenges = slide19.querySelector('#final-challenges');
                 if (challenges && challenges.value.trim()) {
                     activity4.items.push({ label: 'Questions/challenges', value: challenges.value.trim() });
                 }

@@ -3,18 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction to Academic Research | Tulane University Libraries</title>
+<title>The Search Ecosystem | Tulane University Libraries</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap');
-:root{
-  --tulane-green:#285C4D;--tulane-green-dark:#1e4a3d;--tulane-blue:#71C5E8;
-  --tulane-blue-light:#a8ddf2;--storm-shutters:#00778B;--medallion:#CC9900;
-  --olive-branch:#658D1B;--verdigris:#71DBD4;--light-bg:#f0f4f2;
-  --text-dark:#2c3e50;--white:#fff;--card-bg:#fff;--border-light:#e0e8e4;
-}
+:root{--tulane-green:#285C4D;--tulane-green-dark:#1e4a3d;--tulane-blue:#71C5E8;--tulane-blue-light:#a8ddf2;--storm-shutters:#00778B;--medallion:#CC9900;--olive-branch:#658D1B;--verdigris:#71DBD4;--light-bg:#f0f4f2;--text-dark:#2c3e50;--white:#fff;--card-bg:#fff;--border-light:#e0e8e4}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',Tahoma,Geneva,Verdana,sans-serif;background:var(--light-bg);color:var(--text-dark);line-height:1.6}
-h1,h2,.title-slide h1,.title-slide .subtitle{font-family:'DM Serif Display','Georgia',serif}
+h1,h2,.title-slide h1{font-family:'DM Serif Display','Georgia',serif}
 .nav-container{position:fixed;top:0;left:0;right:0;background:var(--tulane-green);padding:10px 20px;display:flex;justify-content:space-between;align-items:center;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.2)}
 .nav-title{color:var(--white);font-size:1.05rem;font-weight:600}
 .nav-controls{display:flex;align-items:center;gap:12px}
@@ -40,9 +35,9 @@ h1,h2,.title-slide h1,.title-slide .subtitle{font-family:'DM Serif Display','Geo
 .highlight-box ul,.highlight-box ol{margin-top:15px;margin-bottom:10px}.highlight-box li{margin-bottom:10px}
 .highlight-box.warning{background:linear-gradient(135deg,#fef3e2,#ffecd2);border-left-color:var(--medallion)}
 .highlight-box.tip{background:linear-gradient(135deg,#e8f4fd,#dbeafe);border-left-color:var(--tulane-blue)}
+.highlight-box.critical{background:linear-gradient(135deg,#fde8e8,#fce4ec);border-left-color:#c0392b}
 .code-example{background:#2d3748;color:#e2e8f0;padding:30px 36px;border-radius:12px;font-family:Consolas,Monaco,monospace;font-size:1rem;overflow-x:auto;margin:26px 0;line-height:2.2;white-space:pre-wrap;word-wrap:break-word}
 .code-example .comment{color:#68d391;display:block;margin-bottom:6px}
-.code-example .highlight{color:var(--tulane-blue);font-weight:600}
 .code-example .operator{color:var(--medallion);font-weight:700}
 .activity-box{background:linear-gradient(135deg,#fef9e7,#fff8e1);border:2px solid var(--medallion);border-radius:16px;padding:32px 38px;margin:35px 0}
 .activity-box h4{color:var(--medallion);display:flex;align-items:center;gap:12px;margin-top:0;font-size:1.35rem;margin-bottom:12px}
@@ -100,7 +95,6 @@ h1,h2,.title-slide h1,.title-slide .subtitle{font-family:'DM Serif Display','Geo
 .builder-copy-btn{background:var(--tulane-blue);color:var(--tulane-green-dark);border:none;padding:7px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.88rem;margin-top:9px;transition:all .2s}
 .builder-copy-btn:hover{background:var(--white)}
 .troubleshoot-panel{background:linear-gradient(135deg,#f0f7f5,#e8f4fd);border:2px solid var(--storm-shutters);border-radius:16px;padding:26px;margin:26px 0}
-.troubleshoot-panel h4{color:var(--storm-shutters);margin-top:0;margin-bottom:16px;font-size:1.15rem}
 .troubleshoot-item{padding:12px 14px;background:var(--white);border-radius:10px;margin-bottom:10px;cursor:pointer;transition:all .2s;border:1px solid #e0e0e0}
 .troubleshoot-item:hover{border-color:var(--storm-shutters)}
 .troubleshoot-q{font-weight:600;color:var(--tulane-green);display:flex;justify-content:space-between;align-items:center}
@@ -140,356 +134,133 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 .email-panel .response-count{display:inline-block;background:var(--tulane-blue);color:var(--tulane-green-dark);padding:3px 11px;border-radius:20px;font-size:.82rem;font-weight:600;margin-bottom:13px}
 .email-panel .success-message{background:#d4edda;color:#155724;padding:13px;border-radius:10px;margin-bottom:13px;display:none}
 .email-panel .success-message.show{display:block}
-
-/* ===== PRETEST SLIDE STYLES ===== */
-.pretest-slide{background:var(--card-bg);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.07);min-height:calc(100vh - 130px);overflow:hidden}
-.pretest-header{text-align:center;background:linear-gradient(135deg,var(--tulane-green),var(--storm-shutters));padding:36px 40px;color:#fff}
-.pretest-header h2{font-size:2rem;margin-bottom:8px;color:#fff;font-family:'DM Serif Display',serif}
-.pretest-header p{font-size:1rem;color:var(--tulane-blue-light)}
-.pretest-body{padding:36px 40px}
-.pretest-progress-wrap{margin-bottom:28px}
-.pretest-progress-label{display:flex;justify-content:space-between;font-size:.92rem;color:#666;margin-bottom:7px}
-.pretest-progress-bar-bg{background:#e0e8e4;border-radius:20px;height:10px}
-.pretest-progress-bar-fill{background:var(--tulane-green);height:10px;border-radius:20px;transition:width .4s}
-.pretest-question-block{display:none;animation:fadeIn .35s}.pretest-question-block.active{display:block}
-.pretest-q-num{font-size:.88rem;font-weight:700;color:var(--storm-shutters);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.pretest-q-topic{display:inline-block;background:#e8f5f1;color:var(--tulane-green);font-size:.8rem;font-weight:700;padding:3px 11px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
-.pretest-q-text{font-size:1.15rem;font-weight:600;color:var(--text-dark);margin-bottom:22px;line-height:1.6}
-.pretest-option{display:flex;align-items:center;gap:14px;padding:14px 18px;background:#f8f9fa;border-radius:10px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:1rem}
-.pretest-option:hover{background:#e8f5f1;border-color:#a8d5c5}
-.pretest-option.selected{background:#e8f5f1;border-color:var(--tulane-green)}
-.pretest-option input[type=radio]{width:19px;height:19px;accent-color:var(--tulane-green);flex-shrink:0}
-.pretest-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;flex-wrap:wrap;gap:12px}
-.pretest-btn{padding:12px 28px;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit}
-.pretest-btn-primary{background:var(--tulane-green);color:#fff}.pretest-btn-primary:hover{background:var(--tulane-green-dark);transform:translateY(-2px)}
-.pretest-btn-secondary{background:#e8f5f1;color:var(--tulane-green)}.pretest-btn-secondary:hover{background:#d0ebe4}
-.pretest-btn-skip{background:transparent;color:#999;border:1px solid #ddd;font-size:.9rem;padding:9px 18px}.pretest-btn-skip:hover{color:var(--tulane-green);border-color:var(--tulane-green)}
-.pretest-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.pretest-feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:.95rem;line-height:1.6;display:none;width:100%}
-.pretest-feedback.show{display:block}
-.pretest-feedback.correct{background:#d4edda;border-left:4px solid var(--olive-branch);color:#155724}
-.pretest-feedback.incorrect{background:#f8d7da;border-left:4px solid #c0392b;color:#721c24}
-
-/* ===== RESULTS SLIDE STYLES ===== */
-.results-slide{background:var(--card-bg);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.07);min-height:calc(100vh - 130px);overflow:hidden}
-.results-header{background:linear-gradient(135deg,var(--tulane-green),var(--storm-shutters));padding:36px 40px;text-align:center;color:#fff}
-.results-header h2{font-size:2rem;margin-bottom:8px;color:#fff;font-family:'DM Serif Display',serif}
-.results-score-big{font-size:3.2rem;font-weight:700;color:var(--tulane-blue-light);margin:8px 0}
-.results-body{padding:36px 40px}
-.results-intro{font-size:1.05rem;line-height:1.8;margin-bottom:26px;padding:18px 22px;background:#f0f7f5;border-radius:12px}
-.cluster-result{margin-bottom:20px;border:2px solid var(--border-light);border-radius:14px;overflow:hidden}
-.cluster-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#f8f9fa}
-.cluster-header h4{margin:0;font-size:1rem;color:var(--tulane-green)}
-.cluster-score-badge{display:flex;align-items:center;gap:10px}
-.cluster-bar-wrap{width:120px;background:#e0e8e4;border-radius:10px;height:8px}
-.cluster-bar-fill{height:8px;border-radius:10px;transition:width .8s .2s}
-.cluster-pct{font-size:.87rem;font-weight:700;min-width:36px;text-align:right}
-.cluster-recs{padding:14px 20px;border-top:1px solid var(--border-light)}
-.cluster-recs p{margin:0 0 9px;font-size:.92rem;color:#555}
-.rec-slide-btn{display:inline-block;background:var(--tulane-green);color:#fff;padding:5px 13px;border-radius:6px;font-size:.84rem;font-weight:600;margin:3px 3px 3px 0;cursor:pointer;border:none;transition:all .2s}
-.rec-slide-btn:hover{background:var(--tulane-green-dark);transform:translateY(-1px)}
-.results-cta{text-align:center;margin-top:28px;padding:26px;background:linear-gradient(135deg,#e8f5f1,#e1f4fb);border-radius:14px}
-.results-cta h3{color:var(--tulane-green);margin-bottom:10px}
-.results-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-.cta-btn{padding:12px 26px;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit}
-.cta-btn-primary{background:var(--tulane-green);color:#fff}.cta-btn-primary:hover{background:var(--tulane-green-dark);transform:translateY(-2px)}
-.cta-btn-secondary{background:var(--white);border:2px solid var(--tulane-green);color:var(--tulane-green)}.cta-btn-secondary:hover{background:var(--tulane-green);color:#fff}
-.results-incomplete-note{background:#fff3cd;border-left:4px solid var(--medallion);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:20px;font-size:.95rem;color:#856404;display:none}
-
-@media(max-width:768px){
-  .nav-container{flex-wrap:wrap;gap:8px}.nav-title{width:100%;text-align:center}
-  .title-slide h1{font-size:2rem}.two-column{grid-template-columns:1fr;gap:22px}
-  .content-slide,.pretest-slide,.results-slide{padding:0}
-  .content-slide{padding:28px 20px}.content-slide h2{font-size:1.6rem}
-  .pretest-body,.results-body{padding:24px 18px}
-  .code-example{padding:22px 18px;font-size:.9rem}.activity-box{padding:26px 20px}
-  .highlight-box{padding:22px 20px}.column{padding:22px 18px}.activity-tracker{display:none}
-}
+.quiz-question{background:#f8f9fa;border:2px solid var(--border-light);border-radius:14px;padding:24px 28px;margin:18px 0}
+.quiz-question .q-text{font-weight:600;font-size:1.05rem;margin-bottom:14px;color:var(--text-dark)}
+.quiz-option{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--white);border-radius:8px;margin-bottom:8px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.quiz-option:hover{background:#e8f5f1;border-color:#a8d5c5}
+.quiz-option.selected{background:#e8f5f1;border-color:var(--tulane-green)}
+.quiz-option.correct-reveal{background:#d4edda;border-color:var(--olive-branch)}
+.quiz-option.incorrect-reveal{background:#f8d7da;border-color:#c0392b}
+.quiz-option input{width:18px;height:18px;accent-color:var(--tulane-green);flex-shrink:0}
+.quiz-feedback{padding:14px 18px;border-radius:10px;margin-top:12px;display:none;font-size:.95rem;line-height:1.6}
+.quiz-feedback.show{display:block}
+.quiz-feedback.correct{background:#d4edda;border-left:4px solid var(--olive-branch);color:#155724}
+.quiz-feedback.incorrect{background:#f8d7da;border-left:4px solid #c0392b;color:#721c24}
+@media(max-width:768px){.nav-container{flex-wrap:wrap;gap:8px}.nav-title{width:100%;text-align:center}.title-slide h1{font-size:2rem}.two-column{grid-template-columns:1fr;gap:22px}.content-slide{padding:28px 20px}.content-slide h2{font-size:1.6rem}.code-example{padding:22px 18px;font-size:.9rem}.activity-box{padding:26px 20px}.highlight-box{padding:22px 20px}.column{padding:22px 18px}.activity-tracker{display:none}}
 @media print{.nav-container,.progress-bar,.email-panel-toggle,.email-panel,.activity-tracker{display:none}.slide{display:block!important;page-break-after:always}.presentation{margin-top:0}}
 </style>
 </head>
 <body>
 <nav class="nav-container">
-  <div class="nav-title">Introduction to Academic Research</div>
+  <div class="nav-title">The Search Ecosystem</div>
   <div class="nav-controls">
-    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">&larr; Previous</button>
     <select class="page-selector" id="slideSelector" onchange="goToSlide(this.value)"></select>
-    <span class="page-indicator" id="pageIndicator">1 / 20</span>
-    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    <span class="page-indicator" id="pageIndicator">1 / 16</span>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next &rarr;</button>
   </div>
 </nav>
-
 <div class="activity-tracker" id="activityTracker">
   <span class="tracker-label">Activities:</span>
-  <div class="tracker-dot" data-label="Evaluate a Source" onclick="goToSlide(8)">1</div>
-  <div class="tracker-dot" data-label="Build Your Search" onclick="goToSlide(10)">2</div>
-  <div class="tracker-dot" data-label="Choose Databases" onclick="goToSlide(14)">3</div>
-  <div class="tracker-dot" data-label="Research Plan" onclick="goToSlide(17)">4</div>
+  <div class="tracker-dot" data-label="Evaluate a Source" onclick="goToSlide(4)">1</div>
+  <div class="tracker-dot" data-label="Build Your Search" onclick="goToSlide(7)">2</div>
+  <div class="tracker-dot" data-label="Research Plan" onclick="goToSlide(13)">3</div>
 </div>
 <div class="progress-bar" id="progressBar"></div>
-<div class="copied-toast" id="copiedToast">✓ Copied to clipboard!</div>
+<div class="copied-toast" id="copiedToast">&check; Copied to clipboard!</div>
 
-<main class="presentation" id="main-presentation">
+<main class="presentation">
 
 <!-- SLIDE 0: TITLE -->
 <section class="slide active" id="slide-0">
   <div class="title-slide">
-    <h1>Introduction to Academic Research</h1>
-    <p class="subtitle">Finding, Evaluating, and Using Library Resources for Your Research</p>
+    <h1>The Search Ecosystem</h1>
+    <p class="subtitle">Navigating the Landscape of Academic &amp; Creative Research</p>
     <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:30px 0">
-      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:6px">📚</div>
-        <div style="font-weight:600;color:var(--tulane-blue-light)">Sources</div>
-        <div style="font-size:.85rem;opacity:.8">Credible vs. Scholarly</div>
-      </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:6px">🔍</div>
-        <div style="font-weight:600;color:var(--tulane-blue-light)">Searching</div>
-        <div style="font-size:.85rem;opacity:.8">Boolean & Databases</div>
-      </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center">
-        <div style="font-size:2rem;margin-bottom:6px">🤝</div>
-        <div style="font-weight:600;color:var(--tulane-blue-light)">Support</div>
-        <div style="font-size:.85rem;opacity:.8">ILL, Librarians & Guides</div>
-      </div>
+      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center"><div style="font-size:2rem;margin-bottom:6px">&#127793;</div><div style="font-weight:600;color:var(--tulane-blue-light)">The Terrain</div><div style="font-size:.85rem;opacity:.8">Source types &amp; habitats</div></div>
+      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center"><div style="font-size:2rem;margin-bottom:6px">&#129517;</div><div style="font-weight:600;color:var(--tulane-blue-light)">Navigation</div><div style="font-size:.85rem;opacity:.8">Boolean logic &amp; search tools</div></div>
+      <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 24px;min-width:150px;text-align:center"><div style="font-size:2rem;margin-bottom:6px">&#9878;&#65039;</div><div style="font-weight:600;color:var(--tulane-blue-light)">The Cracks</div><div style="font-size:.85rem;opacity:.8">Inequities in who gets found</div></div>
     </div>
-    <div>
-      <p style="font-size:1.2rem;margin-top:28px;padding-top:24px;border-top:2px solid var(--tulane-blue);display:inline-block">Presented by Kay P Maye</p>
-      <p style="color:var(--tulane-blue-light);margin-top:6px">Howard-Tilton Memorial Library · Tulane University</p>
-      <p style="margin-top:12px;font-size:1rem">Access this presentation: <strong>https://bit.ly/research_TUL_maye</strong></p>
-    </div>
+    <div><p style="font-size:1.2rem;margin-top:28px;padding-top:24px;border-top:2px solid var(--tulane-blue);display:inline-block">Presented by Kay P Maye</p><p style="color:var(--tulane-blue-light);margin-top:6px">Howard-Tilton Memorial Library &middot; Tulane University</p></div>
     <div style="margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto">
-      <label for="title-topic" style="font-size:1rem;color:var(--tulane-blue-light);display:block;margin-bottom:8px;font-weight:600">🎯 Already have a research topic? Enter it here and we'll pre-fill your activities:</label>
-      <input type="text" id="title-topic" placeholder="e.g., How does social media affect depression among college students?" style="width:100%;padding:14px 18px;border:2px solid rgba(255,255,255,.3);border-radius:12px;font-size:1rem;background:rgba(255,255,255,.15);color:#fff;font-family:inherit;outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--tulane-blue)'" onblur="this.style.borderColor='rgba(255,255,255,.3)'">
+      <label for="title-topic" style="font-size:1rem;color:var(--tulane-blue-light);display:block;margin-bottom:8px;font-weight:600">&#127919; Have a research or creative project? Enter your topic to pre-fill activities:</label>
+      <input type="text" id="title-topic" placeholder="e.g., How does jazz influence contemporary hip-hop production?" style="width:100%;padding:14px 18px;border:2px solid rgba(255,255,255,.3);border-radius:12px;font-size:1rem;background:rgba(255,255,255,.15);color:#fff;font-family:inherit;outline:none;transition:border-color .3s" onfocus="this.style.borderColor='var(--tulane-blue)'" onblur="this.style.borderColor='rgba(255,255,255,.3)'">
     </div>
-    <button style="background:var(--medallion);color:#fff;border:none;padding:14px 36px;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:20px;box-shadow:0 4px 15px rgba(0,0,0,.2);transition:all .3s;font-family:inherit" onclick="saveTopic();changeSlide(1)">
-      📋 How Would You Like to Learn Today? →
-    </button>
+    <button style="background:var(--medallion);color:#fff;border:none;padding:14px 36px;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:20px;box-shadow:0 4px 15px rgba(0,0,0,.2);transition:all .3s;font-family:inherit" onclick="saveTopic();changeSlide(1)">&#127793; Enter the Ecosystem &rarr;</button>
   </div>
 </section>
 
-<!-- SLIDE 2: LEARNING OPTIONS -->
+<!-- SLIDE 1: MAPPING THE ECOSYSTEM -->
 <section class="slide" id="slide-1">
   <div class="content-slide">
-    <h2>🗳️ How Would You Like to Learn Today?</h2>
-    <p>This session is flexible — <strong>as a class, let's decide together</strong> how to work through it. Read the options below and pick the one that sounds best to you.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:28px 0">
-      <div style="background:#fff;border:2px solid var(--tulane-blue);border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.07)">
-        <div style="background:linear-gradient(135deg,var(--tulane-green),var(--storm-shutters));padding:20px 22px;color:#fff">
-          <div style="font-size:2rem;margin-bottom:8px">▶️</div>
-          <h3 style="color:#fff;margin:0;font-size:1.15rem;border:none;padding:0">Option A</h3>
-          <p style="color:var(--tulane-blue-light);margin:4px 0 0;font-size:.9rem;font-weight:600">Just Walk Me Through It</p>
-        </div>
-        <div style="padding:20px 22px">
-          <p style="font-size:.97rem;line-height:1.75;margin-bottom:14px">We follow the slides together as a class — just content. Your librarian guides the pace and pauses for questions.</p>
-          <div style="background:#f0f7f5;border-radius:10px;padding:14px 16px;font-size:.9rem;line-height:1.7">
-            <strong style="color:var(--tulane-green)">Good if:</strong> You prefer a guided walkthrough<br><br>
-            <strong style="color:var(--tulane-green)">Time:</strong> ~45–60 min<br><br>
-            <strong style="color:var(--tulane-green)">To start:</strong> Jump to <em>Why Use the Library?</em> using the dropdown
-          </div>
-        </div>
-      </div>
-      <div style="background:#fff;border:3px solid var(--medallion);border-radius:16px;overflow:hidden;box-shadow:0 3px 16px rgba(204,153,0,.18);position:relative">
-        <div style="background:linear-gradient(135deg,var(--medallion),#b8860b);padding:20px 22px;color:#fff">
-          <div style="font-size:2rem;margin-bottom:8px">🙋</div>
-          <h3 style="color:#fff;margin:0;font-size:1.15rem;border:none;padding:0">Option B</h3>
-          <p style="color:#fff3cd;margin:4px 0 0;font-size:.9rem;font-weight:600">Pretest Together, Then Discuss</p>
-        </div>
-        <div style="padding:20px 22px">
-          <p style="font-size:.97rem;line-height:1.75;margin-bottom:14px">Take the knowledge pretest as a class, then talk through the answers together before diving into content.</p>
-          <div style="background:#fef9e7;border-radius:10px;padding:14px 16px;font-size:.9rem;line-height:1.7">
-            <strong style="color:#856404">Good if:</strong> You want to see what you already know<br><br>
-            <strong style="color:#856404">Time:</strong> ~60–75 min<br><br>
-            <strong style="color:#856404">To start:</strong> Head to the <em>Knowledge Pretest</em> slide
-          </div>
-        </div>
-      </div>
-      <div style="background:#fff;border:2px solid var(--olive-branch);border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.07)">
-        <div style="background:linear-gradient(135deg,var(--olive-branch),#4a6614);padding:20px 22px;color:#fff">
-          <div style="font-size:2rem;margin-bottom:8px">🔬</div>
-          <h3 style="color:#fff;margin:0;font-size:1.15rem;border:none;padding:0">Option C</h3>
-          <p style="color:#d4edda;margin:4px 0 0;font-size:.9rem;font-weight:600">Explore in Small Groups</p>
-        </div>
-        <div style="padding:20px 22px">
-          <p style="font-size:.97rem;line-height:1.75;margin-bottom:14px">Work through the pretest and slides at your own pace with a small group.</p>
-          <div style="background:#f0faf5;border-radius:10px;padding:14px 16px;font-size:.9rem;line-height:1.7">
-            <strong style="color:var(--olive-branch)">Good if:</strong> You learn better by doing<br><br>
-            <strong style="color:var(--olive-branch)">Time:</strong> ~60–90 min<br><br>
-            <strong style="color:var(--olive-branch)">To start:</strong> Each group takes the pretest, then follows recommendations
-          </div>
-        </div>
-      </div>
+    <h2>&#128506;&#65039; Mapping the Ecosystem</h2>
+    <p>Think of the information world as an ecosystem &mdash; a vast, layered landscape of knowledge sources that exist in relationship to one another. Some are easy to reach; others are buried deep. Your job as a researcher or creator is to navigate this landscape with purpose.</p>
+    <div class="highlight-box"><strong>&#127793; Why not just Google it?</strong> Google shows you the surface &mdash; results ranked by popularity, SEO, and ads. The library gives you access to the deep layers: peer-reviewed research, licensed databases, rare archives, and expert guidance. <strong>Your tuition already pays for it.</strong></div>
+    <h3>The Layers of the Ecosystem</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin:20px 0">
+      <div style="background:linear-gradient(180deg,#e8f5f1 0%,#f8f9fa 100%);border-radius:14px;padding:22px;border-top:4px solid var(--tulane-green)"><h4 style="margin-top:0">&#127754; Surface Layer</h4><p style="font-size:.93rem">Google, Wikipedia, news, social media. Easy to access, mixed quality. Good for background, not for evidence.</p></div>
+      <div style="background:linear-gradient(180deg,#e1f4fb 0%,#f8f9fa 100%);border-radius:14px;padding:22px;border-top:4px solid var(--storm-shutters)"><h4 style="margin-top:0">&#127956;&#65039; Middle Layer</h4><p style="font-size:.93rem">Library Search, Google Scholar, credible reports, gov data. Quality-filtered, accessible with the right tools.</p></div>
+      <div style="background:linear-gradient(180deg,#fef9e7 0%,#f8f9fa 100%);border-radius:14px;padding:22px;border-top:4px solid var(--medallion)"><h4 style="margin-top:0">&#9935;&#65039; Deep Layer</h4><p style="font-size:.93rem">Subject databases, special collections, archives, rare materials. The richest material &mdash; requires skill and access.</p></div>
     </div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 3: PRETEST -->
-<section class="slide" id="slide-2">
-  <div class="pretest-slide">
-    <div class="pretest-header">
-      <h2>📋 Knowledge Pretest</h2>
-      <p>Let's see what you already know so we can tailor this session to you.</p>
-      <p style="margin-top:6px;font-size:.9rem;opacity:.8">16 questions · ~3 minutes · No grade, just to guide you</p>
-    </div>
-    <div class="pretest-body">
-      <div class="pretest-progress-wrap">
-        <div class="pretest-progress-label">
-          <span id="pt-progress-label">Question 1 of 16</span>
-          <span id="pt-progress-pct">0%</span>
-        </div>
-        <div class="pretest-progress-bar-bg"><div class="pretest-progress-bar-fill" id="pt-progress-fill" style="width:0%"></div></div>
-      </div>
-      <div id="pretest-questions"></div>
-      <div class="pretest-nav">
-        <button class="pretest-btn pretest-btn-secondary" id="pt-prev-btn" onclick="ptPrev()" disabled>← Back</button>
-        <button class="pretest-btn pretest-btn-skip" onclick="skipToResults()">Skip pretest →</button>
-        <button class="pretest-btn pretest-btn-primary" id="pt-next-btn" onclick="ptNext()">Next →</button>
-        <div id="pt-feedback-inline" class="pretest-feedback"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 4: RESULTS -->
-<section class="slide" id="slide-3">
-  <div class="results-slide">
-    <div class="results-header">
-      <h2>Your Pretest Results</h2>
-      <div class="results-score-big" id="results-score-display">—</div>
-      <p id="results-score-label" style="font-size:1rem;color:var(--tulane-blue-light)"></p>
-    </div>
-    <div class="results-body">
-      <div class="results-incomplete-note" id="results-incomplete-note">
-        ⚠️ You skipped the pretest — recommendations below are shown for all topic areas.
-      </div>
-      <div class="results-intro" id="results-intro-text"></div>
-      <h3 style="color:var(--tulane-green);margin-bottom:18px">📊 Performance by Topic</h3>
-      <div id="cluster-results-container"></div>
-      <div class="results-cta">
-        <h3>Ready to continue?</h3>
-        <p style="color:#555;font-size:1rem">Jump to recommended slides or go slide by slide.</p>
-        <div class="results-cta-btns">
-          <button class="cta-btn cta-btn-primary" onclick="goToFirstRecommended()">▶ Jump to First Recommended Slide</button>
-          <button class="cta-btn cta-btn-secondary" onclick="goToSlide(4)">Start from Slide 1 →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 5: WHY LIBRARY -->
-<section class="slide" id="slide-4">
-  <div class="content-slide">
-    <h2>Why Use the Library?</h2>
-    <p>You already have Google. Here's what you're missing without the library.</p>
-    <div class="two-column">
-      <div class="column">
-        <h4>🔎 Google gives you...</h4>
-        <ul>
-          <li>Results ranked by popularity, not quality</li>
-          <li>Ads, sponsored content, and paywalls</li>
-          <li>No guarantee of accuracy or expertise</li>
-        </ul>
-      </div>
-      <div class="column">
-        <h4>📚 The library gives you...</h4>
-        <ul>
-          <li>Expert-reviewed, quality-controlled sources</li>
-          <li>Free full-text access to expensive databases</li>
-          <li>A librarian who can help you find exactly what you need</li>
-        </ul>
-      </div>
-    </div>
-    <div class="highlight-box">
-      <strong>💡 Your tuition already pays for it.</strong> Tulane students have free access to hundreds of millions of dollars worth of research databases, journals, and books. Not using them is like buying a meal plan and only eating the breadsticks.
-    </div>
-    <h3>What We'll Cover Today</h3>
+    <h3>What We&rsquo;ll Cover Today</h3>
     <ol>
-      <li><strong>Sources</strong> — the difference between credible and scholarly</li>
-      <li><strong>Searching</strong> — turning your topic into effective search terms with Boolean logic</li>
-      <li><strong>Databases</strong> — which tools to use and when</li>
-      <li><strong>Help</strong> — where to go when you get stuck</li>
+      <li><strong>The Terrain</strong> &mdash; source types for academic and creative work</li>
+      <li><strong>Navigation</strong> &mdash; Boolean logic and search tools</li>
+      <li><strong>The Cracks</strong> &mdash; flaws and inequities in who and what gets found</li>
+      <li><strong>Guides &amp; Pathways</strong> &mdash; databases, ILL, and expert help</li>
     </ol>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 6: LOCATIONS -->
-<section class="slide" id="slide-5">
+<!-- SLIDE 2: SOURCE TYPES -->
+<section class="slide" id="slide-2">
   <div class="content-slide">
-    <h2>Tulane Library Locations</h2>
-    <p>Tulane's library system gives you access to specialized collections, equipment, and expertise across campus and downtown.</p>
-    <div class="source-card"><h4><span class="icon">🏛️</span> <a href="https://library.tulane.edu/Places/Howard-Tilton-Memorial_Library" target="_blank">Howard-Tilton Memorial Library</a></h4><p><strong>Main Library · 7001 Freret Street (Uptown)</strong> — Humanities, social sciences, and sciences. Study spaces, group rooms, computer labs, and 24-hour access during finals.</p></div>
-    <div class="source-card"><h4><span class="icon">🌎</span> <a href="https://library.tulane.edu/Places/Doris-Stone-Latin-American-Library-and-Research-Center" target="_blank">Latin American Library</a></h4><p><strong>4th Floor, Howard-Tilton</strong> — One of the premier Latin American research collections in the U.S.</p></div>
-    <div class="source-card"><h4><span class="icon">⚕️</span> <a href="https://library.tulane.edu/places/Rudolph-Matas-Library-of-the-Health-Sciences" target="_blank">Matas Health Sciences Library</a></h4><p><strong>Downtown · 1430 Tulane Avenue</strong> — Medicine, public health, and tropical medicine.</p></div>
-    <div class="source-card"><h4><span class="icon">📜</span> <a href="https://library.tulane.edu/places/Tulane-University-Special-Collections" target="_blank">Special Collections (TUSC) · Jones Hall</a></h4><p>Hogan Jazz Archive, Louisiana Research Collection, Rare Books, and Southeastern Architectural Archive.</p></div>
-    <div class="highlight-box"><strong>📍 Also on campus:</strong> <a href="https://freeman.tulane.edu/library" target="_blank">Turchin Business Library</a> · <a href="https://library.law.tulane.edu/" target="_blank">Law Library</a> · <a href="https://library.tulane.edu/places/Alfred-H-Clifford-Mathematics-Research-Library" target="_blank">Math Library</a></div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 7: SOURCE TYPES -->
-<section class="slide" id="slide-6">
-  <div class="content-slide">
-    <h2>Understanding Your Sources</h2>
-    <div class="highlight-box warning"><strong>⚠️ Key distinction:</strong> All scholarly sources are credible — but not all credible sources are scholarly. Always check what your assignment actually requires.</div>
+    <h2>&#127793; The Terrain: Understanding Your Sources</h2>
+    <p>Every source occupies a niche in the ecosystem. Knowing the terrain helps you match the right source to the right purpose &mdash; whether you&rsquo;re writing a research paper, building an argument, or creating a documentary, exhibition, or performance.</p>
+    <div class="highlight-box warning"><strong>&#9888;&#65039; Key distinction:</strong> All scholarly sources are credible &mdash; but not all credible sources are scholarly. Always check what your assignment or project actually requires.</div>
     <table class="data-table">
-      <tr><th>Source Type</th><th>Classification</th><th>Best For · Where to Find It</th></tr>
-      <tr><td><strong>📄 Scholarly Journal Articles</strong><br><span style="font-size:.87rem;color:#666">Peer-reviewed, expert-authored</span></td><td><span style="color:var(--olive-branch);font-weight:700">Scholarly</span></td><td>Recent research, empirical evidence · <span id="db-scholarly-example">PsycINFO, PubMed, JSTOR</span></td></tr>
-      <tr><td><strong>📚 Academic Books &amp; eBooks</strong><br><span style="font-size:.87rem;color:#666">Published by university presses</span></td><td><span style="color:var(--olive-branch);font-weight:700">Scholarly</span></td><td>Broad overviews, theory · <a href="https://library.tulane.edu" target="_blank">Library catalog</a></td></tr>
-      <tr><td><strong>📰 News &amp; Magazines</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Current events, real-world context · Nexis Uni</td></tr>
-      <tr><td><strong>🏛️ Government &amp; Org Reports</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Statistics, policy analysis · GovInfo, Data.gov</td></tr>
-      <tr><td><strong>📊 Data &amp; Statistics</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Quantitative evidence · ICPSR, Social Explorer</td></tr>
-      <tr><td><strong>📜 Primary Sources</strong></td><td><span style="color:var(--medallion);font-weight:700">Varies</span></td><td>Historical research · Tulane Special Collections</td></tr>
-      <tr><td><strong>❌ Wikipedia / Blogs / Social Media</strong></td><td><span style="color:#c0392b;font-weight:700">Not citable</span></td><td>Background reading only — follow the references to real sources.</td></tr>
+      <tr><th>Source Type</th><th>Classification</th><th>Best For (Academic &amp; Creative)</th></tr>
+      <tr><td><strong>&#128196; Scholarly Journal Articles</strong><br><span style="font-size:.87rem;color:#666">Peer-reviewed, expert-authored</span></td><td><span style="color:var(--olive-branch);font-weight:700">Scholarly</span></td><td>Empirical evidence, lit reviews &middot; PsycINFO, PubMed, JSTOR</td></tr>
+      <tr><td><strong>&#128218; Academic Books &amp; eBooks</strong></td><td><span style="color:var(--olive-branch);font-weight:700">Scholarly</span></td><td>Theory, cultural history &middot; <a href="https://library.tulane.edu" target="_blank">Library catalog</a></td></tr>
+      <tr><td><strong>&#128240; News &amp; Magazines</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Current events, cultural context &middot; Nexis Uni</td></tr>
+      <tr><td><strong>&#127963;&#65039; Government &amp; Org Reports</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Statistics, policy analysis &middot; GovInfo, Data.gov</td></tr>
+      <tr><td><strong>&#128202; Data &amp; Statistics</strong></td><td><span style="color:var(--storm-shutters);font-weight:700">Credible</span></td><td>Quantitative evidence &middot; ICPSR, Social Explorer</td></tr>
+      <tr><td><strong>&#128220; Primary Sources &amp; Archives</strong></td><td><span style="color:var(--medallion);font-weight:700">Varies</span></td><td>Historical research, creative inspiration &middot; Tulane Special Collections, Hogan Jazz Archive</td></tr>
+      <tr><td><strong>&#127916; Media &amp; Performances</strong><br><span style="font-size:.87rem;color:#666">Film, music, visual art, theatre</span></td><td><span style="color:var(--medallion);font-weight:700">Varies</span></td><td>Creative analysis, cultural studies &middot; Films on Demand, Digital Theatre+</td></tr>
+      <tr><td><strong>&#10060; Wikipedia / Blogs / Social Media</strong></td><td><span style="color:#c0392b;font-weight:700">Not citable</span></td><td>Background only &mdash; follow the references.<br><span style="font-size:.87rem;color:var(--storm-shutters)"><em>Exception: social media as primary data when studying online discourse.</em></span></td></tr>
     </table>
-    <div id="source-type-advice" class="highlight-box tip"><strong>💡 Most assignments need a mix.</strong> Check your rubric — "scholarly sources" and "credible sources" are not interchangeable instructions.</div>
+    <div class="highlight-box tip"><strong>&#128161; Creative projects need sources too.</strong> If you&rsquo;re making a film, designing an exhibition, or writing a script, archival materials, oral histories, and cultural criticism are your deep-layer resources.</div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 8: MEDIA SERVICES -->
-<section class="slide" id="slide-7">
+<!-- SLIDE 3: LIBRARY HABITATS -->
+<section class="slide" id="slide-3">
   <div class="content-slide">
-    <h2>Media Services &amp; Equipment</h2>
-    <p><strong>6th floor, Howard-Tilton.</strong> Media Services offers streaming collections, physical media, and borrowable equipment.</p>
-    <div class="two-column">
-      <div class="column">
-        <h4>🎬 Streaming &amp; Physical Media</h4>
-        <ul>
-          <li><strong>Films on Demand</strong> — streaming documentaries</li>
-          <li><strong>Digital Theatre+</strong> — 600+ theatre productions</li>
-          <li>DVDs, Blu-rays, vinyl, CDs</li>
-          <li>Historical newspapers on microfilm</li>
-        </ul>
-      </div>
-      <div class="column">
-        <h4>📷 Equipment Loans</h4>
-        <ul>
-          <li>Video cameras, tripods, projectors</li>
-          <li>GPS devices, headphones, assistive tech</li>
-          <li>Loans up to 1 week · Bring your Splash Card</li>
-          <li><a href="https://libguides.tulane.edu/ctlc" target="_blank">View full equipment inventory →</a></li>
-        </ul>
-      </div>
-    </div>
+    <h2>&#127963;&#65039; Library Habitats: Where to Find What</h2>
+    <p>Each library on campus is a specialized habitat within the ecosystem.</p>
+    <div class="source-card"><h4><span class="icon">&#127963;&#65039;</span> <a href="https://library.tulane.edu/Places/Howard-Tilton-Memorial_Library" target="_blank">Howard-Tilton Memorial Library</a></h4><p><strong>Main Library &middot; Uptown</strong> &mdash; Humanities, social sciences, sciences. Study spaces, group rooms, 24-hour access during finals. <strong>Media Services (6th floor)</strong>: streaming, equipment loans (cameras, projectors, GPS), DVDs, vinyl, microfilm.</p></div>
+    <div class="source-card"><h4><span class="icon">&#127758;</span> <a href="https://library.tulane.edu/Places/Doris-Stone-Latin-American-Library-and-Research-Center" target="_blank">Latin American Library</a></h4><p><strong>4th Floor, Howard-Tilton</strong> &mdash; Premier Latin American research collection.</p></div>
+    <div class="source-card"><h4><span class="icon">&#9877;&#65039;</span> <a href="https://library.tulane.edu/places/Rudolph-Matas-Library-of-the-Health-Sciences" target="_blank">Matas Health Sciences Library</a></h4><p><strong>Downtown</strong> &mdash; Medicine, public health, tropical medicine.</p></div>
+    <div class="source-card"><h4><span class="icon">&#128220;</span> <a href="https://library.tulane.edu/places/Tulane-University-Special-Collections" target="_blank">Special Collections (TUSC) &middot; Jones Hall</a></h4><p>Hogan Jazz Archive, Louisiana Research Collection, Rare Books, Southeastern Architectural Archive. <strong>Essential for creative and historical projects rooted in New Orleans.</strong></p></div>
+    <div class="highlight-box"><strong>&#128205; Also:</strong> <a href="https://freeman.tulane.edu/library" target="_blank">Turchin Business Library</a> &middot; <a href="https://library.law.tulane.edu/" target="_blank">Law Library</a> &middot; <a href="https://library.tulane.edu/places/Alfred-H-Clifford-Mathematics-Research-Library" target="_blank">Math Library</a> &middot; <a href="https://libguides.tulane.edu/ctlc" target="_blank">Equipment inventory &rarr;</a></div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 9: ACTIVITY 1 -->
-<section class="slide" id="slide-8">
+<!-- SLIDE 4: ACTIVITY 1 -->
+<section class="slide" id="slide-4">
   <div class="content-slide">
     <h2>Activity 1: Evaluate a Source</h2>
-    <div class="highlight-box tip"><strong>🔗 Choose a source to evaluate:</strong>
-      <ol style="margin-top:13px;margin-bottom:0" id="source-eval-list">
-        <li><a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank">Source A: About Mental Health — CDC (2024)</a></li>
-        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7364393/" target="_blank">Source B: Social Media Use and Mental Health — PMC/NIH (2020)</a></li>
-        <li><a href="https://www.psychologytoday.com/us/basics/social-media" target="_blank">Source C: Social Media Overview — Psychology Today</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Social_media_and_the_effects_on_American_adolescents" target="_blank">Source D: Social Media Effects on Adolescents — Wikipedia</a></li>
-        <li><a href="https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use" target="_blank">Source E: Health Advisory on Social Media — APA (2023)</a></li>
-        <li><a href="https://www.nature.com/articles/s41562-018-0506-1" target="_blank">Source F: Screen Time and Depression — Nature Human Behaviour (2019)</a></li>
+    <div class="highlight-box tip"><strong>&#128279; Choose a source to evaluate:</strong>
+      <ol style="margin-top:13px;margin-bottom:0">
+        <li><a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank">Source A: About Mental Health &mdash; CDC (2024)</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7364393/" target="_blank">Source B: Social Media Use and Mental Health &mdash; PMC/NIH (2020)</a></li>
+        <li><a href="https://www.psychologytoday.com/us/basics/social-media" target="_blank">Source C: Social Media Overview &mdash; Psychology Today</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Social_media_and_the_effects_on_American_adolescents" target="_blank">Source D: Social Media Effects &mdash; Wikipedia</a></li>
+        <li><a href="https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use" target="_blank">Source E: Health Advisory &mdash; APA (2023)</a></li>
+        <li><a href="https://www.nature.com/articles/s41562-018-0506-1" target="_blank">Source F: Screen Time &amp; Depression &mdash; Nature (2019)</a></li>
       </ol>
     </div>
     <div class="activity-box">
@@ -505,32 +276,14 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
           <div class="radio-option" onclick="selectRadio(this,'sourceselect')"><input type="radio" name="sourceselect" value="F"><label>Source F (Nature)</label></div>
         </div>
         <p><strong>1. Who is the author? Credentials?</strong></p>
-        <input type="text" class="activity-input" id="source-author" placeholder="e.g., Dr. Jane Smith, Professor of Psychology at UCLA">
-        <p><strong>2. Intended audience?</strong></p>
-        <div class="radio-group">
-          <div class="radio-option" onclick="selectRadio(this,'audience')"><input type="radio" name="audience" value="general"><label>General public</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'audience')"><input type="radio" name="audience" value="scholars"><label>Scholars/Researchers</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'audience')"><input type="radio" name="audience" value="professionals"><label>Industry professionals</label></div>
-        </div>
-        <p><strong>3. Peer-reviewed?</strong></p>
-        <div class="radio-group">
-          <div class="radio-option" onclick="selectRadio(this,'peerreview')"><input type="radio" name="peerreview" value="yes"><label>Yes</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'peerreview')"><input type="radio" name="peerreview" value="no"><label>No</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'peerreview')"><input type="radio" name="peerreview" value="unsure"><label>Not sure</label></div>
-        </div>
-        <p><strong>4. Citations/references?</strong></p>
-        <div class="radio-group">
-          <div class="radio-option" onclick="selectRadio(this,'citations')"><input type="radio" name="citations" value="yes"><label>Yes, extensive</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'citations')"><input type="radio" name="citations" value="some"><label>Some</label></div>
-          <div class="radio-option" onclick="selectRadio(this,'citations')"><input type="radio" name="citations" value="no"><label>No</label></div>
-        </div>
-        <p><strong>5. This source is:</strong></p>
+        <input type="text" class="activity-input" id="source-author" placeholder="e.g., Dr. Jane Smith, Professor of Psychology">
+        <p><strong>2. This source is:</strong></p>
         <div class="radio-group">
           <div class="radio-option" onclick="selectRadio(this,'conclusion')"><input type="radio" name="conclusion" value="scholarly"><label>Scholarly (peer-reviewed)</label></div>
           <div class="radio-option" onclick="selectRadio(this,'conclusion')"><input type="radio" name="conclusion" value="credible"><label>Credible but not scholarly</label></div>
           <div class="radio-option" onclick="selectRadio(this,'conclusion')"><input type="radio" name="conclusion" value="questionable"><label>Questionable</label></div>
         </div>
-        <button class="check-btn" onclick="checkSourceAnswers()">✓ Check My Answers</button>
+        <button class="check-btn" onclick="checkSourceAnswers()">&#10003; Check My Answers</button>
         <div id="source-feedback" class="feedback-box"></div>
       </div>
     </div>
@@ -538,265 +291,234 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
   </div>
 </section>
 
-<!-- SLIDE 10: BOOLEAN -->
-<section class="slide" id="slide-9">
+<!-- SLIDE 5: BOOLEAN OPERATORS -->
+<section class="slide" id="slide-5">
   <div class="content-slide">
-    <h2>Building Your Search: Terms &amp; Boolean Operators</h2>
-    <h3>Step 1 — Break your question into concepts</h3>
+    <h2>&#129517; The Language of Search: Boolean Operators</h2>
+    <p>Databases don&rsquo;t understand questions &mdash; they understand <strong>logic</strong>. Boolean operators are the grammar of search. Master them, and you can navigate any layer of the ecosystem.</p>
+    <h3>Step 1 &mdash; Break your question into concepts</h3>
     <div style="margin-bottom:16px">
-      <label for="example-discipline" style="font-weight:600;color:var(--storm-shutters);font-size:.95rem">🔍 Choose an example from your discipline:</label>
+      <label for="example-discipline" style="font-weight:600;color:var(--storm-shutters);font-size:.95rem">&#128270; Choose an example from your discipline:</label>
       <select id="example-discipline" class="activity-input" style="margin-top:8px;margin-bottom:0;font-size:1rem" onchange="switchBooleanExample(this.value)">
-        <option value="psychology">Psychology — Social media &amp; depression</option>
-        <option value="health">Health / Public Health — Air pollution &amp; asthma</option>
-        <option value="sociology">Sociology — Mass incarceration &amp; racial inequality</option>
-        <option value="business">Business — Remote work &amp; employee productivity</option>
-        <option value="humanities">History / Humanities — Civil rights &amp; media coverage</option>
-        <option value="science">Science / Engineering — Microplastics &amp; marine life</option>
-        <option value="education">Education — Technology &amp; student engagement</option>
+        <option value="psychology">Psychology &mdash; Social media &amp; depression</option>
+        <option value="health">Health / Public Health &mdash; Air pollution &amp; asthma</option>
+        <option value="sociology">Sociology &mdash; Mass incarceration &amp; racial inequality</option>
+        <option value="business">Business &mdash; Remote work &amp; productivity</option>
+        <option value="humanities">History / Humanities &mdash; Civil rights &amp; media</option>
+        <option value="science">Science &mdash; Microplastics &amp; marine life</option>
+        <option value="education">Education &mdash; Technology &amp; student engagement</option>
       </select>
     </div>
-    <div class="highlight-box" id="boolean-example-box">
-      <strong>Example question:</strong> <span id="boolean-example-question">"How does social media use affect depression among college students?"</span><br><br>
-      <strong>Concepts:</strong> <span id="boolean-example-concepts"><strong>social media</strong> · <strong>depression</strong> · <strong>college students</strong></span><br><br>
-      <strong>Then brainstorm synonyms for each:</strong> <span id="boolean-example-synonyms">social media → Instagram, TikTok, online platforms · depression → anxiety, mental health · college students → undergraduates, young adults</span>
-    </div>
-    <h3>Step 2 — Combine concepts with Boolean operators</h3>
-    <div class="code-example"><span class="comment"># AND — narrows results (both terms must appear)</span>
-<span id="bool-and-example">social media <span class="operator">AND</span> depression <span class="operator">AND</span> "college students"</span>
+    <div class="highlight-box" id="boolean-example-box"><strong>Example question:</strong> <span id="boolean-example-question">&ldquo;How does social media use affect depression among college students?&rdquo;</span><br><br><strong>Concepts:</strong> <span id="boolean-example-concepts"><strong>social media</strong> &middot; <strong>depression</strong> &middot; <strong>college students</strong></span><br><br><strong>Synonyms:</strong> <span id="boolean-example-synonyms">social media &rarr; Instagram, TikTok &middot; depression &rarr; anxiety, mental health &middot; college students &rarr; undergraduates, young adults</span></div>
+    <h3>Step 2 &mdash; Combine with Boolean operators</h3>
+    <div class="code-example"><span class="comment"># AND &mdash; narrows (both terms must appear)</span>
+<span id="bool-and-example">social media <span class="operator">AND</span> depression <span class="operator">AND</span> &quot;college students&quot;</span>
 
-<span class="comment"># OR — broadens results (use for synonyms)</span>
-<span id="bool-or-example">depression <span class="operator">OR</span> anxiety <span class="operator">OR</span> "mental health"</span>
+<span class="comment"># OR &mdash; broadens (use for synonyms)</span>
+<span id="bool-or-example">depression <span class="operator">OR</span> anxiety <span class="operator">OR</span> &quot;mental health&quot;</span>
 
-<span class="comment"># NOT — excludes a term</span>
-<span id="bool-not-example">"social media" <span class="operator">NOT</span> marketing</span></div>
+<span class="comment"># NOT &mdash; excludes a term</span>
+<span id="bool-not-example">&quot;social media&quot; <span class="operator">NOT</span> marketing</span></div>
     <div class="two-column">
-      <div class="column"><h4>"Quotation marks"</h4><p>Search an exact phrase: <code>"college students"</code>, <code>"social media addiction"</code>. Without quotes, databases treat each word separately.</p></div>
-      <div class="column"><h4>Truncation (*)</h4><p><code>depress*</code> finds: depression, depressed, depressive.<br><code>teen*</code> finds: teen, teens, teenager. The asterisk is a wildcard for word endings.</p></div>
+      <div class="column"><h4>&ldquo;Quotation marks&rdquo;</h4><p>Search an exact phrase: <code>&quot;college students&quot;</code>. Without quotes, databases treat each word separately.</p></div>
+      <div class="column"><h4>Truncation (*)</h4><p><code>depress*</code> finds: depression, depressed, depressive. The asterisk is a wildcard for word endings.</p></div>
     </div>
-    <div class="code-example" id="boolean-full-example"><span class="comment"># Putting it all together:</span>
-<span id="bool-full-string">("social media" <span class="operator">OR</span> Instagram <span class="operator">OR</span> TikTok) <span class="operator">AND</span> (depress* <span class="operator">OR</span> anxi* <span class="operator">OR</span> "mental health") <span class="operator">AND</span> ("college students" <span class="operator">OR</span> undergrad*)</span></div>
-    <div class="highlight-box tip"><strong>💡</strong> Found a good article? Look at its keywords and subject headings — that's your next set of search terms.</div>
+    <div class="code-example"><span class="comment"># Putting it all together:</span>
+<span id="bool-full-string">(&quot;social media&quot; <span class="operator">OR</span> Instagram <span class="operator">OR</span> TikTok) <span class="operator">AND</span> (depress* <span class="operator">OR</span> anxi* <span class="operator">OR</span> &quot;mental health&quot;) <span class="operator">AND</span> (&quot;college students&quot; <span class="operator">OR</span> undergrad*)</span></div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 11: ACTIVITY 2 -->
-<section class="slide" id="slide-10">
+<!-- SLIDE 6: BOOLEAN PRACTICE -->
+<section class="slide" id="slide-6">
+  <div class="content-slide">
+    <h2>&#128221; Practice: Test Your Boolean Skills</h2>
+    <p>Try these questions to check your understanding. Click an answer, then check your work.</p>
+    <div id="quiz-container"></div>
+    <div style="text-align:center;margin-top:24px"><button class="check-btn" onclick="checkAllQuiz()" style="font-size:1.1rem;padding:14px 36px">&#10003; Check All Answers</button></div>
+    <div id="quiz-score" style="text-align:center;margin-top:18px;font-size:1.1rem;font-weight:600;color:var(--tulane-green);display:none"></div>
+    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+  </div>
+</section>
+
+<!-- SLIDE 7: ACTIVITY 2 BUILD YOUR SEARCH -->
+<section class="slide" id="slide-7">
   <div class="content-slide">
     <h2>Activity 2: Build Your Search Strategy</h2>
     <div class="activity-box">
       <h4>Develop Search Terms for Your Topic</h4>
       <div class="activity-content">
         <p><strong>1. What is your research topic or question?</strong></p>
-        <textarea class="activity-textarea" id="research-topic" placeholder="e.g., 'How does climate change affect hurricane intensity in the Gulf of Mexico?'"></textarea>
+        <textarea class="activity-textarea" id="research-topic" placeholder="e.g., How does jazz influence contemporary hip-hop production?"></textarea>
       </div>
     </div>
     <div class="boolean-builder">
-      <h4 style="color:var(--tulane-green);margin-top:0;margin-bottom:18px">🔧 Interactive Search Builder</h4>
+      <h4 style="color:var(--tulane-green);margin-top:0;margin-bottom:18px">&#128295; Interactive Search Builder</h4>
       <p style="margin-bottom:16px;font-size:.93rem;color:#555">Enter your main concepts and synonyms. The builder generates a Boolean search string automatically.</p>
       <div id="builder-concepts">
-        <div class="builder-concept" data-index="0">
-          <input type="text" placeholder="Concept 1 (e.g., climate change)" class="concept-main" id="concept-0" oninput="updateBuilderOutput()">
-          <div class="builder-synonyms" id="synonyms-0">
-            <input type="text" placeholder="Synonym (e.g., global warming)" class="synonym-input" oninput="updateBuilderOutput()">
-            <input type="text" placeholder="Synonym" class="synonym-input" oninput="updateBuilderOutput()">
-            <button class="add-synonym-btn" onclick="addSynonym(0)">+ Add</button>
-          </div>
-        </div>
+        <div class="builder-concept" data-index="0"><input type="text" placeholder="Concept 1 (e.g., jazz)" class="concept-main" oninput="updateBuilderOutput()"><div class="builder-synonyms" id="synonyms-0"><input type="text" placeholder="Synonym (e.g., bebop)" class="synonym-input" oninput="updateBuilderOutput()"><input type="text" placeholder="Synonym" class="synonym-input" oninput="updateBuilderOutput()"><button class="add-synonym-btn" onclick="addSynonym(0)">+ Add</button></div></div>
         <div style="text-align:center;padding:7px;color:var(--medallion);font-weight:700;font-size:1.05rem">AND</div>
-        <div class="builder-concept" data-index="1">
-          <input type="text" placeholder="Concept 2 (e.g., hurricanes)" class="concept-main" id="concept-1" oninput="updateBuilderOutput()">
-          <div class="builder-synonyms" id="synonyms-1">
-            <input type="text" placeholder="Synonym (e.g., tropical storms)" class="synonym-input" oninput="updateBuilderOutput()">
-            <input type="text" placeholder="Synonym" class="synonym-input" oninput="updateBuilderOutput()">
-            <button class="add-synonym-btn" onclick="addSynonym(1)">+ Add</button>
-          </div>
-        </div>
+        <div class="builder-concept" data-index="1"><input type="text" placeholder="Concept 2 (e.g., hip-hop)" class="concept-main" oninput="updateBuilderOutput()"><div class="builder-synonyms" id="synonyms-1"><input type="text" placeholder="Synonym (e.g., rap)" class="synonym-input" oninput="updateBuilderOutput()"><input type="text" placeholder="Synonym" class="synonym-input" oninput="updateBuilderOutput()"><button class="add-synonym-btn" onclick="addSynonym(1)">+ Add</button></div></div>
         <div style="text-align:center;padding:7px;color:var(--medallion);font-weight:700;font-size:1.05rem">AND</div>
-        <div class="builder-concept" data-index="2">
-          <input type="text" placeholder="Concept 3 (e.g., Gulf of Mexico)" class="concept-main" id="concept-2" oninput="updateBuilderOutput()">
-          <div class="builder-synonyms" id="synonyms-2">
-            <input type="text" placeholder="Synonym (e.g., Gulf Coast)" class="synonym-input" oninput="updateBuilderOutput()">
-            <button class="add-synonym-btn" onclick="addSynonym(2)">+ Add</button>
-          </div>
-        </div>
+        <div class="builder-concept" data-index="2"><input type="text" placeholder="Concept 3 (e.g., production)" class="concept-main" oninput="updateBuilderOutput()"><div class="builder-synonyms" id="synonyms-2"><input type="text" placeholder="Synonym (e.g., sampling)" class="synonym-input" oninput="updateBuilderOutput()"><button class="add-synonym-btn" onclick="addSynonym(2)">+ Add</button></div></div>
       </div>
       <p style="margin-top:16px;margin-bottom:5px;font-weight:600;color:var(--tulane-green)">Your Generated Search String:</p>
-      <div class="builder-output" id="builder-output"><span style="color:#999">Enter concepts above to generate your search...</span></div>
+      <div class="builder-output" id="builder-output"><span style="color:#999">Enter concepts above...</span></div>
       <div style="display:flex;gap:9px;margin-top:9px">
-        <button class="builder-copy-btn" onclick="copyBuilderOutput()">📋 Copy to Clipboard</button>
-        <button class="builder-copy-btn" onclick="sendToActivity4()" style="background:var(--tulane-green);color:#fff">→ Send to Research Plan</button>
+        <button class="builder-copy-btn" onclick="copyBuilderOutput()">&#128203; Copy to Clipboard</button>
+        <button class="builder-copy-btn" onclick="sendToResearchPlan()" style="background:var(--tulane-green);color:#fff">&rarr; Send to Research Plan</button>
       </div>
     </div>
-    <div class="highlight-box tip"><strong>💡 Remember:</strong> You'll probably need to try several searches! Start broad, then narrow down.</div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 12: SEARCH ECOSYSTEM -->
-<section class="slide" id="slide-11">
+<!-- SLIDE 8: SEARCH ECOSYSTEM / DATABASES -->
+<section class="slide" id="slide-8">
   <div class="content-slide">
-    <h2>The Search Ecosystem: Choosing the Right Tool</h2>
-    <p>A <strong>library database</strong> is a curated, searchable collection of scholarly content with filters for date, peer-review status, subject, and more.</p>
+    <h2>&#129517; Navigating the Ecosystem: Choosing the Right Tool</h2>
+    <p>A <strong>library database</strong> is a curated, searchable collection with filters for date, peer-review status, and subject. Unlike Google, every item has been cataloged and quality-checked.</p>
     <table class="comparison-table">
       <tr><th></th><th>Google / Google Scholar</th><th>Library Search (Tulane)</th><th>Subject Databases</th></tr>
-      <tr><td>Searches</td><td>The open web — mixed quality</td><td>Tulane's combined holdings</td><td>One discipline in depth</td></tr>
-      <tr><td>Quality control</td><td>None — ranked by popularity</td><td>Filter to peer-reviewed, full-text, by date</td><td>Highly curated; standardized subject headings</td></tr>
-      <tr><td>Best for</td><td>Quick background, finding a known item</td><td>Starting broad</td><td>In-depth disciplinary research</td></tr>
-      <tr><td>Access</td><td>Many paywalled ($30–50/article)</td><td>Full text via Tulane</td><td>Full text via Tulane; "FindIt@Tulane" links</td></tr>
+      <tr><td>Searches</td><td>The open web &mdash; mixed quality</td><td>Tulane&rsquo;s combined holdings</td><td>One discipline in depth</td></tr>
+      <tr><td>Quality</td><td>None &mdash; ranked by popularity</td><td>Filter to peer-reviewed, full-text</td><td>Highly curated; subject headings</td></tr>
+      <tr><td>Best for</td><td>Quick background</td><td>Starting broad</td><td>In-depth research</td></tr>
+      <tr><td>Access</td><td>Many paywalled</td><td>Full text via Tulane</td><td>Full text via &ldquo;FindIt@Tulane&rdquo;</td></tr>
     </table>
-    <h3>Find the Right Database for Your Subject</h3>
+    <h3>Find the Right Database</h3>
     <div class="highlight-box" style="padding:22px 28px">
-      <strong>🔍 Browse all databases by subject or name:</strong>
+      <strong>&#128270; Browse all databases by subject or name:</strong>
       <p style="margin:12px 0 0;font-size:1.1rem"><a href="https://libguides.tulane.edu/az/databases" target="_blank"><strong>libguides.tulane.edu/az/databases</strong></a></p>
-      <p style="margin:10px 0 0;font-size:.95rem;color:#555">Tulane subscribes to 900+ databases. Use the A-Z list to browse by name, or filter by subject area to find the best databases for your discipline.</p>
+      <p style="margin:10px 0 0;font-size:.95rem;color:#555">Tulane subscribes to 900+ databases. Filter by subject to find the best ones for your discipline.</p>
     </div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 13: RESEARCH GUIDES + GOOGLE SCHOLAR -->
-<section class="slide" id="slide-12">
+<!-- SLIDE 9: RESEARCH GUIDES + GOOGLE SCHOLAR -->
+<section class="slide" id="slide-9">
   <div class="content-slide">
-    <h2>Research Guides &amp; Google Scholar</h2>
+    <h2>&#128204; Guides, Pathways &amp; Google Scholar</h2>
     <div class="two-column">
       <div class="column">
-        <h4>📌 Library Research Guides (LibGuides)</h4>
-        <p>Subject librarians build these guides so you don't have to figure out where to start.</p>
+        <h4>&#128204; Library Research Guides (LibGuides)</h4>
+        <p>Subject librarians build these so you don&rsquo;t have to figure out where to start. Each guide lists the best databases, key journals, and tips.</p>
         <p><strong>Browse:</strong> <a href="https://libguides.tulane.edu" target="_blank">libguides.tulane.edu</a></p>
-        <p style="margin-top:10px" id="libguide-examples"><strong>Examples:</strong> <a href="https://libguides.tulane.edu/Psyc" target="_blank">Psychology</a> · <a href="https://libguides.tulane.edu/history" target="_blank">History</a> · <a href="https://libguides.tulane.edu/basicbusiness" target="_blank">Business</a> · <a href="https://libguides.tulane.edu/socialsciencedata" target="_blank">Data</a></p>
+        <p style="margin-top:10px"><strong>Examples:</strong> <a href="https://libguides.tulane.edu/Psyc" target="_blank">Psychology</a> &middot; <a href="https://libguides.tulane.edu/history" target="_blank">History</a> &middot; <a href="https://libguides.tulane.edu/basicbusiness" target="_blank">Business</a> &middot; <a href="https://libguides.tulane.edu/socialsciencedata" target="_blank">Data</a></p>
       </div>
       <div class="column">
-        <h4>🎓 Google Scholar + Tulane</h4>
-        <p>Link Google Scholar to Tulane once and you'll see <strong>"Full Text @ Tulane"</strong> buttons.</p>
+        <h4>&#127891; Google Scholar + Tulane</h4>
+        <p>Link once to see <strong>&ldquo;Full Text @ Tulane&rdquo;</strong> buttons instead of paywalls.</p>
         <ol style="margin-left:18px;margin-top:8px">
           <li>Go to <a href="https://scholar.google.com" target="_blank">scholar.google.com</a></li>
-          <li>Menu (☰) → <strong>Settings</strong> → <strong>Library links</strong></li>
-          <li>Search <strong>Tulane</strong> → check <strong>Full Text @ Tulane</strong> → Save</li>
+          <li>Menu &#9776; &rarr; <strong>Settings</strong> &rarr; <strong>Library links</strong></li>
+          <li>Search <strong>Tulane</strong> &rarr; check &rarr; Save</li>
         </ol>
-        <p style="margin-top:14px;padding:10px 14px;background:#d4edda;border-radius:8px;color:#155724;font-size:.93rem">✅ Done once. Works every time.</p>
+        <p style="margin-top:14px;padding:10px 14px;background:#d4edda;border-radius:8px;color:#155724;font-size:.93rem">&#9989; Done once. Works every time.</p>
       </div>
     </div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 13.5: TROUBLESHOOTING (new standalone slide) -->
+<!-- SLIDE 10: TROUBLESHOOTING -->
+<section class="slide" id="slide-10">
+  <div class="content-slide">
+    <h2>&#128295; Troubleshooting Your Search</h2>
+    <p>Searching is iterative &mdash; you&rsquo;ll almost never get perfect results on the first try.</p>
+    <div class="troubleshoot-panel" style="margin-top:24px">
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Too many results? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Add more concepts with <strong>AND</strong>, use quotation marks, add date filters, or limit to peer-reviewed.</div></div>
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Too few results? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Use <strong>OR</strong> for synonyms, try truncation (depress* instead of depression), remove one concept, or try a broader database.</div></div>
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Results aren&rsquo;t relevant? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Search &ldquo;Subject&rdquo; instead of &ldquo;All Text&rdquo;. Use <strong>NOT</strong> to exclude. Use subject headings from a good article.</div></div>
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Can&rsquo;t access full text? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Look for &ldquo;FindIt@Tulane&rdquo; links. Try Library Search. Use ILL &mdash; it&rsquo;s free!</div></div>
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Not sure which database? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Start with your subject&rsquo;s Research Guide at <a href="https://libguides.tulane.edu" target="_blank">libguides.tulane.edu</a>. When in doubt, <strong>Academic Search Complete</strong> covers most disciplines.</div></div>
+      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Found a great article &mdash; how to find more? <span class="arrow">&#9660;</span></div><div class="troubleshoot-a">Check its <strong>references</strong> for earlier sources. Use <strong>&ldquo;Cited by&rdquo;</strong> in Google Scholar or Web of Science to find newer work. Copy its <strong>subject headings</strong> into your next search.</div></div>
+    </div>
+    <div class="highlight-box tip"><strong>&#128161; Remember:</strong> A &ldquo;failed&rdquo; search isn&rsquo;t wasted &mdash; it tells you what to adjust. Change one variable at a time.</div>
+    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+  </div>
+</section>
+
+<!-- SLIDE 11: CRACKS IN THE ECOSYSTEM -->
+<section class="slide" id="slide-11">
+  <div class="content-slide">
+    <h2>&#9878;&#65039; Cracks in the Ecosystem: Flaws &amp; Inequities</h2>
+    <p>The search ecosystem is powerful &mdash; but it&rsquo;s not neutral. The systems that organize, publish, and surface knowledge carry historical biases that shape what you find and what you miss. Critical researchers and creators need to understand these cracks.</p>
+
+    <h3>&#128683; Who Gets Published?</h3>
+    <div class="highlight-box critical">
+      <strong>The publishing pipeline has gatekeepers.</strong> Peer review favors established researchers at well-funded institutions. Scholars from the Global South, HBCUs, community colleges, and under-resourced institutions face systemic barriers to publication: higher rejection rates, less access to research funding, and fewer connections to editorial boards. If you only search peer-reviewed databases, you may be seeing a narrow slice of who actually produces knowledge.
+    </div>
+
+    <h3>&#127760; Whose Knowledge Gets Indexed?</h3>
+    <div class="two-column">
+      <div class="column">
+        <h4>Language Bias</h4>
+        <p>Major databases overwhelmingly index English-language journals. Research published in Spanish, Portuguese, Mandarin, Arabic, or Indigenous languages is often invisible to standard searches &mdash; even when it&rsquo;s the most relevant work on a topic.</p>
+      </div>
+      <div class="column">
+        <h4>Subject Heading Bias</h4>
+        <p>Library classification systems (like Library of Congress Subject Headings) were designed in the early 20th century and carry outdated or harmful language around race, gender, sexuality, disability, and Indigenous peoples. The terms you search with shape what you find.</p>
+      </div>
+    </div>
+
+    <h3>&#128176; The Cost of Access</h3>
+    <p>Academic publishing is a multi-billion-dollar industry. Most journal subscriptions cost thousands per year. Tulane&rsquo;s library budget covers this for students &mdash; but researchers at less-resourced institutions, independent scholars, community organizations, and the general public are often locked out entirely. This paywall creates a knowledge divide.</p>
+
+    <h3>&#128161; What You Can Do</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0">
+      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--tulane-green)"><strong>Search beyond the usual databases.</strong> Look for open-access repositories (DOAJ, PubMed Central), institutional repositories, and grey literature (reports, working papers, theses).</div>
+      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--storm-shutters)"><strong>Question your search terms.</strong> Try community-used language alongside academic jargon. Search in multiple languages if your topic warrants it.</div>
+      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--medallion)"><strong>Cite diversely and intentionally.</strong> Audit your bibliography. Are you citing women, scholars of color, Global South researchers, and non-Western perspectives? If not, ask why.</div>
+      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--olive-branch)"><strong>Use primary and community sources.</strong> Oral histories, archives, cultural collections, and community-generated knowledge are valid and often essential &mdash; especially for creative work.</div>
+    </div>
+    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+  </div>
+</section>
+
+<!-- SLIDE 12: ILL & GETTING HELP -->
+<section class="slide" id="slide-12">
+  <div class="content-slide">
+    <h2>&#129522; When the Trail Goes Cold: ILL &amp; Getting Help</h2>
+    <p>Can&rsquo;t find a source in Tulane&rsquo;s collection? <strong>Interlibrary Loan (ILL)</strong> lets you request it from another library &mdash; anywhere in the world &mdash; for free.</p>
+    <div class="highlight-box"><strong>&#128279; Submit a request:</strong> <a href="https://library.tulane.edu/services/interlibrary-loan" target="_blank">library.tulane.edu/services/interlibrary-loan</a></div>
+    <div class="two-column">
+      <div class="column"><h4>&#128196; Articles</h4><ul><li>PDF to your email</li><li><strong>1&ndash;3 days</strong></li></ul></div>
+      <div class="column"><h4>&#128218; Books</h4><ul><li>Pick up at the library</li><li><strong>5&ndash;10 days</strong></li></ul></div>
+    </div>
+    <h3>Getting Expert Help</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin:24px 0">
+      <div class="source-card" style="margin:0"><h4><span class="icon">&#128172;</span> Chat</h4><p style="font-size:.95rem">Instant help from the library website.</p><div class="examples"><strong>Use for:</strong> Quick questions, access issues</div></div>
+      <div class="source-card" style="margin:0"><h4><span class="icon">&#128231;</span> Email</h4><p style="font-size:.95rem">Reach your subject librarian directly.</p><div class="examples"><strong>Use for:</strong> Follow-up, detailed questions</div></div>
+      <div class="source-card" style="margin:0"><h4><span class="icon">&#128197;</span> Research Consultation</h4><p style="font-size:.95rem">One-on-one with a subject librarian.</p><div class="examples"><strong>Use for:</strong> Search strategy, thesis work, creative projects</div></div>
+    </div>
+    <div class="highlight-box"><strong>&#128105;&zwj;&#127979; Find your subject librarian:</strong> <a href="https://library.tulane.edu/people/find-a-subject-specialist" target="_blank">library.tulane.edu/people/find-a-subject-specialist</a></div>
+    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
+  </div>
+</section>
+
+<!-- SLIDE 13: ACTIVITY 3 RESEARCH PLAN -->
 <section class="slide" id="slide-13">
   <div class="content-slide">
-    <h2>🔧 Troubleshooting Your Search Results</h2>
-    <p>Searching is iterative — you'll almost never get perfect results on the first try. Here's how to adjust.</p>
-    <div class="troubleshoot-panel" style="margin-top:24px">
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Too many results? <span class="arrow">▼</span></div><div class="troubleshoot-a">Add more concepts with <strong>AND</strong>, use quotation marks for exact phrases, add date filters, or limit to peer-reviewed sources. The more specific you are, the more relevant your results.</div></div>
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Too few results? <span class="arrow">▼</span></div><div class="troubleshoot-a">Use <strong>OR</strong> to add synonyms, try truncation (depress* instead of depression), remove one concept, or try a broader database like Academic Search Complete.</div></div>
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Results aren't relevant? <span class="arrow">▼</span></div><div class="troubleshoot-a">Try searching "Subject" instead of "All Text". Use <strong>NOT</strong> to exclude irrelevant topics. Look at the subject headings of a good article and use those terms in your next search.</div></div>
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Can't access full text? <span class="arrow">▼</span></div><div class="troubleshoot-a">Look for "Full Text @ Tulane" or "FindIt@Tulane" links. Try searching the title in Library Search. As a last resort, use Interlibrary Loan — it's free and articles arrive in 1–3 days!</div></div>
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Not sure which database to use? <span class="arrow">▼</span></div><div class="troubleshoot-a">Start with your subject's Research Guide at <a href="https://libguides.tulane.edu" target="_blank">libguides.tulane.edu</a> — each guide lists the best databases for that field. When in doubt, <strong>Academic Search Complete</strong> covers most disciplines. You can also browse <a href="https://libguides.tulane.edu/az/databases" target="_blank">all 900+ databases by subject</a>.</div></div>
-      <div class="troubleshoot-item" onclick="this.classList.toggle('open')"><div class="troubleshoot-q">Found a great article — how do I find more like it? <span class="arrow">▼</span></div><div class="troubleshoot-a">Check the article's <strong>references</strong> for earlier sources and use <strong>"Cited by"</strong> features (available in Google Scholar and Web of Science) to find newer articles that build on it. Also look at the article's <strong>subject headings/keywords</strong> and use those in your next search.</div></div>
-    </div>
-    <div class="highlight-box tip"><strong>💡 Remember:</strong> A "failed" search isn't wasted — it tells you what to adjust. Change one thing at a time (add a synonym, remove a concept, try a different database) so you can see what works.</div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 14: ACTIVITY 3 -->
-<section class="slide" id="slide-14">
-  <div class="content-slide">
-    <h2>Activity 3: Choose Your Databases</h2>
-    <div class="activity-box">
-      <h4>Plan Your Database Strategy</h4>
-      <div class="activity-content">
-        <p><strong>1. What class or subject is your research for?</strong></p>
-        <input type="text" class="activity-input" id="class-subject" placeholder="e.g., PSYC 101, ENGL 2000">
-        <p><strong>2. Source types needed?</strong></p>
-        <div class="checklist-item"><input type="checkbox" id="need-scholarly" onchange="toggleCheck(this)"><label for="need-scholarly">Scholarly/peer-reviewed articles</label></div>
-        <div class="checklist-item"><input type="checkbox" id="need-news" onchange="toggleCheck(this)"><label for="need-news">News articles</label></div>
-        <div class="checklist-item"><input type="checkbox" id="need-books" onchange="toggleCheck(this)"><label for="need-books">Books or book chapters</label></div>
-        <div class="checklist-item"><input type="checkbox" id="need-data" onchange="toggleCheck(this)"><label for="need-data">Statistics or data sets</label></div>
-        <div class="checklist-item"><input type="checkbox" id="need-primary" onchange="toggleCheck(this)"><label for="need-primary">Primary sources</label></div>
-        <p><strong>3. Databases you plan to search:</strong></p>
-        <div class="highlight-box" style="margin:12px 0;padding:18px 22px">
-          <strong>📚 Quick Reference:</strong>
-          <select id="database-reference" class="activity-input" style="margin-top:10px;margin-bottom:0" onchange="showDatabaseSuggestions(this.value)">
-            <option value="">-- Select a Subject --</option>
-            <option value="psychology">Psychology</option><option value="health">Health/Medicine</option>
-            <option value="business">Business</option><option value="humanities">Humanities</option>
-            <option value="sociology">Sociology</option><option value="crime">Criminology</option>
-            <option value="education">Education</option><option value="science">Science</option>
-            <option value="engineering">Engineering</option><option value="multidisciplinary">Not Sure</option>
-          </select>
-          <div id="database-suggestions" style="margin-top:10px;padding:10px;background:#fff;border-radius:8px;display:none"><strong>Recommended:</strong> <span id="database-list"></span></div>
-        </div>
-        <input type="text" class="activity-input" id="database1" placeholder="Database 1">
-        <input type="text" class="activity-input" id="database2" placeholder="Database 2">
-        <input type="text" class="activity-input" id="database3" placeholder="Database 3 (optional)">
-        <p><strong>4. Why did you choose these databases?</strong></p>
-        <textarea class="activity-textarea" id="database-reasoning" placeholder="e.g., 'PsycINFO because my topic is about mental health...'"></textarea>
-      </div>
-    </div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 15: ILL -->
-<section class="slide" id="slide-15">
-  <div class="content-slide">
-    <h2>Interlibrary Loan (ILL)</h2>
-    <p>Can't find a source? <strong>ILL lets you request it from another library — for free.</strong></p>
-    <div class="highlight-box"><strong>🔗 Submit a request:</strong> <a href="https://library.tulane.edu/services/interlibrary-loan" target="_blank">library.tulane.edu/services/interlibrary-loan</a></div>
-    <div class="two-column">
-      <div class="column"><h4>📄 Articles</h4><ul><li>PDF to your email</li><li><strong>1–3 days</strong></li></ul></div>
-      <div class="column"><h4>📚 Books</h4><ul><li>Pick up at the library</li><li><strong>5–10 days</strong></li></ul></div>
-    </div>
-    <div class="highlight-box tip"><strong>💡 Plan ahead.</strong> ILL is fast — but not instant. Submit requests early.</div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 16: GETTING HELP -->
-<section class="slide" id="slide-16">
-  <div class="content-slide">
-    <h2>Getting Help</h2>
-    <p>Librarians support every stage of the research process.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin:24px 0">
-      <div class="source-card" style="margin:0"><h4><span class="icon">💬</span> Chat</h4><p style="font-size:.95rem">Instant help from the library website.</p><div class="examples"><strong>Use for:</strong> Quick questions, access issues</div></div>
-      <div class="source-card" style="margin:0"><h4><span class="icon">📧</span> Email</h4><p style="font-size:.95rem">Reach your subject librarian directly.</p><div class="examples"><strong>Use for:</strong> Follow-up, detailed questions</div></div>
-      <div class="source-card" style="margin:0"><h4><span class="icon">📅</span> Research Consultation</h4><p style="font-size:.95rem">One-on-one with a subject librarian.</p><div class="examples"><strong>Use for:</strong> Search strategy, thesis work</div></div>
-    </div>
-    <div class="highlight-box"><strong>👩‍🏫 Every subject has a dedicated librarian.</strong><p style="margin:10px 0 0">Find yours at: <a href="https://library.tulane.edu/people/find-a-subject-specialist" target="_blank"><strong>library.tulane.edu/people/find-a-subject-specialist</strong></a></p></div>
-    <div class="highlight-box tip"><strong>💡</strong> "I have a paper due and I don't know where to start" is a completely valid reason to reach out.</div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 17: ACTIVITY 4 -->
-<section class="slide" id="slide-17">
-  <div class="content-slide">
-    <h2>Activity 4: Create Your Research Plan</h2>
-    <div class="highlight-box tip" style="margin-bottom:26px">
-      <strong>💡 Auto-filled from your profile and earlier activities!</strong> Review and refine.<br>
-      <button class="builder-copy-btn" style="margin-top:9px" onclick="pullFromPrevious()">🔄 Refresh from Previous Activities</button>
-    </div>
+    <h2>Activity 3: Create Your Research Plan</h2>
+    <div class="highlight-box tip" style="margin-bottom:26px"><strong>&#128161; Auto-filled from your earlier activities!</strong><br><button class="builder-copy-btn" style="margin-top:9px" onclick="pullFromPrevious()">&#128260; Refresh from Previous Activities</button></div>
     <div class="activity-box">
       <h4>Put It All Together</h4>
       <div class="activity-content">
         <p><strong>1. My research topic/question:</strong></p>
-        <textarea class="activity-textarea" id="final-topic" placeholder="Your research question"></textarea>
+        <textarea class="activity-textarea" id="final-topic" placeholder="Your research or creative question"></textarea>
         <p><strong>2. My search string:</strong></p>
-        <textarea class="activity-textarea" id="final-search" placeholder='e.g., ("social media" OR Instagram) AND (depression OR "mental health")'></textarea>
+        <textarea class="activity-textarea" id="final-search" placeholder="Your Boolean search string"></textarea>
         <p><strong>3. Databases I will search:</strong></p>
-        <textarea class="activity-textarea" id="final-databases" placeholder="List databases and explain why"></textarea>
-        <div class="highlight-box tip" style="margin:8px 0 18px;padding:16px 20px"><strong>🔗</strong> <a href="https://libguides.tulane.edu/az/databases" target="_blank">A-Z Databases</a></div>
-        <p><strong>4. Research Guides I plan to use:</strong></p>
-        <textarea class="activity-textarea" id="final-guides" placeholder="e.g., Psychology Research Guide"></textarea>
-        <p><strong>5. Source types I need:</strong></p>
+        <textarea class="activity-textarea" id="final-databases" placeholder="List databases"></textarea>
+        <p><strong>4. Source types I need:</strong></p>
         <div class="checklist-item"><input type="checkbox" id="final-scholarly" onchange="toggleCheck(this)"><label for="final-scholarly">Scholarly articles</label></div>
         <div class="checklist-item"><input type="checkbox" id="final-books" onchange="toggleCheck(this)"><label for="final-books">Books/eBooks</label></div>
         <div class="checklist-item"><input type="checkbox" id="final-news" onchange="toggleCheck(this)"><label for="final-news">News articles</label></div>
-        <div class="checklist-item"><input type="checkbox" id="final-credible" onchange="toggleCheck(this)"><label for="final-credible">Credible websites</label></div>
         <div class="checklist-item"><input type="checkbox" id="final-data" onchange="toggleCheck(this)"><label for="final-data">Statistics/data</label></div>
-        <div class="checklist-item"><input type="checkbox" id="final-primary" onchange="toggleCheck(this)"><label for="final-primary">Primary sources</label></div>
-        <p><strong>6. What's still confusing?</strong></p>
+        <div class="checklist-item"><input type="checkbox" id="final-primary" onchange="toggleCheck(this)"><label for="final-primary">Primary sources / archives</label></div>
+        <div class="checklist-item"><input type="checkbox" id="final-media" onchange="toggleCheck(this)"><label for="final-media">Media &amp; performances</label></div>
+        <p><strong>5. What&rsquo;s still confusing?</strong></p>
         <textarea class="activity-textarea" id="final-challenges" placeholder="Questions you still have?"></textarea>
       </div>
     </div>
@@ -804,51 +526,49 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
   </div>
 </section>
 
-<!-- SLIDE 18: DISCUSSION -->
-<section class="slide" id="slide-18">
+<!-- SLIDE 14: DISCUSSION + QR -->
+<section class="slide" id="slide-14">
   <div class="content-slide">
-    <h2>💬 Discussion &amp; Reflection</h2>
-    <p>These questions don't have right answers — they're worth sitting with.</p>
+    <h2>&#128172; Discussion &amp; Reflection</h2>
+    <p>These questions don&rsquo;t have right answers &mdash; they&rsquo;re worth sitting with.</p>
     <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px">
-      <div style="background:linear-gradient(135deg,#e8f5f1,#e1f4fb);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--tulane-green)">1.</strong> When would you still start with Google — and when would you go straight to a database?</p></div>
-      <div style="background:linear-gradient(135deg,#fef9e7,#fff8e1);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--medallion)">2.</strong> When might a credible non-scholarly source be more useful than a peer-reviewed one?</p></div>
-      <div style="background:linear-gradient(135deg,#f0faf5,#e8f4fd);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--storm-shutters)">3.</strong> If you only search the terms most common in your field, whose perspectives might you be missing?</p></div>
-      <div style="background:linear-gradient(135deg,#f8f9fa,#f0f4f2);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--olive-branch)">4.</strong> What's the single most useful thing from today that you'll actually apply?</p></div>
+      <div style="background:linear-gradient(135deg,#e8f5f1,#e1f4fb);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--tulane-green)">1.</strong> When would you start with Google &mdash; and when would you go straight to a database?</p></div>
+      <div style="background:linear-gradient(135deg,#fef9e7,#fff8e1);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--medallion)">2.</strong> Think about the &ldquo;cracks&rdquo; we discussed. Whose voices might be missing from the sources you found today?</p></div>
+      <div style="background:linear-gradient(135deg,#f0faf5,#e8f4fd);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--storm-shutters)">3.</strong> How would your search strategy differ for a creative project vs. a traditional research paper?</p></div>
+      <div style="background:linear-gradient(135deg,#f8f9fa,#f0f4f2);border-radius:12px;padding:18px 22px"><p style="margin:0;font-size:1rem;line-height:1.8"><strong style="color:var(--olive-branch)">4.</strong> What&rsquo;s the single most useful thing from today that you&rsquo;ll actually apply?</p></div>
     </div>
-<h3>✅ Final Reflection</h3>
+    <h3>&#9989; Final Reflection</h3>
     <div style="text-align:center;margin:28px 0;padding:36px;background:linear-gradient(135deg,#f0f7f5,#e8f4fd);border-radius:16px">
-      <p style="font-size:1.15rem;font-weight:600;color:var(--tulane-green);margin-bottom:16px">📱 Scan to share your feedback:</p>
+      <p style="font-size:1.15rem;font-weight:600;color:var(--tulane-green);margin-bottom:16px">&#128241; Scan to share your feedback:</p>
       <img src="data:image/png;base64,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" alt="Feedback QR Code" style="width:220px;height:220px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.12)">
       <p style="margin-top:16px;font-size:.95rem;color:#555">Your responses help us improve this session for future students.</p>
     </div>
-    <div style="margin-top:20px;padding:18px 22px;background:var(--tulane-green);border-radius:12px;color:#fff;text-align:center">
-      <p style="margin:0;font-size:1rem;line-height:1.8">📬 Still have questions? — <strong>kmaye@tulane.edu</strong></p>
-    </div>
+    <div style="margin-top:20px;padding:18px 22px;background:var(--tulane-green);border-radius:12px;color:#fff;text-align:center"><p style="margin:0;font-size:1rem;line-height:1.8">&#128236; Still have questions? &mdash; <strong>kmaye@tulane.edu</strong></p></div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
-<!-- SLIDE 19: SUMMARY -->
-<section class="slide" id="slide-19">
+<!-- SLIDE 15: SUMMARY -->
+<section class="slide" id="slide-15">
   <div class="content-slide">
     <h2>Summary &amp; Next Steps</h2>
     <h3>Five Things to Remember</h3>
-    <div class="key-point"><div class="key-point-icon">1</div><div><strong>Scholarly ≠ Credible.</strong> All scholarly sources are credible, but not all credible sources are scholarly.</div></div>
+    <div class="key-point"><div class="key-point-icon">1</div><div><strong>Scholarly &ne; Credible.</strong> All scholarly sources are credible, but not all credible sources are scholarly.</div></div>
     <div class="key-point"><div class="key-point-icon">2</div><div><strong>Break your topic into concepts, then add synonyms.</strong> AND to narrow, OR to broaden, NOT to exclude.</div></div>
     <div class="key-point"><div class="key-point-icon">3</div><div><strong>Use the right tool.</strong> Google for background. Library Search for broad. Subject databases for depth.</div></div>
-    <div class="key-point"><div class="key-point-icon">4</div><div><strong>Full text is almost always available.</strong> FindIt@Tulane, Google Scholar linked, or ILL.</div></div>
-    <div class="key-point"><div class="key-point-icon">5</div><div><strong>Librarians are research partners.</strong> Chat for quick help. Consultation for big projects.</div></div>
+    <div class="key-point"><div class="key-point-icon">4</div><div><strong>The ecosystem has cracks.</strong> Search beyond the usual databases. Question your terms. Cite diversely.</div></div>
+    <div class="key-point"><div class="key-point-icon">5</div><div><strong>Librarians are research partners.</strong> Chat for quick help. Consultation for big projects &mdash; academic or creative.</div></div>
     <h3>Save Your Work</h3>
     <div class="export-btns">
-      <button class="export-btn" onclick="copyAllResponses()">📋 Copy All Responses</button>
-      <button class="export-btn" onclick="downloadResponses()">⬇️ Download as Text</button>
-      <button class="export-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <button class="export-btn" onclick="copyAllResponses()">&#128203; Copy All Responses</button>
+      <button class="export-btn" onclick="downloadResponses()">&#11015;&#65039; Download as Text</button>
+      <button class="export-btn" onclick="window.print()">&#128424;&#65039; Print / Save as PDF</button>
     </div>
     <div class="contact-card" style="margin-top:36px">
       <h3>Questions? Contact Me!</h3>
       <p class="name">Kay P Maye</p>
-      <p style="color:var(--tulane-blue-light)">Howard-Tilton Memorial Library · Tulane University</p>
-      <p style="font-size:1.05rem;margin-top:8px">📧 kmaye@tulane.edu</p>
+      <p style="color:var(--tulane-blue-light)">Howard-Tilton Memorial Library &middot; Tulane University</p>
+      <p style="font-size:1.05rem;margin-top:8px">&#128231; kmaye@tulane.edu</p>
     </div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
@@ -856,12 +576,12 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 
 </main>
 
-<button class="email-panel-toggle" onclick="toggleEmailPanel()"><span>📧</span><span>Email My Responses</span></button>
+<button class="email-panel-toggle" onclick="toggleEmailPanel()"><span>&#128231;</span><span>Email My Responses</span></button>
 <div class="email-panel" id="emailPanel">
-  <button class="close-btn" onclick="toggleEmailPanel()">×</button>
-  <h3>📧 Email Your Responses</h3>
+  <button class="close-btn" onclick="toggleEmailPanel()">&times;</button>
+  <h3>&#128231; Email Your Responses</h3>
   <p class="subtitle">Send activity responses to yourself for reference.</p>
-  <div class="success-message" id="successMessage">✓ Email client opened!</div>
+  <div class="success-message" id="successMessage">&check; Email client opened!</div>
   <div class="response-count" id="responseCount">0 responses collected</div>
   <div class="response-preview" id="responsePreview"><em>Complete activities to see responses here.</em></div>
   <label for="respondentName">Your Name (optional)</label>
@@ -877,225 +597,78 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 
 <script>
 // ================================================================
-// SIMPLE TOPIC PRE-FILL
+// TOPIC PRE-FILL
 // ================================================================
-let savedTopic = '';
-
-function saveTopic() {
-  const input = document.getElementById('title-topic');
-  if (input) savedTopic = input.value.trim();
-  if (savedTopic) applyTopic();
-}
-
-function applyTopic() {
-  if (!savedTopic) return;
-  const rt = document.getElementById('research-topic');
-  if (rt && !rt.value) rt.value = savedTopic;
-  const ft = document.getElementById('final-topic');
-  if (ft && !ft.value) ft.value = savedTopic;
-}
+let savedTopic='';
+function saveTopic(){const i=document.getElementById('title-topic');if(i)savedTopic=i.value.trim();if(savedTopic)applyTopic();}
+function applyTopic(){if(!savedTopic)return;const rt=document.getElementById('research-topic');if(rt&&!rt.value)rt.value=savedTopic;const ft=document.getElementById('final-topic');if(ft&&!ft.value)ft.value=savedTopic;}
 
 // ================================================================
-// DISCIPLINE-BASED BOOLEAN EXAMPLES
+// DISCIPLINE BOOLEAN EXAMPLES
 // ================================================================
-const booleanExamples = {
-  psychology: {
-    question: '"How does social media use affect depression among college students?"',
-    concepts: '<strong>social media</strong> · <strong>depression</strong> · <strong>college students</strong>',
-    synonyms: 'social media → Instagram, TikTok, online platforms · depression → anxiety, mental health · college students → undergraduates, young adults',
-    andEx: 'social media <span class="operator">AND</span> depression <span class="operator">AND</span> "college students"',
-    orEx: 'depression <span class="operator">OR</span> anxiety <span class="operator">OR</span> "mental health"',
-    notEx: '"social media" <span class="operator">NOT</span> marketing',
-    fullEx: '("social media" <span class="operator">OR</span> Instagram <span class="operator">OR</span> TikTok) <span class="operator">AND</span> (depress* <span class="operator">OR</span> anxi* <span class="operator">OR</span> "mental health") <span class="operator">AND</span> ("college students" <span class="operator">OR</span> undergrad*)'
-  },
-  health: {
-    question: '"What is the relationship between air pollution and childhood asthma in urban areas?"',
-    concepts: '<strong>air pollution</strong> · <strong>childhood asthma</strong> · <strong>urban areas</strong>',
-    synonyms: 'air pollution → air quality, particulate matter, PM2.5 · childhood asthma → pediatric asthma, respiratory disease · urban areas → cities, metropolitan',
-    andEx: '"air pollution" <span class="operator">AND</span> asthma <span class="operator">AND</span> children',
-    orEx: '"air pollution" <span class="operator">OR</span> "air quality" <span class="operator">OR</span> "particulate matter"',
-    notEx: 'asthma <span class="operator">NOT</span> "occupational exposure"',
-    fullEx: '("air pollution" <span class="operator">OR</span> "air quality" <span class="operator">OR</span> PM2.5) <span class="operator">AND</span> (asthma <span class="operator">OR</span> "respiratory disease" <span class="operator">OR</span> wheez*) <span class="operator">AND</span> (child* <span class="operator">OR</span> pediatric*)'
-  },
-  sociology: {
-    question: '"How does mass incarceration contribute to racial inequality in the United States?"',
-    concepts: '<strong>mass incarceration</strong> · <strong>racial inequality</strong> · <strong>United States</strong>',
-    synonyms: 'mass incarceration → prison, criminal justice system · racial inequality → racial disparit*, racism, systemic racism · United States → America, U.S.',
-    andEx: '"mass incarceration" <span class="operator">AND</span> "racial inequality" <span class="operator">AND</span> "United States"',
-    orEx: '"mass incarceration" <span class="operator">OR</span> prison <span class="operator">OR</span> "criminal justice"',
-    notEx: '"criminal justice" <span class="operator">NOT</span> "juvenile justice"',
-    fullEx: '("mass incarceration" <span class="operator">OR</span> prison* <span class="operator">OR</span> "criminal justice") <span class="operator">AND</span> ("racial inequality" <span class="operator">OR</span> "racial disparit*" <span class="operator">OR</span> "systemic racism") <span class="operator">AND</span> ("United States" <span class="operator">OR</span> America*)'
-  },
-  business: {
-    question: '"How does remote work affect employee productivity and job satisfaction?"',
-    concepts: '<strong>remote work</strong> · <strong>employee productivity</strong> · <strong>job satisfaction</strong>',
-    synonyms: 'remote work → telecommuting, work from home, hybrid work · employee productivity → worker performance, output · job satisfaction → employee engagement, morale',
-    andEx: '"remote work" <span class="operator">AND</span> productivity <span class="operator">AND</span> "job satisfaction"',
-    orEx: '"remote work" <span class="operator">OR</span> telecommut* <span class="operator">OR</span> "work from home"',
-    notEx: '"remote work" <span class="operator">NOT</span> freelanc*',
-    fullEx: '("remote work" <span class="operator">OR</span> telecommut* <span class="operator">OR</span> "work from home" <span class="operator">OR</span> "hybrid work") <span class="operator">AND</span> (productiv* <span class="operator">OR</span> "worker performance") <span class="operator">AND</span> ("job satisfaction" <span class="operator">OR</span> "employee engagement")'
-  },
-  humanities: {
-    question: '"How did newspaper coverage shape public opinion during the civil rights movement?"',
-    concepts: '<strong>newspaper coverage</strong> · <strong>public opinion</strong> · <strong>civil rights movement</strong>',
-    synonyms: 'newspaper coverage → media, press, journalism · public opinion → public perception, attitudes · civil rights movement → desegregation, 1960s activism, racial justice',
-    andEx: 'newspaper <span class="operator">AND</span> "public opinion" <span class="operator">AND</span> "civil rights"',
-    orEx: 'newspaper <span class="operator">OR</span> media <span class="operator">OR</span> press <span class="operator">OR</span> journalism',
-    notEx: '"civil rights" <span class="operator">NOT</span> "civil liberties"',
-    fullEx: '(newspaper* <span class="operator">OR</span> media <span class="operator">OR</span> press <span class="operator">OR</span> journalism) <span class="operator">AND</span> ("public opinion" <span class="operator">OR</span> "public perception" <span class="operator">OR</span> attitude*) <span class="operator">AND</span> ("civil rights movement" <span class="operator">OR</span> desegregation <span class="operator">OR</span> "racial justice")'
-  },
-  science: {
-    question: '"What are the effects of microplastics on marine organisms in coastal ecosystems?"',
-    concepts: '<strong>microplastics</strong> · <strong>marine organisms</strong> · <strong>coastal ecosystems</strong>',
-    synonyms: 'microplastics → plastic pollution, microfibers, nanoplastics · marine organisms → fish, marine life, aquatic species · coastal ecosystems → ocean, estuar*, shoreline',
-    andEx: 'microplastic* <span class="operator">AND</span> "marine organisms" <span class="operator">AND</span> coastal',
-    orEx: 'microplastic* <span class="operator">OR</span> "plastic pollution" <span class="operator">OR</span> microfiber*',
-    notEx: 'microplastic* <span class="operator">NOT</span> "freshwater"',
-    fullEx: '(microplastic* <span class="operator">OR</span> "plastic pollution" <span class="operator">OR</span> microfiber* <span class="operator">OR</span> nanoplastic*) <span class="operator">AND</span> ("marine organisms" <span class="operator">OR</span> fish <span class="operator">OR</span> "marine life" <span class="operator">OR</span> "aquatic species") <span class="operator">AND</span> (coastal <span class="operator">OR</span> ocean* <span class="operator">OR</span> estuar*)'
-  },
-  education: {
-    question: '"How does classroom technology affect student engagement in K-12 education?"',
-    concepts: '<strong>classroom technology</strong> · <strong>student engagement</strong> · <strong>K-12 education</strong>',
-    synonyms: 'classroom technology → educational technology, ed tech, digital tools · student engagement → motivation, participation, active learning · K-12 → elementary, secondary, primary school',
-    andEx: '"classroom technology" <span class="operator">AND</span> "student engagement" <span class="operator">AND</span> K-12',
-    orEx: '"educational technology" <span class="operator">OR</span> "ed tech" <span class="operator">OR</span> "digital tools"',
-    notEx: '"educational technology" <span class="operator">NOT</span> "higher education"',
-    fullEx: '("educational technology" <span class="operator">OR</span> "ed tech" <span class="operator">OR</span> "digital tools" <span class="operator">OR</span> "classroom technology") <span class="operator">AND</span> ("student engagement" <span class="operator">OR</span> motivat* <span class="operator">OR</span> participat* <span class="operator">OR</span> "active learning") <span class="operator">AND</span> (K-12 <span class="operator">OR</span> elementary <span class="operator">OR</span> "secondary education")'
-  }
-};
-
-function switchBooleanExample(discipline) {
-  const ex = booleanExamples[discipline];
-  if (!ex) return;
-  document.getElementById('boolean-example-question').innerHTML = ex.question;
-  document.getElementById('boolean-example-concepts').innerHTML = ex.concepts;
-  document.getElementById('boolean-example-synonyms').innerHTML = ex.synonyms;
-  document.getElementById('bool-and-example').innerHTML = ex.andEx;
-  document.getElementById('bool-or-example').innerHTML = ex.orEx;
-  document.getElementById('bool-not-example').innerHTML = ex.notEx;
-  document.getElementById('bool-full-string').innerHTML = ex.fullEx;
-}
-
+const booleanExamples={psychology:{question:'"How does social media use affect depression among college students?"',concepts:'<strong>social media</strong> &middot; <strong>depression</strong> &middot; <strong>college students</strong>',synonyms:'social media &rarr; Instagram, TikTok &middot; depression &rarr; anxiety, mental health &middot; college students &rarr; undergraduates',andEx:'social media <span class="operator">AND</span> depression <span class="operator">AND</span> &quot;college students&quot;',orEx:'depression <span class="operator">OR</span> anxiety <span class="operator">OR</span> &quot;mental health&quot;',notEx:'&quot;social media&quot; <span class="operator">NOT</span> marketing',fullEx:'(&quot;social media&quot; <span class="operator">OR</span> Instagram <span class="operator">OR</span> TikTok) <span class="operator">AND</span> (depress* <span class="operator">OR</span> anxi* <span class="operator">OR</span> &quot;mental health&quot;) <span class="operator">AND</span> (&quot;college students&quot; <span class="operator">OR</span> undergrad*)'},health:{question:'"What is the relationship between air pollution and childhood asthma in urban areas?"',concepts:'<strong>air pollution</strong> &middot; <strong>childhood asthma</strong> &middot; <strong>urban areas</strong>',synonyms:'air pollution &rarr; air quality, PM2.5 &middot; asthma &rarr; respiratory disease &middot; urban &rarr; cities',andEx:'&quot;air pollution&quot; <span class="operator">AND</span> asthma <span class="operator">AND</span> children',orEx:'&quot;air pollution&quot; <span class="operator">OR</span> &quot;air quality&quot; <span class="operator">OR</span> PM2.5',notEx:'asthma <span class="operator">NOT</span> &quot;occupational exposure&quot;',fullEx:'(&quot;air pollution&quot; <span class="operator">OR</span> &quot;air quality&quot; <span class="operator">OR</span> PM2.5) <span class="operator">AND</span> (asthma <span class="operator">OR</span> wheez*) <span class="operator">AND</span> (child* <span class="operator">OR</span> pediatric*)'},sociology:{question:'"How does mass incarceration contribute to racial inequality?"',concepts:'<strong>mass incarceration</strong> &middot; <strong>racial inequality</strong> &middot; <strong>United States</strong>',synonyms:'incarceration &rarr; prison, criminal justice &middot; racial inequality &rarr; racial disparit*, systemic racism',andEx:'&quot;mass incarceration&quot; <span class="operator">AND</span> &quot;racial inequality&quot;',orEx:'&quot;mass incarceration&quot; <span class="operator">OR</span> prison <span class="operator">OR</span> &quot;criminal justice&quot;',notEx:'&quot;criminal justice&quot; <span class="operator">NOT</span> &quot;juvenile justice&quot;',fullEx:'(&quot;mass incarceration&quot; <span class="operator">OR</span> prison* <span class="operator">OR</span> &quot;criminal justice&quot;) <span class="operator">AND</span> (&quot;racial inequality&quot; <span class="operator">OR</span> &quot;racial disparit*&quot; <span class="operator">OR</span> &quot;systemic racism&quot;)'},business:{question:'"How does remote work affect employee productivity?"',concepts:'<strong>remote work</strong> &middot; <strong>productivity</strong> &middot; <strong>job satisfaction</strong>',synonyms:'remote work &rarr; telecommuting, work from home &middot; productivity &rarr; performance &middot; satisfaction &rarr; engagement',andEx:'&quot;remote work&quot; <span class="operator">AND</span> productivity',orEx:'&quot;remote work&quot; <span class="operator">OR</span> telecommut* <span class="operator">OR</span> &quot;work from home&quot;',notEx:'&quot;remote work&quot; <span class="operator">NOT</span> freelanc*',fullEx:'(&quot;remote work&quot; <span class="operator">OR</span> telecommut* <span class="operator">OR</span> &quot;work from home&quot;) <span class="operator">AND</span> (productiv* <span class="operator">OR</span> &quot;worker performance&quot;)'},humanities:{question:'"How did newspaper coverage shape public opinion during civil rights?"',concepts:'<strong>newspaper</strong> &middot; <strong>public opinion</strong> &middot; <strong>civil rights</strong>',synonyms:'newspaper &rarr; media, press &middot; public opinion &rarr; perception &middot; civil rights &rarr; desegregation',andEx:'newspaper <span class="operator">AND</span> &quot;public opinion&quot; <span class="operator">AND</span> &quot;civil rights&quot;',orEx:'newspaper <span class="operator">OR</span> media <span class="operator">OR</span> press <span class="operator">OR</span> journalism',notEx:'&quot;civil rights&quot; <span class="operator">NOT</span> &quot;civil liberties&quot;',fullEx:'(newspaper* <span class="operator">OR</span> media <span class="operator">OR</span> press) <span class="operator">AND</span> (&quot;public opinion&quot; <span class="operator">OR</span> attitude*) <span class="operator">AND</span> (&quot;civil rights movement&quot; <span class="operator">OR</span> desegregation)'},science:{question:'"What are the effects of microplastics on marine organisms?"',concepts:'<strong>microplastics</strong> &middot; <strong>marine organisms</strong> &middot; <strong>coastal</strong>',synonyms:'microplastics &rarr; plastic pollution, microfibers &middot; marine &rarr; fish, aquatic &middot; coastal &rarr; ocean',andEx:'microplastic* <span class="operator">AND</span> &quot;marine organisms&quot; <span class="operator">AND</span> coastal',orEx:'microplastic* <span class="operator">OR</span> &quot;plastic pollution&quot; <span class="operator">OR</span> microfiber*',notEx:'microplastic* <span class="operator">NOT</span> freshwater',fullEx:'(microplastic* <span class="operator">OR</span> &quot;plastic pollution&quot;) <span class="operator">AND</span> (&quot;marine organisms&quot; <span class="operator">OR</span> fish <span class="operator">OR</span> &quot;marine life&quot;) <span class="operator">AND</span> (coastal <span class="operator">OR</span> ocean*)'},education:{question:'"How does classroom technology affect student engagement?"',concepts:'<strong>classroom technology</strong> &middot; <strong>student engagement</strong> &middot; <strong>K-12</strong>',synonyms:'technology &rarr; ed tech, digital tools &middot; engagement &rarr; motivation, participation &middot; K-12 &rarr; elementary, secondary',andEx:'&quot;classroom technology&quot; <span class="operator">AND</span> &quot;student engagement&quot;',orEx:'&quot;educational technology&quot; <span class="operator">OR</span> &quot;ed tech&quot; <span class="operator">OR</span> &quot;digital tools&quot;',notEx:'&quot;educational technology&quot; <span class="operator">NOT</span> &quot;higher education&quot;',fullEx:'(&quot;educational technology&quot; <span class="operator">OR</span> &quot;ed tech&quot; <span class="operator">OR</span> &quot;digital tools&quot;) <span class="operator">AND</span> (&quot;student engagement&quot; <span class="operator">OR</span> motivat* <span class="operator">OR</span> participat*)'}};
+function switchBooleanExample(d){const ex=booleanExamples[d];if(!ex)return;document.getElementById('boolean-example-question').innerHTML=ex.question;document.getElementById('boolean-example-concepts').innerHTML=ex.concepts;document.getElementById('boolean-example-synonyms').innerHTML=ex.synonyms;document.getElementById('bool-and-example').innerHTML=ex.andEx;document.getElementById('bool-or-example').innerHTML=ex.orEx;document.getElementById('bool-not-example').innerHTML=ex.notEx;document.getElementById('bool-full-string').innerHTML=ex.fullEx;}
 
 // ================================================================
-// PRETEST DATA
+// BOOLEAN QUIZ
 // ================================================================
-const pretestQuestions=[
-  {id:0,cluster:'sources',topic:'Source Types',q:'A peer-reviewed article published in the Journal of Psychology is best described as:',options:['Scholarly','Credible but not scholarly','Not credible','A primary source'],correct:0,explanation:'Peer-reviewed academic articles are the definition of scholarly sources.'},
-  {id:1,cluster:'sources',topic:'Source Types',q:'A New York Times article reporting on a recent scientific study is:',options:['Scholarly','Not acceptable','A primary source','Credible but not scholarly'],correct:3,explanation:'News sources from established outlets are credible but not scholarly.'},
-  {id:2,cluster:'sources',topic:'Source Types',q:'Which is TRUE about Wikipedia as a source?',options:['Acceptable as a scholarly citation','Never useful at all','Counts as a primary source','Useful background reading — its references can lead to real sources'],correct:3,explanation:'Wikipedia is not an acceptable citation, but its references can lead to actual sources.'},
-  {id:3,cluster:'sources',topic:'Source Types',q:'Which best describes the relationship between "scholarly" and "credible" sources?',options:['All credible sources are also scholarly','All scholarly sources are credible, but not all credible sources are scholarly','They mean the same thing','Government reports are always scholarly'],correct:1,explanation:'Scholarly requires peer review. Credible just means trustworthy.'},
-  {id:4,cluster:'boolean',topic:'Boolean Search',q:'You want results with BOTH "climate change" AND "agriculture." Which search is correct?',options:['"climate change" OR "agriculture"','"climate change" NOT "agriculture"','"climate change" AND "agriculture"','climate change agriculture (no operator)'],correct:2,explanation:'AND narrows results by requiring both terms.'},
-  {id:5,cluster:'boolean',topic:'Boolean Search',q:'What does depress* (with an asterisk) do?',options:['Truncation: finds depression, depressed, depressive, etc.','Searches only "depress"','Excludes depression','Searches within quotation marks'],correct:0,explanation:'The asterisk (*) is a truncation wildcard.'},
-  {id:6,cluster:'boolean',topic:'Boolean Search',q:'Too many results for "social media." Best strategy?',options:['Use AND to add "mental health"','Use OR to add synonyms','Use NOT to remove social media','Switch to Google'],correct:0,explanation:'AND narrows by requiring additional concepts.'},
-  {id:7,cluster:'boolean',topic:'Boolean Search',q:'Which correctly broadens a search?',options:['"college students" AND "university students"','"college students" NOT "university students"','"college students" * "university students"','"college students" OR "university students"'],correct:3,explanation:'OR broadens by including either term.'},
-  {id:8,cluster:'databases',topic:'Databases & Tools',q:'Advantage of a subject database over Library Search?',options:['Subject databases are free','More comprehensive for one discipline with standardized subject headings','Library Search only finds books','Subject databases search the open web'],correct:1,explanation:'Subject databases focus deeply on one field with expert indexing.'},
-  {id:9,cluster:'databases',topic:'Databases & Tools',q:'Best starting database for psychology research?',options:['PsycINFO','JSTOR','PubMed','Nexis Uni'],correct:0,explanation:'PsycINFO is the premier psychology database.'},
-  {id:10,cluster:'databases',topic:'Databases & Tools',q:'How to set up "Full Text @ Tulane" in Google Scholar?',options:['Log in with Tulane email','Add "site:tulane.edu"','Scholar Settings → Library links → Search "Tulane" → Save','It\'s automatic'],correct:2,explanation:'Library links in Scholar Settings connects you to Tulane.'},
-  {id:11,cluster:'databases',topic:'Databases & Tools',q:'Where is Tulane\'s complete database list?',options:['Google Scholar settings','libguides.tulane.edu','library.tulane.edu → Databases A-Z','scholar.google.com'],correct:2,explanation:'Databases A-Z lists all 900+ databases.'},
-  {id:12,cluster:'ill_help',topic:'ILL & Getting Help',q:'Need a journal article Tulane doesn\'t have?',options:['Buy it online','Submit an ILL request — it\'s free','Cite the abstract','Skip it'],correct:1,explanation:'ILL is free. Articles arrive within 1–3 days.'},
-  {id:13,cluster:'ill_help',topic:'ILL & Getting Help',q:'Best for in-depth help with a major project?',options:['Wikipedia','Google Scholar','Research consultation with a subject librarian','Library chat'],correct:2,explanation:'Subject librarians offer consultations for personalized help.'},
-  {id:14,cluster:'locations',topic:'Tulane Library Resources',q:'Where to find equipment loans and the Hogan Jazz Archive?',options:['Matas Library','Law Library','Google Scholar','Howard-Tilton (Media Services) and Special Collections (Jones Hall)'],correct:3,explanation:'Media Services has equipment. Special Collections houses archives.'},
-  {id:15,cluster:'locations',topic:'Tulane Library Resources',q:'LibGuides are best used for:',options:['Submitting ILL requests','Curated databases, journals, and tips for a specific subject','Borrowing equipment','Searching Google Scholar'],correct:1,explanation:'LibGuides are curated by subject librarians.'}
+const quizQuestions=[
+  {q:'You want articles about BOTH "climate change" AND "agriculture." Which search is correct?',options:['"climate change" OR "agriculture"','"climate change" AND "agriculture"','"climate change" NOT "agriculture"','climate change agriculture (no operator)'],correct:1,explanation:'AND requires both terms to appear, narrowing your results to the intersection.'},
+  {q:'What does depress* (with an asterisk) find?',options:['Only the exact word "depress"','depression, depressed, depressive, etc.','Excludes depression from results','Searches for words inside quotation marks'],correct:1,explanation:'Truncation (*) finds all words sharing that root: depression, depressed, depressive, and more.'},
+  {q:'You have too many results for "social media." Best strategy?',options:['Use OR to add more synonyms','Switch from a database to Google','Use AND to add another concept like "mental health"','Remove all search terms and start over'],correct:2,explanation:'AND narrows by requiring an additional concept. OR would broaden even further.'},
+  {q:'Which search correctly BROADENS results using synonyms?',options:['"college students" AND "university students"','"college students" NOT "university students"','"college students" OR "university students"','"college students" + "university students"'],correct:2,explanation:'OR includes results with either term — perfect for synonyms so you catch everything.'},
+  {q:'You want the exact phrase "social media addiction" — how do you search?',options:['social AND media AND addiction','social media addiction (no operators)','social media addiction*','"social media addiction" (in quotation marks)'],correct:3,explanation:'Quotation marks tell the database to search for the exact phrase as a unit, not individual words.'},
+  {q:'Which search would EXCLUDE results about marketing?',options:['"social media" AND marketing','"social media" OR marketing','"social media" NOT marketing','"social media" (marketing)'],correct:2,explanation:'NOT removes results containing the excluded term from your search.'}
 ];
-
-const clusters={
-  sources:{name:'Source Types & Evaluation',slides:[6,8],slideNames:['Understanding Your Sources','Activity 1: Evaluate a Source'],color:'#285C4D'},
-  boolean:{name:'Boolean Search & Strategies',slides:[9,10],slideNames:['Search Terms & Boolean','Activity 2: Build Your Search'],color:'#00778B'},
-  databases:{name:'Databases, Tools & Google Scholar',slides:[11,12],slideNames:['Search Ecosystem & Databases','Research Guides & Scholar'],color:'#CC9900'},
-  ill_help:{name:'ILL & Getting Help',slides:[15,16],slideNames:['Interlibrary Loan','Getting Help'],color:'#658D1B'},
-  locations:{name:'Tulane Library Resources',slides:[5,7],slideNames:['Library Locations','Media Services'],color:'#71C5E8'}
-};
+let quizAnswers={};
+function renderQuiz(){const c=document.getElementById('quiz-container');if(!c)return;c.innerHTML='';quizQuestions.forEach((q,qi)=>{let h=`<div class="quiz-question" id="qq-${qi}"><div class="q-text">${qi+1}. ${q.q}</div>`;q.options.forEach((opt,oi)=>{h+=`<div class="quiz-option" id="qo-${qi}-${oi}" onclick="selectQuizOption(${qi},${oi})"><input type="radio" name="qq${qi}" value="${oi}"><label>${opt}</label></div>`;});h+=`<div class="quiz-feedback" id="qf-${qi}"></div></div>`;c.innerHTML+=h;});}
+function selectQuizOption(qi,oi){quizQuestions[qi].options.forEach((_,idx)=>{const el=document.getElementById(`qo-${qi}-${idx}`);if(el){el.classList.remove('selected','correct-reveal','incorrect-reveal');}});document.getElementById(`qo-${qi}-${oi}`).classList.add('selected');quizAnswers[qi]=oi;}
+function checkAllQuiz(){let correct=0;quizQuestions.forEach((q,qi)=>{const fb=document.getElementById(`qf-${qi}`);const ans=quizAnswers[qi];q.options.forEach((_,oi)=>{const el=document.getElementById(`qo-${qi}-${oi}`);el.classList.remove('selected','correct-reveal','incorrect-reveal');if(oi===q.correct)el.classList.add('correct-reveal');else if(oi===ans&&ans!==q.correct)el.classList.add('incorrect-reveal');});if(ans===q.correct){correct++;fb.className='quiz-feedback show correct';fb.innerHTML=`<strong>&#9989; Correct!</strong> ${q.explanation}`;}else if(ans!==undefined){fb.className='quiz-feedback show incorrect';fb.innerHTML=`<strong>&#10060; Not quite.</strong> ${q.explanation}`;}else{fb.className='quiz-feedback show incorrect';fb.innerHTML='<strong>&#9888;&#65039; No answer selected.</strong>';}});const sc=document.getElementById('quiz-score');sc.textContent=`You got ${correct} out of ${quizQuestions.length} correct!`;sc.style.display='block';}
 
 // ================================================================
-// PRETEST STATE
+// SOURCE EVALUATION
 // ================================================================
-let ptCurrent=0,ptAnswers={},pretestCompleted=false,pretestSkipped=false,firstRecommendedSlide=4;
-
-function renderPretestQuestions(){const c=document.getElementById('pretest-questions');c.innerHTML='';pretestQuestions.forEach((q,qi)=>{const d=document.createElement('div');d.className='pretest-question-block'+(qi===0?' active':'');d.id='ptq-'+qi;d.innerHTML=`<div class="pretest-q-num">Question ${qi+1} of ${pretestQuestions.length}</div><div class="pretest-q-topic">${q.topic}</div><div class="pretest-q-text">${q.q}</div><div id="ptopts-${qi}">${q.options.map((opt,oi)=>`<div class="pretest-option" id="ptopt-${qi}-${oi}" onclick="ptSelectOption(${qi},${oi})"><input type="radio" name="ptq${qi}" value="${oi}" id="ptrad-${qi}-${oi}"><label for="ptrad-${qi}-${oi}">${opt}</label></div>`).join('')}</div>`;c.appendChild(d);});}
-
-function ptSelectOption(qi,oi){pretestQuestions[qi].options.forEach((_,idx)=>{const el=document.getElementById(`ptopt-${qi}-${idx}`);if(el)el.classList.remove('selected');});document.getElementById(`ptopt-${qi}-${oi}`).classList.add('selected');document.getElementById(`ptrad-${qi}-${oi}`).checked=true;ptAnswers[qi]=oi;document.getElementById('pt-feedback-inline').classList.remove('show','correct','incorrect');updatePtNav();}
-
-function updatePtProgress(){const pct=Math.round(((ptCurrent+1)/pretestQuestions.length)*100);document.getElementById('pt-progress-label').textContent=`Question ${ptCurrent+1} of ${pretestQuestions.length}`;document.getElementById('pt-progress-pct').textContent=pct+'%';document.getElementById('pt-progress-fill').style.width=pct+'%';}
-
-function updatePtNav(){document.getElementById('pt-prev-btn').disabled=ptCurrent===0;document.getElementById('pt-next-btn').textContent=ptCurrent===pretestQuestions.length-1?'See My Results →':'Next →';}
-
-function ptNext(){if(!ptAnswers.hasOwnProperty(ptCurrent)){const fb=document.getElementById('pt-feedback-inline');fb.textContent='Please select an answer.';fb.className='pretest-feedback show incorrect';return;}const q=pretestQuestions[ptCurrent],ic=ptAnswers[ptCurrent]===q.correct;const fb=document.getElementById('pt-feedback-inline');fb.innerHTML=`<strong>${ic?'✅ Correct!':'❌ Not quite.'}</strong> ${q.explanation}`;fb.className='pretest-feedback show '+(ic?'correct':'incorrect');if(ptCurrent===pretestQuestions.length-1){setTimeout(()=>{pretestCompleted=true;buildResults();goToSlide(3);},1600);return;}setTimeout(()=>{fb.classList.remove('show');document.getElementById('ptq-'+ptCurrent).classList.remove('active');ptCurrent++;document.getElementById('ptq-'+ptCurrent).classList.add('active');if(ptAnswers.hasOwnProperty(ptCurrent))document.getElementById(`ptopt-${ptCurrent}-${ptAnswers[ptCurrent]}`).classList.add('selected');updatePtProgress();updatePtNav();},1400);}
-
-function ptPrev(){if(ptCurrent===0)return;document.getElementById('pt-feedback-inline').classList.remove('show','correct','incorrect');document.getElementById('ptq-'+ptCurrent).classList.remove('active');ptCurrent--;document.getElementById('ptq-'+ptCurrent).classList.add('active');if(ptAnswers.hasOwnProperty(ptCurrent))document.getElementById(`ptopt-${ptCurrent}-${ptAnswers[ptCurrent]}`).classList.add('selected');updatePtProgress();updatePtNav();}
-
-function skipToResults(){pretestSkipped=true;buildResults();goToSlide(3);}
-
-// ================================================================
-// RESULTS ENGINE
-// ================================================================
-function buildResults(){const cs={};Object.keys(clusters).forEach(k=>{cs[k]={correct:0,total:0};});pretestQuestions.forEach((q,qi)=>{cs[q.cluster].total++;if(ptAnswers[qi]===q.correct)cs[q.cluster].correct++;});const tc=pretestQuestions.filter((q,qi)=>ptAnswers[qi]===q.correct).length,tq=pretestQuestions.length,pct=pretestSkipped?null:Math.round((tc/tq)*100);if(pretestSkipped){document.getElementById('results-score-display').textContent='—';document.getElementById('results-score-label').textContent='Pretest skipped';document.getElementById('results-incomplete-note').style.display='block';document.getElementById('results-intro-text').textContent='Use the buttons below to jump to any section.';}else{document.getElementById('results-score-display').textContent=`${tc}/${tq}`;document.getElementById('results-score-label').textContent=`${pct}% correct`;document.getElementById('results-incomplete-note').style.display='none';document.getElementById('results-intro-text').textContent=pct>=80?'Great work! Strong foundation.':pct>=50?'Good start! Some topics need more time.':'This session will be really valuable!';}const container=document.getElementById('cluster-results-container');container.innerHTML='';firstRecommendedSlide=4;let ff=false;Object.entries(clusters).forEach(([key,info])=>{const s=cs[key],cp=s.total>0?Math.round((s.correct/s.total)*100):0,nr=pretestSkipped||cp<75;if(nr&&!ff){firstRecommendedSlide=info.slides[0];ff=true;}const bc=cp>=75?'#658D1B':cp>=50?'#CC9900':'#c0392b',si=pretestSkipped?'📌':cp>=75?'✅':cp>=50?'🔶':'❗',sd=pretestSkipped?'—':`${s.correct}/${s.total}`,bw=pretestSkipped?0:cp;const btns=info.slides.map((si2,idx)=>`<button class="rec-slide-btn" onclick="goToSlide(${si2})">→ ${info.slideNames[idx]}</button>`).join('');let rh=nr?`<div class="cluster-recs"><p>📌 <strong>Recommended:</strong></p>${btns}</div>`:`<div class="cluster-recs" style="background:#f0faf5"><p style="color:#155724;margin:0">✅ You scored well here.</p></div>`;const d=document.createElement('div');d.className='cluster-result';d.innerHTML=`<div class="cluster-header"><h4>${si} ${info.name}</h4><div class="cluster-score-badge"><div class="cluster-bar-wrap"><div class="cluster-bar-fill" style="width:${bw}%;background:${bc}"></div></div><span class="cluster-pct" style="color:${bc}">${sd}</span></div></div>${rh}`;container.appendChild(d);});}
-
-function goToFirstRecommended(){goToSlide(firstRecommendedSlide);}
+var sourceAnswers={A:{type:'credible',explanation:'The CDC is credible but not peer-reviewed scholarly.'},B:{type:'scholarly',explanation:'This PMC article is peer-reviewed with expert authors.'},C:{type:'credible',explanation:'Psychology Today is credible but not scholarly.'},D:{type:'questionable',explanation:'Wikipedia is not acceptable for academic research.'},E:{type:'credible',explanation:'APA advisories are credible but not peer-reviewed scholarly articles.'},F:{type:'scholarly',explanation:'Nature Human Behaviour is a top-tier peer-reviewed journal.'}};
+function checkSourceAnswers(){const sel=document.querySelector('input[name="sourceselect"]:checked'),con=document.querySelector('input[name="conclusion"]:checked');const fb=document.getElementById('source-feedback');if(!sel){fb.className='feedback-box incorrect';fb.style.display='block';fb.innerHTML='<strong>Select a source first!</strong>';return;}if(!con){fb.className='feedback-box incorrect';fb.style.display='block';fb.innerHTML='<strong>Answer the classification question first!</strong>';return;}const ans=sourceAnswers[sel.value];if(con.value===ans.type){fb.className='feedback-box correct';fb.innerHTML='<strong>&#9989; Correct!</strong> '+ans.explanation;}else if((con.value==='credible'&&ans.type==='scholarly')||(con.value==='scholarly'&&ans.type==='credible')){fb.className='feedback-box partial';fb.innerHTML='<strong>&#129300; Close!</strong> '+ans.explanation;}else{fb.className='feedback-box incorrect';fb.innerHTML='<strong>&#10060; Not quite.</strong> '+ans.explanation;}fb.style.display='block';updateActivityTracker();}
 
 // ================================================================
 // PRESENTATION ENGINE
 // ================================================================
-let currentSlide=0;const totalSlides=20;const activitySlides=[8,10,14,17];
-const slideNames=['Title Slide','How Would You Like to Learn?','Knowledge Pretest','Pretest Results','Why Use the Library?','Tulane Library Locations','Understanding Your Sources','Media Services & Equipment','Activity 1: Evaluate a Source','Search Terms & Boolean Operators','Activity 2: Build Your Search','The Search Ecosystem & Databases','Research Guides & Google Scholar','Troubleshooting Your Search','Activity 3: Choose Your Databases','Interlibrary Loan (ILL)','Getting Help','Activity 4: Research Plan','Discussion & Reflection','Summary & Next Steps'];
-
-function buildSlideSelector(){const sel=document.getElementById('slideSelector');sel.innerHTML='';slideNames.forEach((n,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1} · ${n}`;sel.appendChild(o);});}
-
-function updateSlide(){document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));document.getElementById('slide-'+currentSlide).classList.add('active');document.getElementById('slideSelector').value=currentSlide;document.getElementById('pageIndicator').textContent=(currentSlide+1)+' / '+totalSlides;document.getElementById('progressBar').style.width=(((currentSlide+1)/totalSlides)*100)+'%';document.getElementById('prevBtn').disabled=currentSlide===0;document.getElementById('nextBtn').disabled=currentSlide===totalSlides-1;updateActivityTracker();if(currentSlide===17)pullFromPrevious();window.scrollTo(0,0);}
-
+let currentSlide=0;const totalSlides=16;const activitySlides=[4,7,13];
+const slideNames=['Title','Mapping the Ecosystem','The Terrain: Sources','Library Habitats','Activity 1: Evaluate a Source','The Language of Search: Boolean','Practice: Boolean Quiz','Activity 2: Build Your Search','Navigating the Ecosystem: Databases','Guides, Pathways & Google Scholar','Troubleshooting Your Search','Cracks in the Ecosystem','ILL & Getting Help','Activity 3: Research Plan','Discussion & Reflection','Summary & Next Steps'];
+function buildSlideSelector(){const sel=document.getElementById('slideSelector');sel.innerHTML='';slideNames.forEach((n,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1} \u00b7 ${n}`;sel.appendChild(o);});}
+function updateSlide(){document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));document.getElementById('slide-'+currentSlide).classList.add('active');document.getElementById('slideSelector').value=currentSlide;document.getElementById('pageIndicator').textContent=(currentSlide+1)+' / '+totalSlides;document.getElementById('progressBar').style.width=(((currentSlide+1)/totalSlides)*100)+'%';document.getElementById('prevBtn').disabled=currentSlide===0;document.getElementById('nextBtn').disabled=currentSlide===totalSlides-1;updateActivityTracker();if(currentSlide===13)pullFromPrevious();window.scrollTo(0,0);}
 function changeSlide(d){const n=currentSlide+d;if(n>=0&&n<totalSlides){currentSlide=n;updateSlide();}}
 function goToSlide(i){currentSlide=parseInt(i);updateSlide();}
-function toggleCheck(cb){const item=cb.closest('.checklist-item');if(item)item.classList.toggle('checked',cb.checked);updateResponseCount();}
 function selectRadio(el,name){const p=el.closest('.radio-group')||el.parentElement;p.querySelectorAll('.radio-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');const r=el.querySelector('input[type="radio"]');if(r)r.checked=true;updateResponseCount();}
-
+function toggleCheck(cb){const item=cb.closest('.checklist-item');if(item)item.classList.toggle('checked',cb.checked);updateResponseCount();}
 function updateActivityTracker(){document.querySelectorAll('.tracker-dot').forEach((dot,i)=>{dot.classList.remove('active');if(currentSlide===activitySlides[i])dot.classList.add('active');dot.classList.toggle('complete',checkActivityCompletion(i+1));});}
+function checkActivityCompletion(n){if(n===1)return!!document.querySelector('input[name="conclusion"]:checked');if(n===2){let f=0;document.querySelectorAll('.concept-main').forEach(m=>{if(m.value.trim())f++;});return f>=2;}if(n===3)return!!document.getElementById('final-topic').value.trim();return false;}
 
-function checkActivityCompletion(n){if(n===1)return!!document.querySelector('input[name="conclusion"]:checked');if(n===2){let f=0;document.querySelectorAll('.concept-main').forEach(m=>{if(m.value.trim())f++;});return f>=2;}if(n===3)return!!document.getElementById('database1').value.trim();if(n===4)return!!document.getElementById('final-topic').value.trim();return false;}
-
-var sourceAnswers={A:{type:'credible',explanation:'The CDC is credible but not peer-reviewed scholarly.'},B:{type:'scholarly',explanation:'This PMC article is peer-reviewed with expert authors.'},C:{type:'credible',explanation:'Psychology Today is credible but not scholarly.'},D:{type:'questionable',explanation:'Wikipedia is not acceptable for academic research.'},E:{type:'credible',explanation:'APA advisories are credible but not peer-reviewed scholarly articles.'},F:{type:'scholarly',explanation:'Nature Human Behaviour is a top-tier peer-reviewed journal.'}};
-
-function checkSourceAnswers(){const sel=document.querySelector('input[name="sourceselect"]:checked'),con=document.querySelector('input[name="conclusion"]:checked');const fb=document.getElementById('source-feedback');if(!sel){fb.className='feedback-box incorrect';fb.style.display='block';fb.innerHTML='<strong>Select a source first!</strong>';return;}if(!con){fb.className='feedback-box incorrect';fb.style.display='block';fb.innerHTML='<strong>Answer question 5 first!</strong>';return;}const ans=sourceAnswers[sel.value];if(con.value===ans.type){fb.className='feedback-box correct';fb.innerHTML='<strong>✅ Correct!</strong> '+ans.explanation;}else if((con.value==='credible'&&ans.type==='scholarly')||(con.value==='scholarly'&&ans.type==='credible')){fb.className='feedback-box partial';fb.innerHTML='<strong>🤔 Close!</strong> '+ans.explanation;}else{fb.className='feedback-box incorrect';fb.innerHTML='<strong>❌ Not quite.</strong> '+ans.explanation;}fb.style.display='block';updateActivityTracker();}
-
+// BUILDER
 function updateBuilderOutput(){const concepts=document.querySelectorAll('.builder-concept');const groups=[];concepts.forEach(c=>{const main=c.querySelector('.concept-main').value.trim();if(!main)return;const syns=[];c.querySelectorAll('.synonym-input').forEach(s=>{if(s.value.trim())syns.push(s.value.trim());});const terms=[main].concat(syns).map(t=>t.indexOf(' ')>=0?'"'+t+'"':t);groups.push(terms.length===1?terms[0]:'('+terms.join(' OR ')+')');});const out=document.getElementById('builder-output');if(groups.length){out.textContent=groups.join(' AND ');}else{out.innerHTML='<span style="color:#999">Enter concepts above...</span>';}updateActivityTracker();}
-
 function addSynonym(i){const c=document.getElementById('synonyms-'+i);const btn=c.querySelector('.add-synonym-btn');const inp=document.createElement('input');inp.type='text';inp.placeholder='Another synonym...';inp.className='synonym-input';inp.oninput=updateBuilderOutput;c.insertBefore(inp,btn);inp.focus();}
-
 function copyBuilderOutput(){const o=document.getElementById('builder-output').textContent;if(o&&o.indexOf('Enter concepts')<0)navigator.clipboard.writeText(o).then(()=>showToast());}
+function sendToResearchPlan(){const o=document.getElementById('builder-output').textContent;if(o&&o.indexOf('Enter concepts')<0)document.getElementById('final-search').value=o;const t=document.getElementById('research-topic').value;if(t)document.getElementById('final-topic').value=t;showToast('\u2713 Sent to Research Plan!');}
+function pullFromPrevious(){const t=document.getElementById('research-topic').value;if(t&&!document.getElementById('final-topic').value)document.getElementById('final-topic').value=t;const bo=document.getElementById('builder-output').textContent;if(bo&&bo.indexOf('Enter concepts')<0&&!document.getElementById('final-search').value)document.getElementById('final-search').value=bo;}
 
-function sendToActivity4(){const o=document.getElementById('builder-output').textContent;if(o&&o.indexOf('Enter concepts')<0)document.getElementById('final-search').value=o;const t=document.getElementById('research-topic').value;if(t)document.getElementById('final-topic').value=t;showToast('✓ Sent to Research Plan!');}
-
-function pullFromPrevious(){const t=document.getElementById('research-topic').value;if(t&&!document.getElementById('final-topic').value)document.getElementById('final-topic').value=t;const bo=document.getElementById('builder-output').textContent;if(bo&&bo.indexOf('Enter concepts')<0&&!document.getElementById('final-search').value)document.getElementById('final-search').value=bo;const dbs=[];for(let i=1;i<=3;i++){const v=document.getElementById('database'+i).value.trim();if(v)dbs.push(v);}const r=document.getElementById('database-reasoning').value.trim();if(dbs.length&&!document.getElementById('final-databases').value){let txt=dbs.join(', ');if(r)txt+='\nReasoning: '+r;document.getElementById('final-databases').value=txt;}const cm={'need-scholarly':'final-scholarly','need-books':'final-books','need-news':'final-news','need-data':'final-data','need-primary':'final-primary'};Object.entries(cm).forEach(([sk,dk])=>{const se=document.getElementById(sk),de=document.getElementById(dk);if(se&&se.checked&&de&&!de.checked){de.checked=true;toggleCheck(de);}});}
-
-var databaseInfo={psychology:{title:'Psychology',databases:'<strong>PsycINFO</strong>, PsycARTICLES, Psychology & Behavioral Sciences Collection',description:'PsycINFO is the premier psychology database.'},health:{title:'Health/Medicine',databases:'<strong>PubMed/MEDLINE</strong>, CINAHL Complete, Cochrane Library',description:'PubMed is essential for health sciences.'},business:{title:'Business',databases:'<strong>Business Source Complete</strong>, EconLit, Bloomberg, WRDS',description:'Business Source Complete covers most topics.'},humanities:{title:'Humanities',databases:'<strong>JSTOR</strong>, MLA International Bibliography, Historical Abstracts',description:'JSTOR is excellent for humanities.'},sociology:{title:'Sociology',databases:'<strong>SocINDEX</strong>, Sociological Abstracts, Social Work Abstracts',description:'SocINDEX provides comprehensive coverage.'},crime:{title:'Criminology',databases:'<strong>Criminal Justice Abstracts</strong>, NCJRS, SocINDEX',description:'Criminal Justice Abstracts is the core database.'},gender:{title:'Gender Studies',databases:'<strong>GenderWatch</strong>, LGBT Life, Women\'s Studies International',description:'Specialized databases for gender studies.'},education:{title:'Education',databases:'<strong>ERIC</strong>, Education Source, Professional Development Collection',description:'ERIC is essential for education.'},science:{title:'Science',databases:'<strong>Web of Science</strong>, SciFinder-n, Biological Abstracts',description:'Web of Science covers all sciences.'},engineering:{title:'Engineering',databases:'<strong>IEEE Xplore</strong>, ACM Digital Library, Compendex',description:'IEEE Xplore covers engineering and CS.'},latinamerican:{title:'Latin American Studies',databases:'<strong>PRISMA with HAPI Index</strong>, HLAS Web',description:'HAPI Index is essential.'},communication:{title:'Communication',databases:'<strong>Communication & Mass Media Complete</strong>, Film & Television Literature Index',description:'Covers journalism and media.'},arts:{title:'Arts',databases:'<strong>Oxford Music Online</strong>, Music Periodicals Database, Grove Art Online',description:'Authoritative references.'},legal:{title:'Legal',databases:'<strong>Westlaw</strong>, Nexis Uni, HeinOnline',description:'Westlaw is comprehensive.'},news:{title:'News',databases:'<strong>Nexis Uni</strong>, Newspaper Source Plus, Access World News',description:'Extensive news coverage.'},primary:{title:'Primary Sources',databases:'<strong>Archives Unbound</strong>, Digital National Security Archive, Black Studies Center',description:'Digitized primary sources.'},multidisciplinary:{title:'Multidisciplinary',databases:'<strong>Academic Search Complete</strong>, Library Search, ProQuest Central',description:'Start here for broad topics.'}};
-
-function showResearchDatabases(area){const r=document.getElementById('database-results');if(area&&databaseInfo[area]){document.getElementById('database-area-title').textContent=databaseInfo[area].title;document.getElementById('database-results-list').innerHTML=databaseInfo[area].databases;document.getElementById('database-description').textContent=databaseInfo[area].description;r.style.display='block';}else{r.style.display='none';}}
-function showDatabaseSuggestions(subject){const div=document.getElementById('database-suggestions'),span=document.getElementById('database-list');if(subject&&databaseInfo[subject]){span.textContent=databaseInfo[subject].databases.replace(/<\/?strong>/g,'');div.style.display='block';}else{div.style.display='none';}}
-
-function showToast(msg){const t=document.getElementById('copiedToast');t.textContent=msg||'✓ Copied to clipboard!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
-
-function collectResponses(){const responses=[];if(savedTopic){responses.push({title:'Research Topic',items:[{label:'Topic',value:savedTopic}]});}const a1={title:'Activity 1: Evaluate a Source',items:[]};const ss=document.querySelector('input[name="sourceselect"]:checked');if(ss)a1.items.push({label:'Source',value:'Source '+ss.value});const sa=document.getElementById('source-author');if(sa&&sa.value.trim())a1.items.push({label:'Author',value:sa.value.trim()});const con=document.querySelector('input[name="conclusion"]:checked');if(con)a1.items.push({label:'Conclusion',value:con.value});if(a1.items.length)responses.push(a1);const a2={title:'Activity 2: Search Strategy',items:[]};const rt=document.getElementById('research-topic');if(rt&&rt.value.trim())a2.items.push({label:'Topic',value:rt.value.trim()});const bo=document.getElementById('builder-output').textContent;if(bo&&bo.indexOf('Enter concepts')<0)a2.items.push({label:'Boolean string',value:bo});if(a2.items.length)responses.push(a2);const a3={title:'Activity 3: Databases',items:[]};const cst=document.getElementById('class-subject');if(cst&&cst.value.trim())a3.items.push({label:'Class',value:cst.value.trim()});const dbs2=[];for(let i=1;i<=3;i++){const d=document.getElementById('database'+i);if(d&&d.value.trim())dbs2.push(d.value.trim());}if(dbs2.length)a3.items.push({label:'Databases',value:dbs2.join(', ')});const dr=document.getElementById('database-reasoning');if(dr&&dr.value.trim())a3.items.push({label:'Reasoning',value:dr.value.trim()});if(a3.items.length)responses.push(a3);const a4={title:'Activity 4: Research Plan',items:[]};const ft=document.getElementById('final-topic');if(ft&&ft.value.trim())a4.items.push({label:'Topic',value:ft.value.trim()});const fs=document.getElementById('final-search');if(fs&&fs.value.trim())a4.items.push({label:'Search',value:fs.value.trim()});const fd=document.getElementById('final-databases');if(fd&&fd.value.trim())a4.items.push({label:'Databases',value:fd.value.trim()});const fg=document.getElementById('final-guides');if(fg&&fg.value.trim())a4.items.push({label:'Research Guides',value:fg.value.trim()});const ch=document.getElementById('final-challenges');if(ch&&ch.value.trim())a4.items.push({label:'Challenges',value:ch.value.trim()});if(a4.items.length)responses.push(a4);return responses;}
-
+// RESPONSES
+function showToast(msg){const t=document.getElementById('copiedToast');t.textContent=msg||'\u2713 Copied to clipboard!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function collectResponses(){const r=[];if(savedTopic)r.push({title:'Research Topic',items:[{label:'Topic',value:savedTopic}]});const a1={title:'Activity 1: Evaluate a Source',items:[]};const ss=document.querySelector('input[name="sourceselect"]:checked');if(ss)a1.items.push({label:'Source',value:'Source '+ss.value});const sa=document.getElementById('source-author');if(sa&&sa.value.trim())a1.items.push({label:'Author',value:sa.value.trim()});const con=document.querySelector('input[name="conclusion"]:checked');if(con)a1.items.push({label:'Conclusion',value:con.value});if(a1.items.length)r.push(a1);const a2={title:'Activity 2: Search Strategy',items:[]};const rt=document.getElementById('research-topic');if(rt&&rt.value.trim())a2.items.push({label:'Topic',value:rt.value.trim()});const bo=document.getElementById('builder-output').textContent;if(bo&&bo.indexOf('Enter concepts')<0)a2.items.push({label:'Boolean',value:bo});if(a2.items.length)r.push(a2);const a3={title:'Activity 3: Research Plan',items:[]};const ft=document.getElementById('final-topic');if(ft&&ft.value.trim())a3.items.push({label:'Topic',value:ft.value.trim()});const fs=document.getElementById('final-search');if(fs&&fs.value.trim())a3.items.push({label:'Search',value:fs.value.trim()});const fd=document.getElementById('final-databases');if(fd&&fd.value.trim())a3.items.push({label:'Databases',value:fd.value.trim()});const ch=document.getElementById('final-challenges');if(ch&&ch.value.trim())a3.items.push({label:'Challenges',value:ch.value.trim()});if(a3.items.length)r.push(a3);return r;}
 function countResponses(){let c=0;collectResponses().forEach(a=>{c+=a.items.length;});return c;}
 function updateResponseCount(){const c=countResponses();const el=document.getElementById('responseCount');if(el)el.textContent=c+' response'+(c!==1?'s':'')+' collected';updateActivityTracker();}
-
-function formatResponsesForEmail(){const responses=collectResponses();const name=document.getElementById('respondentName').value.trim();const date=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});let text='INTRODUCTION TO ACADEMIC RESEARCH\nActivity Responses\n\n';if(name)text+='Student: '+name+'\n';text+='Date: '+date+'\nPresenter: Kay P Maye\nTulane University Libraries\n\n';if(!responses.length){text+='No responses recorded.\n';return text;}responses.forEach(a=>{text+=a.title.toUpperCase()+'\n---\n';a.items.forEach(i=>{text+=i.label+': '+i.value+'\n';});text+='\n';});text+='\nNeed help? Contact Kay P Maye: kmaye@tulane.edu\n';return text;}
-
+function formatResponsesForEmail(){const responses=collectResponses();const name=document.getElementById('respondentName').value.trim();const date=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});let text='THE SEARCH ECOSYSTEM\nActivity Responses\n\n';if(name)text+='Student: '+name+'\n';text+='Date: '+date+'\nPresenter: Kay P Maye\nTulane University Libraries\n\n';if(!responses.length){text+='No responses recorded.\n';return text;}responses.forEach(a=>{text+=a.title.toUpperCase()+'\n---\n';a.items.forEach(i=>{text+=i.label+': '+i.value+'\n';});text+='\n';});text+='\nNeed help? Contact Kay P Maye: kmaye@tulane.edu\n';return text;}
 function previewResponses(){const responses=collectResponses();const preview=document.getElementById('responsePreview');if(!responses.length){preview.innerHTML='<em>Complete activities first.</em>';return;}let html='';responses.forEach(a=>{html+='<h4>'+a.title+'</h4><ul style="margin:5px 0 13px 18px">';a.items.forEach(i=>{const v=i.value.length>80?i.value.substring(0,80)+'...':i.value;html+='<li><strong>'+i.label+':</strong> '+v+'</li>';});html+='</ul>';});preview.innerHTML=html;updateResponseCount();}
-
-function emailResponses(){const email=document.getElementById('respondentEmail').value.trim();if(!email){alert('Please enter your email.');return;}const subject=encodeURIComponent('Research Workshop Responses - '+new Date().toLocaleDateString());const body=encodeURIComponent(formatResponsesForEmail());window.location.href='mailto:'+email+'?subject='+subject+'&body='+body;const msg=document.getElementById('successMessage');msg.classList.add('show');setTimeout(()=>msg.classList.remove('show'),5000);}
-
-function copyAllResponses(){const text=formatResponsesForEmail();navigator.clipboard.writeText(text).then(()=>showToast('✓ All responses copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('✓ Copied!');});}
-
-function downloadResponses(){const text=formatResponsesForEmail();const blob=new Blob([text],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='research-workshop-responses.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);}
-
+function emailResponses(){const email=document.getElementById('respondentEmail').value.trim();if(!email){alert('Please enter your email.');return;}const subject=encodeURIComponent('Search Ecosystem Workshop Responses - '+new Date().toLocaleDateString());const body=encodeURIComponent(formatResponsesForEmail());window.location.href='mailto:'+email+'?subject='+subject+'&body='+body;const msg=document.getElementById('successMessage');msg.classList.add('show');setTimeout(()=>msg.classList.remove('show'),5000);}
+function copyAllResponses(){const text=formatResponsesForEmail();navigator.clipboard.writeText(text).then(()=>showToast('\u2713 All responses copied!')).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('\u2713 Copied!');});}
+function downloadResponses(){const text=formatResponsesForEmail();const blob=new Blob([text],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='search-ecosystem-responses.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);}
 function toggleEmailPanel(){const p=document.getElementById('emailPanel');p.classList.toggle('active');if(p.classList.contains('active')){updateResponseCount();previewResponses();}}
-
 document.addEventListener('input',e=>{if(e.target.classList.contains('activity-input')||e.target.classList.contains('activity-textarea'))updateResponseCount();});
 document.addEventListener('change',e=>{if(e.target.type==='checkbox'||e.target.type==='radio')updateResponseCount();});
-document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT')return;if(currentSlide===2)return;if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();changeSlide(1);}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();changeSlide(-1);}else if(e.key==='Home'){e.preventDefault();currentSlide=0;updateSlide();}else if(e.key==='End'){e.preventDefault();currentSlide=totalSlides-1;updateSlide();}});
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT')return;if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();changeSlide(1);}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();changeSlide(-1);}else if(e.key==='Home'){e.preventDefault();currentSlide=0;updateSlide();}else if(e.key==='End'){e.preventDefault();currentSlide=totalSlides-1;updateSlide();}});
 
-// ===== INIT =====
-buildSlideSelector();renderPretestQuestions();updatePtProgress();updatePtNav();updateSlide();updateResponseCount();
+// INIT
+buildSlideSelector();renderQuiz();updateSlide();updateResponseCount();
 </script>
 </body>
 </html>

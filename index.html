@@ -161,6 +161,22 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 .pathway-empty{text-align:center;padding:46px 24px;background:#f8f9fa;border:2px dashed #ccc;border-radius:16px;margin:30px 0}
 @media(max-width:768px){.nav-container{flex-wrap:wrap;gap:8px}.nav-title{width:100%;text-align:center}.title-slide h1{font-size:2rem}.two-column{grid-template-columns:1fr;gap:22px}.content-slide{padding:28px 20px}.content-slide h2{font-size:1.6rem}.code-example{padding:22px 18px;font-size:.9rem}.activity-box{padding:26px 20px}.highlight-box{padding:22px 20px}.column{padding:22px 18px}.activity-tracker{display:none}}
 @media print{.nav-container,.progress-bar,.email-panel-toggle,.email-panel,.activity-tracker{display:none}.slide{display:block!important;page-break-after:always}.presentation{margin-top:0}}
+.ai-phase{border:1px solid var(--border-light);border-radius:14px;padding:0;margin:20px 0;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.ai-phase .phase-head{display:flex;align-items:center;gap:12px;padding:16px 22px;background:#f0f7f5}
+.ai-phase .phase-head .phase-icon{font-size:1.4rem}
+.ai-phase .phase-head h4{margin:0;color:var(--tulane-green);font-size:1.15rem}
+.ai-phase .phase-body{padding:18px 24px 22px}
+.verdict{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.98rem;padding:11px 18px;border-radius:10px;margin-bottom:14px;line-height:1.4}
+.verdict.no{background:#fde8e8;color:#a02622;border:1px solid #f2b8b5}
+.verdict.yes{background:#e6f4ea;color:#1e5631;border:1px solid #b7dfc4}
+.ai-phase .phase-body p{font-size:1rem;line-height:1.7}
+.ai-phase .instead{background:#f8f9fa;border-left:4px solid var(--tulane-blue);border-radius:0 10px 10px 0;padding:14px 20px;margin-top:14px}
+.ai-phase .instead strong{color:var(--storm-shutters)}
+.ai-phase .instead ul{margin:8px 0 0 20px}
+.ai-phase .instead li{margin-bottom:7px;font-size:.96rem;line-height:1.6}
+.consider-list{counter-reset:cw;margin:18px 0 0;padding:0;list-style:none}
+.consider-list li{position:relative;padding:12px 16px 12px 52px;background:#f8f9fa;border-radius:10px;margin-bottom:10px;font-size:.98rem;line-height:1.6}
+.consider-list li::before{counter-increment:cw;content:counter(cw);position:absolute;left:14px;top:11px;width:26px;height:26px;background:var(--medallion);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem}
 </style>
 </head>
 <body>
@@ -529,28 +545,90 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
   </div>
 </section>
 
-<!-- SLIDE 12: AI USE GUIDELINES -->
+<!-- SLIDE 13: WHAT AI IS & THE RESEARCH DECISION TREE -->
 <section class="slide" id="slide-13">
   <div class="content-slide">
-    <h2>&#x1F9EC; A New Species in the Ecosystem: What Generative AI Is</h2>
-    <p>Generative AI has arrived in the search ecosystem like a newly introduced species &mdash; fast-spreading, powerful, and still poorly understood. Whether it behaves like a helpful pollinator or an invasive species depends on how (and whether) you use it to find scholarly literature. Before we get to Tulane&rsquo;s expectations, it helps to be clear about what these tools actually are.</p>
+    <h2>&#x1F9EC; A New Species in the Ecosystem: Using AI Critically</h2>
+    <p>As research and innovation experts, Tulane University Libraries&rsquo; librarians are committed to up-to-date guidance on engaging with AI to <strong>find, evaluate, and cite</strong> resources. The rise of AI &mdash; both search assistants and generative text models &mdash; has blurred the lines of academic ownership and critical thinking. Generative tools create an <em>illusion of originality</em>, making it easy to mistake an algorithm&rsquo;s output for your own analysis. Outsourcing that thinking can leave real gaps in your development as a researcher &mdash; and training these models carries a substantial energy and water cost, too.</p>
 
-    <h3>What &ldquo;Generative AI&rdquo; Means</h3>
+    <h3>What Is AI?</h3>
     <div class="highlight-box">
-      <p><strong>Generative AI</strong> describes tools &mdash; like ChatGPT, Claude, Gemini, and Microsoft Copilot &mdash; that produce new text, images, or code in response to a prompt. Trained on enormous amounts of existing material, they work by predicting a <em>plausible</em> response, not by looking facts up in a verified record.</p>
+      <p style="margin:0"><strong>Artificial Intelligence</strong> is a broad term for computer systems designed to perform tasks that typically require human intelligence &mdash; recognizing patterns, making predictions, retrieving information, or producing new content &mdash; by learning from very large sets of data. &ldquo;AI&rdquo; is not one thing: it covers everything from the recommendation algorithm behind a streaming service to a chatbot that writes essays. Not all AI works the same way, and the distinction below matters for <em>how</em>, and <em>whether</em>, you should use a given tool at each stage of your research.</p>
+    </div>
+
+    <h3>Generative vs. Non-Generative AI</h3>
+    <div class="two-column">
+      <div class="column">
+        <h4>&#x26A1; Generative AI</h4>
+        <p>Tools like <strong>ChatGPT, Gemini, Claude, and Microsoft Copilot</strong> create new text, images, summaries, or citations by predicting likely patterns from their training data. They do <em>not</em> consult a live database or verify facts by default &mdash; they produce <strong>plausible-sounding output, which is not the same as accurate output</strong>.</p>
+      </div>
+      <div class="column">
+        <h4>&#x1F50E; Non-Generative (AI-Assisted)</h4>
+        <p>Tools like <strong>Semantic Scholar, Elicit, citation managers, and plagiarism checkers</strong> apply AI techniques to search, sort, filter, or organize <em>existing</em> information &mdash; without inventing new content.</p>
+      </div>
     </div>
     <div class="highlight-box tip">
-      <p><strong>The distinction that matters most for research:</strong> a generative model <em>generates language</em>; a library database <em>retrieves documents</em>. AI tools are not databases &mdash; so they belong at the <em>start</em> of your search, never as a substitute for the library&rsquo;s indexes.</p>
+      <p style="margin:0"><strong>The foundation for everything that follows:</strong> non-generative tools are broadly safer to use throughout the research process, while generative tools carry real risks &mdash; to the accuracy of your work, and to your growth as a researcher.</p>
     </div>
 
-    <h3>&#127793; Where It Genuinely Helps</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:18px 0">
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-top:4px solid var(--tulane-green)"><h4 style="margin-top:0">Brainstorm &amp; translate</h4><p style="font-size:.93rem;margin:0">Generate keywords, synonyms, and related concepts for your Boolean strings; explain dense jargon in plain language; outline an unfamiliar topic before you dive in.</p></div>
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-top:4px solid var(--storm-shutters)"><h4 style="margin-top:0">AI-assisted discovery</h4><p style="font-size:.93rem;margin:0">A growing class of tools (e.g., Semantic Scholar, Elicit, Research Rabbit) sits on top of real scholarly indexes and links to actual papers &mdash; very different from general chatbots, which <em>generate text</em> rather than <em>retrieve documents</em>.</p></div>
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-top:4px solid var(--medallion)"><h4 style="margin-top:0">Accelerate the tedious</h4><p style="font-size:.93rem;margin:0">Triage long reading lists, summarize background material, and map citation networks &mdash; freeing time for the analysis and creativity only you can do.</p></div>
+    <h3>&#x1F333; The Decision Tree: AI at Each Research Phase</h3>
+
+    <div class="ai-phase">
+      <div class="phase-head"><span class="phase-icon">&#x1F4A1;</span><h4>Brainstorming a Research Topic</h4></div>
+      <div class="phase-body">
+        <div class="verdict no">&#x1F6D1; TUL Librarians do NOT recommend generative AI here</div>
+        <p>Ask a generative model to &ldquo;give me a thesis topic&rdquo; and you&rsquo;ll typically get generic, trendy ideas drawn from common internet patterns. Leaning on the machine here is a <em>cognitive shortcut</em> that skips the messy but necessary work of forming your own questions. If the AI selects your topic, the direction of your research is no longer entirely your own.</p>
+        <div class="instead"><strong>Instead, try:</strong>
+          <ul>
+            <li>Consulting a librarian to talk through your interests and narrow a topic</li>
+            <li>Searching the library&rsquo;s databases to see what&rsquo;s already been studied</li>
+            <li>Reading recent literature reviews and bibliographies to spot open questions or gaps</li>
+            <li>Browsing your subject&rsquo;s LibGuide for an overview of the landscape</li>
+            <li>Using <em>non-generative</em> tools like Semantic Scholar or Elicit to surface relevant work</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="highlight-box" style="border-left-color:var(--storm-shutters)"><p style="margin:0">Powerful as that is, <em>how</em> you&rsquo;re permitted to use these tools at Tulane comes with clear expectations &mdash; that&rsquo;s next.</p></div>
+    <div class="ai-phase">
+      <div class="phase-head"><span class="phase-icon">&#x1F4DA;</span><h4>Finding Books, Articles &amp; Other Resources</h4></div>
+      <div class="phase-body">
+        <div class="verdict yes">&#x2705; Use NON-generative AI tools for this phase</div>
+        <p>Generative tools don&rsquo;t search the live web or academic indexes by default &mdash; they predict text. This frequently produces <strong>&ldquo;source confabulation&rdquo;</strong>: highly realistic but entirely fake titles, journals, authors, and DOIs. Anything real they return could usually have been found with a plain web search.</p>
+        <div class="instead"><strong>Instead, try:</strong>
+          <ul>
+            <li>Non-generative, discovery-focused tools such as Semantic Scholar or Elicit</li>
+            <li>Traditional library databases such as Scopus, JSTOR, or PubMed</li>
+            <li>The library&rsquo;s discovery search for a broad first pass across collections</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-phase">
+      <div class="phase-head"><span class="phase-icon">&#x2696;&#xFE0F;</span><h4>Evaluating Books, Articles &amp; Other Resources</h4></div>
+      <div class="phase-body">
+        <div class="verdict no">&#x1F6D1; TUL Librarians do NOT recommend generative AI here</div>
+        <p>Relying on AI to read and summarize sources for you strips away the context you build by engaging with the literature yourself, and it breaks the citation chains that let you trace how ideas developed. Models can also skew a summary to agree with whatever bias is embedded in your prompt, rather than reporting a study&rsquo;s actual limitations.</p>
+        <div class="instead"><strong>Instead, try:</strong>
+          <ul>
+            <li>Reading and annotating sources yourself, even if it takes longer</li>
+            <li>Applying an evaluation framework such as the CRAAP test or lateral reading</li>
+            <li>Using non-generative tools like Semantic Scholar and Elicit for evaluative context</li>
+            <li>Talking through a source&rsquo;s strengths and weaknesses in a research consultation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-phase">
+      <div class="phase-head"><span class="phase-icon">&#x1F517;</span><h4>Generating Citations</h4></div>
+      <div class="phase-body">
+        <div class="verdict yes">&#x2705; Use NON-generative AI tools for this phase</div>
+        <p>Generative tools frequently invent or misremember bibliographic details &mdash; page numbers, DOIs, volume and issue numbers &mdash; producing citations that look right but fall apart against the original source. Non-generative tools like <strong>Zotero, EndNote, and database &ldquo;cite&rdquo; buttons</strong> pull from structured information rather than generating text, which makes them far more reliable. Formatting errors still happen, so always check against a citation style manual.</p>
+      </div>
+    </div>
+
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
@@ -559,11 +637,11 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 <section class="slide" id="slide-14">
   <div class="content-slide">
     <h2>&#x1F916; AI &amp; Academic Research at Tulane</h2>
-    <p>Now that we&rsquo;ve defined what generative AI is, here&rsquo;s how Tulane expects you to use it. The university takes a <strong>pro-exploration</strong> approach &mdash; but with clear expectations around transparency, integrity, and data privacy.</p>
+    <p>Now that we&rsquo;ve defined what AI is and where it belongs in the research process, here&rsquo;s how Tulane expects you to use it. The university takes a <strong>pro-exploration</strong> approach &mdash; but with clear expectations around transparency, integrity, and data privacy.</p>
 
     <h3>Tulane&rsquo;s Core Stance</h3>
     <div class="highlight-box">
-      <p>Tulane <strong>does not ban AI</strong> &mdash; and actively encourages students, faculty, and staff to explore its potential. However, the university&rsquo;s <a href="https://college.tulane.edu/academic-integrity" target="_blank">Academic Integrity Policy</a> applies fully to AI use. Any AI assistance beyond grammar and spell-checking on graded work must be explicitly permitted by your instructor. Faculty are now <strong>required</strong> to include an AI statement in their syllabus &mdash; check it every semester.</p>
+      <p style="margin:0">Tulane <strong>does not ban AI</strong> &mdash; and actively encourages students, faculty, and staff to explore its potential. However, the university&rsquo;s <a href="https://college.tulane.edu/academic-integrity" target="_blank">Academic Integrity Policy</a> applies fully to AI use. Any AI assistance beyond grammar and spell-checking on graded work must be <strong>explicitly permitted by your instructor</strong>. Faculty are now required to include an AI statement in their syllabus &mdash; check it every semester.</p>
     </div>
 
     <h3>Key Guidelines for Students</h3>
@@ -585,81 +663,26 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
       </div>
     </div>
 
-    <div class="highlight-box tip"><p style="margin:0">With those rules in mind, the next slide turns to <strong>practice</strong>: the prompts that make AI a search ally, the hazards to watch for, and a healthy end-to-end workflow.</p></div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
+    <h3>If You Do Use Generative AI, Always Consider&hellip;</h3>
+    <p style="font-size:.97rem;color:#555">Even where a tool is permitted, weigh these before you rely on it for brainstorming or finding resources:</p>
+    <ol class="consider-list">
+      <li>Citations may be completely fabricated.</li>
+      <li>The tool may miss important details in a resource.</li>
+      <li>You can stifle your creative and critical thinking by outsourcing those skills to the algorithm.</li>
+      <li>AI tools &mdash; especially generative ones &mdash; can use your information without your knowledge to train future models.</li>
+      <li>Using AI-generated text can be considered plagiarism and grounds for academic discipline.</li>
+      <li>You should always disclose your use of AI.</li>
+      <li>The environmental impacts of AI may not be fully known for some time.</li>
+      <li>Legal regulations on AI could lead to more limited use in the future.</li>
+      <li>AI can&rsquo;t read resources behind paywalls, limiting the sources it can recommend.</li>
+    </ol>
 
-<!-- SLIDE 15: USING AI WELL - PROMPTS, HAZARDS & WORKFLOW -->
-<section class="slide" id="slide-15">
-  <div class="content-slide">
-    <h2>&#x1F50D; Using AI as a Search Strategist</h2>
-    <p>You know what generative AI is and what Tulane permits &mdash; now to the craft of using it well. The most productive move is to treat AI as a <em>search strategist</em>: ask it to help you search smarter, never to hand you finished citations.</p>
-
-    <h3>&#9999;&#65039; Sample Prompts</h3>
-    <p>Notice what these prompts have in common: they ask AI to help you <strong>search smarter</strong> &mdash; never to hand you citations.</p>
-    <div class="code-example"><span class="comment"># Brainstorm concepts &amp; synonyms for your Boolean string</span>
-&quot;I&rsquo;m researching how short-form video affects attention span in teenagers. Identify 3&ndash;4 core concepts in this question, and list synonyms and related terms for each that I could use in a library database search.&quot;
-
-<span class="comment"># Decode the jargon in an article you found</span>
-&quot;Explain the difference between a longitudinal and a cross-sectional study in plain language for a first-year undergraduate.&quot;
-
-<span class="comment"># Mine a real abstract for search terms</span>
-&quot;Here is the abstract of an article I found: [paste abstract]. What subject terms and keywords should I search to find related peer-reviewed studies?&quot;
-
-<span class="comment"># Figure out where a topic lives in the ecosystem</span>
-&quot;Which academic disciplines study food insecurity among college students? What kinds of library databases typically cover those fields?&quot;</div>
-    <div class="highlight-box warning"><strong>&#9888;&#65039; What&rsquo;s missing on purpose:</strong> none of these prompts asks the AI to &ldquo;give me five peer-reviewed sources.&rdquo; That&rsquo;s the prompt that produces hallucinated citations. Take the <em>terms</em> AI suggests into Library Search and the databases &mdash; let the library retrieve the real sources.</div>
-    <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
-  </div>
-</section>
-
-<!-- SLIDE 16: USING AI WISELY - HAZARDS, ETHICS & WORKFLOW -->
-<section class="slide" id="slide-16">
-  <div class="content-slide">
-    <h2>&#9888;&#65039; Using AI Wisely: Hazards, Ethics &amp; Workflow</h2>
-    <p>Powerful as AI is for search strategy, it carries real hazards and real ethical weight. Recognizing them &mdash; and following a disciplined workflow &mdash; is what separates responsible use from risky use.</p>
-
-    <h3>&#9888;&#65039; Challenges</h3>
-    <div class="highlight-box critical">
-      <strong>Hallucinated citations are the #1 hazard.</strong> Chatbots regularly produce plausible-looking but nonexistent references &mdash; invented authors, invented titles, sometimes attached to real journals. Every AI-suggested citation must be verified in Library Search, Google Scholar, or a database before you trust it. If you can&rsquo;t find it, assume it doesn&rsquo;t exist.
-    </div>
-    <div class="two-column">
-      <div class="column">
-        <h4>Coverage gaps</h4>
-        <p>Most models are trained largely on the open web. Paywalled scholarship &mdash; the deep layer of the ecosystem &mdash; is underrepresented, and training cutoffs mean the newest research may be invisible.</p>
-      </div>
-      <div class="column">
-        <h4>Opacity &amp; amplified cracks</h4>
-        <p>A database can show you <em>why</em> a result matched (subject headings, fields, filters). An AI tool usually can&rsquo;t fully explain why it surfaced &mdash; or omitted &mdash; a source. And because AI learns from an already biased scholarly record, the inequities from our &ldquo;Cracks&rdquo; slide (English-language, highly cited, Global North work) get reproduced at machine speed.</p>
-      </div>
-    </div>
-
-    <h3>&#9878;&#65039; Ethics</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0">
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--tulane-green)"><strong>Transparency &amp; disclosure.</strong> The policy slide&rsquo;s rule still holds: when AI use is permitted, document which tools you used and how &mdash; undisclosed AI assistance is a form of misrepresentation.</div>
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--storm-shutters)"><strong>Integrity &amp; authority.</strong> An AI summary is not a source. Read, verify, and cite the actual scholarship &mdash; a chatbot cannot be the authority for a factual claim in academic work.</div>
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--medallion)"><strong>Privacy &amp; data.</strong> Same guardrail as the policy slide &mdash; never paste unpublished data, others&rsquo; work, or restricted Tulane information into public AI tools; default settings are not private.</div>
-      <div style="background:#f0f7f5;border-radius:12px;padding:18px 22px;border-left:4px solid var(--olive-branch)"><strong>Equity &amp; labor.</strong> These systems are trained on the work of authors and creators who weren&rsquo;t asked or compensated, and the most capable tools sit behind subscriptions &mdash; access to AI, like access to journals, is unevenly distributed.</div>
-    </div>
-    <div class="highlight-box" style="border-left-color:var(--verdigris)"><strong>&#127757; The ecosystem isn&rsquo;t just a metaphor.</strong> Training large AI models and answering billions of prompts consumes substantial electricity, and the data centers behind them use large volumes of water for cooling. Any single prompt&rsquo;s footprint is tiny, but at global scale the costs are real &mdash; and they often land on the communities and watersheds near data centers. By comparison, a library database search is computationally lightweight. Using AI <em>deliberately</em> rather than by default is an environmental choice as well as an academic one.</div>
-
-    <h3>&#128260; A Healthy Workflow</h3>
-    <div class="highlight-box">
-      <ol style="margin-top:8px;margin-bottom:8px">
-        <li><strong>Brainstorm with AI</strong> (if your course permits): keywords, synonyms, concept maps.</li>
-        <li><strong>Search in library databases</strong> using the Boolean skills from this session.</li>
-        <li><strong>Read and verify</strong> the real sources &mdash; never cite anything you haven&rsquo;t opened.</li>
-        <li><strong>Cite the scholarship</strong>, and disclose your AI use per your course policy.</li>
-      </ol>
-      <p style="margin:8px 0 0;font-size:.95rem"><strong>Citing AI itself:</strong> if your instructor permits AI-generated content in your work, APA, MLA, and Chicago have each published formats for citing generative AI &mdash; see the <a href="https://libguides.tulane.edu/AI" target="_blank">Library AI Research Guide</a>.</p>
-    </div>
     <div class="slide-footer">Kay P Maye | Tulane University Libraries</div>
   </div>
 </section>
 
 <!-- SLIDE 16: ACTIVITY 4 - RESEARCH PLAN -->
-<section class="slide" id="slide-17">
+<section class="slide" id="slide-15">
   <div class="content-slide">
     <h2>Activity 4: Your Research Plan &amp; Foraging Map</h2>
     <div class="highlight-box tip" style="margin-bottom:26px"><strong>&#128161; Auto-filled from your earlier activities!</strong><br><button class="builder-copy-btn" style="margin-top:9px" onclick="pullFromPrevious()">&#128260; Refresh from Previous Activities</button></div>
@@ -692,7 +715,7 @@ a{color:var(--storm-shutters);text-decoration:none;border-bottom:1px dashed var(
 </section>
 
 <!-- FINAL SLIDE: SUMMARY, DISCUSSION, HELP, CONTACT -->
-<section class="slide" id="slide-18">
+<section class="slide" id="slide-16">
   <div class="content-slide">
     <h2>Summary &amp; Next Steps</h2>
     <h3>Five Things to Remember</h3>
@@ -849,10 +872,10 @@ function renderFindPreview(){const c=document.getElementById('find-preview');if(
 // ================================================================
 // PRESENTATION ENGINE
 // ================================================================
-let currentSlide=0;const totalSlides=19;const activitySlides=[3,5,8,17];
-const slideNames=['Title','Mapping the Ecosystem','The Terrain: Sources','Activity 1: Pick Your Path','Library Habitats','Activity 2: Evaluate a Source','The Language of Search: Boolean','Practice: Boolean Quiz','Activity 3: Build Your Search','Navigating the Ecosystem: Databases & Guides','Troubleshooting Your Search','Closing the Loop: Citing Sources','Cracks in the Ecosystem','A New Species: What Generative AI Is','AI & Academic Research at Tulane','Using AI as a Search Strategist','Using AI Wisely: Hazards, Ethics & Workflow','Activity 4: Research Plan & Foraging Map','Summary, Discussion & Contact'];
+let currentSlide=0;const totalSlides=17;const activitySlides=[3,5,8,15];
+const slideNames=['Title','Mapping the Ecosystem','The Terrain: Sources','Activity 1: Pick Your Path','Library Habitats','Activity 2: Evaluate a Source','The Language of Search: Boolean','Practice: Boolean Quiz','Activity 3: Build Your Search','Navigating the Ecosystem: Databases & Guides','Troubleshooting Your Search','Closing the Loop: Citing Sources','Cracks in the Ecosystem','Using AI Critically: What It Is & When to Use It','AI & Academic Research at Tulane','Activity 4: Research Plan & Foraging Map','Summary, Discussion & Contact'];
 function buildSlideSelector(){const sel=document.getElementById('slideSelector');sel.innerHTML='';slideNames.forEach((n,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1} \u00b7 ${n}`;sel.appendChild(o);});}
-function updateSlide(){document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));document.getElementById('slide-'+currentSlide).classList.add('active');document.getElementById('slideSelector').value=currentSlide;document.getElementById('pageIndicator').textContent=(currentSlide+1)+' / '+totalSlides;document.getElementById('progressBar').style.width=(((currentSlide+1)/totalSlides)*100)+'%';document.getElementById('prevBtn').disabled=currentSlide===0;document.getElementById('nextBtn').disabled=currentSlide===totalSlides-1;updateActivityTracker();if(currentSlide===17){pullFromPrevious();renderFindSlide();}window.scrollTo(0,0);}
+function updateSlide(){document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));document.getElementById('slide-'+currentSlide).classList.add('active');document.getElementById('slideSelector').value=currentSlide;document.getElementById('pageIndicator').textContent=(currentSlide+1)+' / '+totalSlides;document.getElementById('progressBar').style.width=(((currentSlide+1)/totalSlides)*100)+'%';document.getElementById('prevBtn').disabled=currentSlide===0;document.getElementById('nextBtn').disabled=currentSlide===totalSlides-1;updateActivityTracker();if(currentSlide===15){pullFromPrevious();renderFindSlide();}window.scrollTo(0,0);}
 function changeSlide(d){const n=currentSlide+d;if(n>=0&&n<totalSlides){currentSlide=n;updateSlide();}}
 function goToSlide(i){currentSlide=parseInt(i);updateSlide();}
 function selectRadio(el,name){const p=el.closest('.radio-group')||el.parentElement;p.querySelectorAll('.radio-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');const r=el.querySelector('input[type="radio"]');if(r)r.checked=true;updateResponseCount();}
